@@ -1,0 +1,183 @@
+/* Custom CSS for Elite Endeavor Website */
+
+/* Custom Font */
+body {
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Smooth Scrolling */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Navigation Link Animation */
+.nav-link {
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -5px;
+    left: 0;
+    background-color: #f5b642;
+    transition: width 0.3s ease;
+}
+
+.nav-link:hover::after {
+    width: 100%;
+}
+
+/* Hero Section Animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.animate-fade-in {
+    animation: fadeIn 1s ease-out;
+}
+
+/* Product Card Hover Effect */
+.product-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.product-card:hover {
+    transform: translateY(-10px);
+}
+
+/* Feature Item Hover */
+.feature-item {
+    transition: all 0.3s ease;
+}
+
+.feature-item:hover {
+    transform: translateX(5px);
+}
+
+/* Gallery Image Overlay */
+.gallery-item {
+    position: relative;
+    overflow: hidden;
+}
+
+.gallery-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(26, 60, 52, 0.1);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 1;
+}
+
+.gallery-item:hover::before {
+    opacity: 1;
+}
+
+/* Sticky Header */
+header {
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Table Responsive */
+@media (max-width: 768px) {
+    .overflow-x-auto {
+        -webkit-overflow-scrolling: touch;
+    }
+}
+
+/* Custom Colors */
+.bg-primary {
+    background-color: #1a3c34;
+}
+
+.bg-secondary {
+    background-color: #2e7d32;
+}
+
+.bg-accent {
+    background-color: #e74c3c;
+}
+
+.bg-premium {
+    background-color: #f5b642;
+}
+
+.text-primary {
+    color: #1a3c34;
+}
+
+.text-secondary {
+    color: #2e7d32;
+}
+
+.text-accent {
+    color: #e74c3c;
+}
+
+.text-premium {
+    color: #f5b642;
+}
+
+/* Form Focus States */
+input:focus, textarea:focus {
+    box-shadow: 0 0 0 3px rgba(245, 182, 66, 0.1);
+}
+
+/* WhatsApp Button Animation */
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+a[href*="whatsapp"]:hover {
+    animation: pulse 0.5s ease-in-out;
+}
+
+/* Mobile Menu Transition */
+#mobile-menu {
+    transition: max-height 0.3s ease-out;
+    max-height: 0;
+    overflow: hidden;
+}
+
+#mobile-menu.active {
+    max-height: 300px;
+}
+
+/* Loading Animation */
+@keyframes shimmer {
+    0% {
+        background-position: -200% center;
+    }
+    100% {
+        background-position: 200% center;
+    }
+}
+
+.loading-shimmer {
+    background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+    background-size: 200% 100%;
+    animation: shimmer 1.5s infinite;
+}

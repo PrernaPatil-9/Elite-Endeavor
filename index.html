@@ -1,0 +1,2701 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elite Endeavor | Premium Aluminium Doors & Windows</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Material Icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="assets/logo.png">
+    <style>
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .animate-fade-in {
+            animation: fadeIn 1.2s ease-out;
+        }
+
+        /* Custom animations and styles */
+        @keyframes float {
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+
+        .floating-icon {
+            animation: float 3s ease-in-out infinite;
+        }
+
+        /* Form focus effects */
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            box-shadow: 0 0 0 3px rgba(245, 182, 66, 0.1);
+        }
+
+        /* Gradient text animation */
+        .gradient-text {
+            background: linear-gradient(45deg, #f5b642, #e74c3c);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        /* Smooth scroll behavior */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Custom scrollbar for form */
+        textarea::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        textarea::-webkit-scrollbar-track {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 4px;
+        }
+
+        textarea::-webkit-scrollbar-thumb {
+            background: #f5b642;
+            border-radius: 4px;
+        }
+
+         /* Custom styles for overlapping effect */
+        .product-section {
+            position: relative;
+            height: 400vh; /* 4x viewport height for 4 products */
+        }
+        
+        .product-container {
+            position: sticky;
+            top: 0;
+            height: 100vh;
+            overflow: hidden;
+        }
+        
+        .product-item {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            transform: translateY(100px);
+            transition: all 1.2s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .product-item.active {
+            opacity: 1;
+            transform: translateY(0);
+            z-index: 30;
+        }
+        
+        .product-item.prev {
+            opacity: 0.2;
+            transform: translateY(-50px) scale(0.95);
+            z-index: 20;
+        }
+        
+        .product-item.next {
+            opacity: 0.5;
+            transform: translateY(100px);
+            z-index: 10;
+        }
+        
+        /* Spacer sections for scrolling */
+        .scroll-spacer {
+            height: 100vh;
+        }
+        
+        /* Content animations */
+        .product-content h3,
+        .product-content p,
+        .product-content span {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease-out;
+        }
+        
+        .product-item.active .product-content h3 {
+            opacity: 1;
+            transform: translateY(0);
+            transition-delay: 0.3s;
+        }
+        
+        .product-item.active .product-content p {
+            opacity: 1;
+            transform: translateY(0);
+            transition-delay: 0.5s;
+        }
+        
+        .product-item.active .product-content span {
+            opacity: 1;
+            transform: translateY(0);
+            transition-delay: 0.7s;
+        }
+        
+        /* Scroll indicator */
+        .scroll-indicator {
+            position: fixed;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 100;
+            color: white;
+            text-align: center;
+            background: rgba(0,0,0,0.3);
+            padding: 10px 20px;
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+        }
+        
+        .indicator-dots {
+            display: flex;
+            gap: 10px;
+            margin-top: 10px;
+            justify-content: center;
+        }
+        
+        .dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.3);
+            transition: all 0.3s ease;
+        }
+        
+        .dot.active {
+            background: #e74c3c;
+            transform: scale(1.3);
+        }
+        
+        /* Smooth scroll */
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        /* Image zoom effect */
+        .product-item img {
+            transition: transform 1.5s ease-out;
+            transform: scale(1.1);
+        }
+        
+        .product-item.active img {
+            transform: scale(1);
+        }
+        
+        .product-item.prev img {
+            transform: scale(0.9);
+        }
+        
+
+
+        /* Animation Base Classes */
+    .reveal-from-top {
+        opacity: 0;
+        transform: translateY(-30px);
+        transition: all 0.8s ease-out;
+    }
+    
+    .reveal-from-left {
+        opacity: 0;
+        transform: translateX(-50px);
+        transition: all 0.8s ease-out;
+    }
+    
+    .reveal-from-right {
+        opacity: 0;
+        transform: translateX(50px);
+        transition: all 0.8s ease-out;
+    }
+    
+    .reveal-scale {
+        opacity: 0;
+        transform: scale(0.8);
+        transition: all 0.6s ease-out;
+    }
+    
+    .reveal-item {
+        opacity: 0;
+        transform: translateY(20px);
+        transition: all 0.6s ease-out;
+    }
+    
+    /* Active State - Applied when element is in view */
+    .reveal-active {
+        opacity: 1;
+        transform: translate(0, 0) scale(1);
+    }
+
+
+
+
+    #header,
+#top-navbar,
+#main-nav {
+  background-color: white !important;
+  border: none !important;
+  outline: none !important;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+    </style>
+</head>
+
+<body class="font-sans">
+
+
+  <!-- Combined Header: Top Navbar + Golden Divider + Main Navigation -->
+<!-- <header id="header" class="fixed w-full z-50 bg-[#1a3c34] transition-all duration-300">
+    <div id="top-navbar" class="w-full bg-[#1a3c34] text-white text-sm transition-opacity duration-300">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row justify-between items-center py-2 gap-3">
+                <div class="flex items-center gap-2">
+                    <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67z"/>
+                    </svg>
+                    <span>Mon - Sat: 9:00 AM - 6:00 PM</span>
+                </div>
+
+                <div class="flex flex-wrap items-center justify-center md:justify-end gap-5">
+                    <a href="mailto:info@eliteendeavor.com" class="flex items-center gap-2 hover:text-[#f5b642] transition">
+                        <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+                        </svg>
+                        <span class="text-sm">info@eliteendeavor.com</span>
+                    </a>
+
+                    <a href="tel:+919876543210" class="flex items-center gap-2 hover:text-[#f5b642] transition">
+                        <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
+                        </svg>
+                        <span class="text-sm">+91 98765 43210</span>
+                    </a>
+
+                    <div class="flex items-center gap-4">
+                        <a href="https://facebook.com/eliteendeavor" target="_blank" rel="noopener" class="hover:text-[#f5b642] transition" aria-label="Facebook">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.99 3.66 9.13 8.44 9.88v-6.99h-2.54v-2.89h2.54V9.41c0-2.52 1.5-3.91 3.79-3.91 1.1 0 2.25.2 2.25.2v2.48h-1.26c-1.25 0-1.64.78-1.64 1.58v1.9h2.79l-.45 2.89h-2.34v6.99C18.34 21.13 22 16.99 22 12z"/>
+                            </svg>
+                        </a>
+
+                        <a href="https://instagram.com/eliteendeavor" target="_blank" rel="noopener" class="hover:text-[#f5b642] transition" aria-label="Instagram">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 0C8.74 0 8.33.01 7.05.07c-1.33.06-2.24.27-3.03.58-.81.31-1.49.72-2.17 1.4-.68.68-1.09 1.36-1.4 2.17-.31.79-.52 1.7-.58 3.03C.01 8.33 0 8.74 0 12s.01 3.67.07 4.95c.06 1.33.27 2.24.58 3.03.31.81.72 1.49 1.4 2.17.68.68 1.36 1.09 2.17 1.4.79.31 1.7.52 3.03.58 1.28.06 1.69.07 4.95.07s3.67-.01 4.95-.07c1.33-.06 2.24-.27 3.03-.58.81-.31 1.49-.72 2.17-1.4.68-.68 1.09-1.36 1.4-2.17.31-.79.52-1.7.58-3.03.06-1.28.07-1.69.07-4.95s-.01-3.67-.07-4.95c-.06-1.33-.27-2.24-.58-3.03-.31-.81-.72-1.49-1.4-2.17-.68-.68-1.36-1.09-2.17-1.4-.79-.31-1.7-.52-3.03-.58C15.67.01 15.26 0 12 0z"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="golden-divider" class="w-full h-px bg-gradient-to-r from-transparent via-[#f5b642] to-transparent transition-opacity duration-300"></div>
+
+    <nav id="main-nav" class="container mx-auto px-4 py-4 transition-all duration-300">
+        <div class="flex justify-between items-center">
+            <div class="flex items-center">
+                <img src="assets/logo.png.png" alt="Elite Endeavor Logo" class="h-10 w-auto">
+                <span class="ml-2 text-white font-bold text-xl">Elite Endeavor</span>
+            </div>
+
+            <div class="hidden md:flex space-x-8">
+                <a href="#home" class="text-white hover:text-[#f5b642]">Home</a>
+                <a href="#about" class="text-white hover:text-[#f5b642]">About</a>
+                <a href="#products" class="text-white hover:text-[#f5b642]">Products</a>
+                <a href="#specs" class="text-white hover:text-[#f5b642]">Specifications</a>
+                <a href="#features" class="text-white hover:text-[#f5b642]">Features</a>
+                <a href="#founders" class="text-white hover:text-[#f5b642]">Founders</a>
+                <a href="#contact" class="text-white hover:text-[#f5b642]">Contact</a>
+            </div>
+
+            <button id="mobile-menu-button" class="md:hidden text-white">
+                <span class="material-icons text-3xl">menu</span>
+            </button>
+        </div>
+
+        <div id="mobile-menu" class="hidden md:hidden mt-4 space-y-4">
+            <a href="#home" class="block text-white hover:text-[#f5b642] py-2">Home</a>
+            <a href="#about" class="block text-white hover:text-[#f5b642] py-2">About</a>
+            <a href="#products" class="block text-white hover:text-[#f5b642] py-2">Products</a>
+            <a href="#specs" class="block text-white hover:text-[#f5b642] py-2">Specifications</a>
+            <a href="#features" class="block text-white hover:text-[#f5b642] py-2">Features</a>
+            <a href="#founders" class="block text-white hover:text-[#f5b642] py-2">Founders</a>
+            <a href="#contact" class="block text-white hover:text-[#f5b642] py-2">Contact</a>
+        </div>
+    </nav>
+</header> -->
+
+
+<!-- Fixed Header: Top Navbar with Contact & Social + Main Navigation -->
+
+<header id="header" class="fixed top-0 left-0 w-full z-50 bg-white transition-all duration-300 shadow-sm">
+   <!-- Top Navbar: Business Hours, Contact Info & Social Icons -->
+<div id="top-navbar" class="w-full bg-white text-black text-xs border-b border-gray-200"> <!-- Reduced from text-sm to text-xs -->
+    <div class="container mx-auto px-4">
+        <div class="flex flex-col md:flex-row justify-between items-center py-2 gap-3"> <!-- Reduced py-3 → py-2 and gap-4 → gap-3 -->
+
+            <!-- Left: Business Hours -->
+            <div class="flex items-center gap-2"> <!-- Reduced gap-3 → gap-2 -->
+                <span class="text-sm">●</span> <!-- Slightly smaller dot -->
+                <span>Mon - Sat: 9:00 AM - 6:00 PM</span>
+            </div>
+
+            <!-- Right: Email, Phone & Social Icons -->
+            <div class="flex flex-col md:flex-row items-center gap-4 md:gap-6"> <!-- Reduced gaps -->
+
+                <!-- Contact Info -->
+                <div class="flex flex-col md:flex-row items-center gap-4 text-center md:text-left"> <!-- Reduced gap-6 → gap-4 -->
+                    <a href="mailto:saleseliteendeavor@gmail.com" class="hover:text-[#f5b642] transition">
+                        saleseliteendeavor@gmail.com
+                    </a>
+                    <a href="tel:+919876543210" class="hover:text-[#f5b642] transition">
+                        +91 98765 43210
+                    </a>
+                </div>
+
+                <!-- Social Media Icons -->
+                <div class="flex items-center gap-4"> <!-- Reduced gap-5 → gap-4 -->
+                    <!-- Facebook -->
+                    <a href="https://facebook.com/eliteendeavor" target="_blank" rel="noopener"
+                        class="hover:opacity-80 transition" aria-label="Facebook">
+                        <svg class="w-4 h-4" viewBox="0 0 24 24" fill="#1877F2"> <!-- Reduced w-5 h-5 → w-4 h-4 -->
+                            <path d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.99 3.66 9.13 8.44 9.88v-6.99h-2.54v-2.89h2.54V9.41c0-2.52 1.5-3.91 3.79-3.91 1.1 0 2.25.2 2.25.2v2.48h-1.26c-1.25 0-1.64.78-1.64 1.58v1.9h2.79l-.45 2.89h-2.34v6.99C18.34 21.13 22 16.99 22 12z" />
+                        </svg>
+                    </a>
+
+                    <!-- Instagram -->
+                    <a href="https://instagram.com/eliteendeavor" target="_blank" rel="noopener"
+                        class="hover:opacity-80 transition" aria-label="Instagram">
+                        <div class="w-4 h-4 rounded overflow-hidden"> <!-- Reduced w-5 h-5 → w-4 h-4 -->
+                            <svg viewBox="0 0 24 24" class="w-full h-full">
+                                <defs>
+                                    <radialGradient id="instagramGrad" cx="30%" cy="107%" r="150%">
+                                        <stop offset="0%" stop-color="#fdf497" />
+                                        <stop offset="5%" stop-color="#fdf497" />
+                                        <stop offset="45%" stop-color="#fd5949" />
+                                        <stop offset="60%" stop-color="#d6249f" />
+                                        <stop offset="90%" stop-color="#285AEB" />
+                                    </radialGradient>
+                                </defs>
+                                <rect width="24" height="24" fill="url(#instagramGrad)" rx="6" />
+                                <path fill="white" d="M12 2.16c3.2 0 3.58.01 4.85.07 1.17.06 1.97.24 2.68.51.82.3 1.51.7 2.2 1.39.69.69 1.09 1.38 1.39 2.2.27.71.45 1.51.51 2.68.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.06 1.17-.24 1.97-.51 2.68-.3.82-.7 1.51-1.39 2.2-.69.69-1.38 1.09-2.2 1.39-.71.27-1.51.45-2.68.51-1.27.06-1.65.07-4.85.07s-3.58-.01-4.85-.07c-1.17-.06-1.97-.24-2.68-.51-.82-.3-1.51-.7-2.2-1.39-.69-.69-1.09-1.38-1.39-2.2-.27-.71-.45-1.51-.51-2.68-.06-1.27-.07-1.65-.07-4.85s.01-3.58.07-4.85c.06-1.17.24-1.97.51-2.68.3-.82.7-1.51 1.39-2.2.69-.69 1.38-1.09 2.2-1.39.71-.27 1.51-.45 2.68-.51 1.27-.06 1.65-.07 4.85-.07zM12 0C8.74 0 8.33.01 7.05.07c-1.33.06-2.24.27-3.03.58-.81.31-1.49.72-2.17 1.4-.68.68-1.09 1.36-1.4 2.17-.31.79-.52 1.7-.58 3.03C.01 8.33 0 8.74 0 12s.01 3.67.07 4.95c.06 1.33.27 2.24.58 3.03.31.81.72 1.49 1.4 2.17.68.68 1.36 1.09 2.17 1.4.79.31 1.7.52 3.03.58 1.28.06 1.69.07 4.95.07s3.67-.01 4.95-.07c1.33-.06 2.24-.27 3.03-.58.81-.31 1.49-.72 2.17-1.4-.68.68 1.09-1.36 1.4-2.17.31-.79.52-1.7.58-3.03.06-1.28.07-1.69.07-4.95s-.01-3.67-.07-4.95c-.06-1.33-.27-2.24-.58-3.03-.31-.81-.72-1.49-1.4-2.17-.68-.68-1.36-1.09-2.17-1.4-.79-.31-1.7-.52-3.03-.58C15.67.01 15.26 0 12 0z" />
+                                <circle fill="white" cx="12" cy="12" r="4" />
+                                <circle fill="white" cx="18.41" cy="5.59" r="1.44" />
+                            </svg>
+                        </div>
+                    </a>
+
+                    <!-- YouTube -->
+                    <a href="https://youtube.com/@eliteendeavor" target="_blank" rel="noopener"
+                        class="hover:opacity-80 transition" aria-label="YouTube">
+                        <svg class="w-4 h-4" viewBox="0 0 24 24" fill="#FF0000"> <!-- Reduced w-5 h-5 → w-4 h-4 -->
+                            <path d="M23.5 6.36c-.28-1.03-.99-1.84-1.99-2.1-1.79-.48-8.99-.48-8.99-.48s-7.2 0-8.99.48c-1 .26-1.71 1.07-1.99 2.1C1.07 7.39 1 9.2 1 12s.07 4.61.57 5.64c.28 1.03.99 1.84 1.99 2.1 1.79.48 8.99.48 8.99.48s7.2 0 8.99-.48c1-.26 1.71-1.07 1.99-2.1.5-1.03.57-2.84.57-5.64s-.07-4.61-.57-5.64zM9.8 15.63l-.01-6.63 6.44 3.33-6.43 3.3z" />
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+  <!-- Golden Divider Line -->
+  <div class="w-full h-px bg-[#f5b642]"></div>
+
+  <!-- Main Navigation -->
+<nav id="main-nav" class="container mx-auto px-4 py-4 bg-white">
+  <div class="flex justify-between items-center">
+    <!-- Logo -->
+    <div class="flex items-center gap-8"> <!-- Increased gap from gap-3 to gap-8 for more space -->
+      <!-- Even larger logo using bigger scale (no height increase) -->
+      <div class="scale-[1.8] origin-left">
+        <img src="assets/logo.png" alt="Elite Endeavor Logo" class="h-10 w-auto">
+      </div>
+      <span class="font-bold text-xl text-black">Elite Endeavor</span>
+    </div>
+
+    <!-- Desktop Menu -->
+    <div class="hidden md:flex items-center space-x-8">
+      <a href="#home" class="text-black hover:text-[#f5b642] transition">Home</a>
+      <a href="#about" class="text-black hover:text-[#f5b642] transition">About</a>
+      <a href="#products" class="text-black hover:text-[#f5b642] transition">Products</a>
+      <a href="#specs" class="text-black hover:text-[#f5b642] transition">Specifications</a>
+      <a href="#features" class="text-black hover:text-[#f5b642] transition">Features</a>
+      <a href="#founders" class="text-black hover:text-[#f5b642] transition">Founders</a>
+      <a href="#contact" class="text-black hover:text-[#f5b642] transition">Contact</a>
+    </div>
+
+    <!-- Mobile Hamburger Menu Button -->
+    <button id="mobile-menu-button" class="md:hidden text-black text-3xl focus:outline-none">
+      ☰
+    </button>
+  </div>
+
+  <!-- Mobile Menu (hidden by default, toggled with JS) -->
+  <div id="mobile-menu" class="hidden md:hidden mt-6 pb-4 border-t border-gray-200 pt-4">
+    <div class="flex flex-col space-y-4">
+      <a href="#home" class="text-black hover:text-[#f5b642] transition py-2">Home</a>
+      <a href="#about" class="text-black hover:text-[#f5b642] transition py-2">About</a>
+      <a href="#products" class="text-black hover:text-[#f5b642] transition py-2">Products</a>
+      <a href="#specs" class="text-black hover:text-[#f5b642] transition py-2">Specifications</a>
+      <a href="#features" class="text-black hover:text-[#f5b642] transition py-2">Features</a>
+      <a href="#founders" class="text-black hover:text-[#f5b642] transition py-2">Founders</a>
+      <a href="#contact" class="text-black hover:text-[#f5b642] transition py-2">Contact</a>
+    </div>
+  </div>
+</nav>
+</header>
+
+    <!--  Hero Section with Sliding Banners (Carousel) -->
+    <section id="home" class="relative h-screen min-h-[600px] overflow-hidden">
+        <!-- Carousel Slides -->
+        <div class="absolute inset-0">
+            <!-- Slide 1 -->
+            <div class="absolute inset-0 opacity-0 transition-opacity duration-1000 ease-in-out" data-slide="0">
+                <img src="https://iniciowindows.com/wp-content/uploads/15_Modern-Luxury-Retreat_R05_cropped.jpg"
+                    alt="Modern luxury aluminium windows and doors" class="w-full h-full object-cover">
+                <div class="absolute inset-0 bg-black opacity-60"></div>
+            </div>
+            <!-- Slide 2 -->
+            <div class="absolute inset-0 opacity-0 transition-opacity duration-1000 ease-in-out" data-slide="1">
+                <img src="https://panoramicdoors.com/wp-content/uploads/2023/03/Panoramic-Door-aluminum-butterfly-door-panels-spaced-inside-view-standard-scaled.jpeg"
+                    alt="Elegant aluminium sliding glass doors" class="w-full h-full object-cover">
+                <div class="absolute inset-0 bg-black opacity-60"></div>
+            </div>
+            <!-- Slide 3 -->
+            <div class="absolute inset-0 opacity-100 transition-opacity duration-1000 ease-in-out" data-slide="2">
+                <img src="https://www.visionartaluminium.com/wp-content/uploads/the-rise-of-luxury-aluminum-bi-folding-doors-in-new-jersey.webp"
+                    alt="Luxury aluminium bifold doors open to patio" class="w-full h-full object-cover">
+                <div class="absolute inset-0 bg-black opacity-60"></div>
+            </div>
+        </div>
+
+        <!-- Hero Content (Overlay) -->
+        <div class="container mx-auto px-4 h-full flex items-center relative z-10">
+            <div class="max-w-3xl text-white animate-fade-in">
+                <h1 class="text-5xl md:text-7xl font-bold mb-6 leading-tight">
+                    Premium Aluminium Doors & Windows
+                </h1>
+                <p class="text-xl md:text-3xl mb-10 opacity-90">
+                    Engineering Excellence Meets Aesthetic Perfection – Durable, Secure & Timeless Design
+                </p>
+                <div class="flex flex-wrap gap-6">
+                    <!-- Restored original color: Red (#e74c3c) with hover to golden (#f5b642) -->
+                    <a href="#products"
+                        class="bg-[#e74c3c] hover:bg-[#f5b642] text-white font-bold py-4 px-10 rounded-lg text-lg transition-all duration-300 transform hover:scale-105 shadow-lg">
+                        Explore Products
+                    </a>
+                    <a href="#contact"
+                        class="bg-transparent border-3 border-white hover:bg-white hover:text-[#1a3c34] text-white font-bold py-4 px-10 rounded-lg text-lg transition-all duration-300 shadow-lg">
+                        Get a Quote
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Carousel Indicators -->
+        <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex space-x-3 z-20">
+            <button class="w-3 h-3 rounded-full bg-white opacity-50 hover:opacity-100 transition"
+                data-slide-index="0"></button>
+            <button class="w-3 h-3 rounded-full bg-white opacity-50 hover:opacity-100 transition"
+                data-slide-index="1"></button>
+            <button class="w-3 h-3 rounded-full bg-white opacity-100 transition" data-slide-index="2"></button>
+        </div>
+
+        <!-- Prev/Next Arrows -->
+        <button
+            class="absolute left-6 top-1/2 transform -translate-y-1/2 text-white text-4xl z-20 opacity-70 hover:opacity-100"
+            id="prev-slide">&lt;</button>
+        <button
+            class="absolute right-6 top-1/2 transform -translate-y-1/2 text-white text-4xl z-20 opacity-70 hover:opacity-100"
+            id="next-slide">&gt;</button>
+    </section>
+
+    <!-- About Us Section -->
+<section id="about" class="py-16 bg-white">
+    <div class="container mx-auto px-4 max-w-6xl">
+        <!-- Section Header -->
+        <div class="text-center mb-12">
+            <h2 class="text-3xl md:text-4xl font-bold text-[#1a3c34] mb-3 reveal-from-top">About Elite Endeavor</h2>
+            <div class="w-20 h-1 bg-[#2e7d32] mx-auto rounded-full reveal-from-top" style="transition-delay: 0.1s"></div>
+        </div>
+
+        <div class="grid lg:grid-cols-2 gap-12 items-center">
+            <!-- Image Column -->
+            <div class="relative">
+                <div class="relative rounded-xl overflow-hidden shadow-lg reveal-from-left">
+                    <img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                        alt="Premium Aluminium Doors & Windows" 
+                        class="w-full h-auto transition-transform duration-500 hover:scale-105">
+                </div>
+                <!-- Experience Badge -->
+                <div class="absolute -bottom-4 -right-4 bg-[#1a3c34] text-white p-4 rounded-xl shadow-lg reveal-scale"
+                     style="transition-delay: 0.4s">
+                    <div class="text-center">
+                        <div class="text-2xl font-bold">17+</div>
+                        <div class="text-xs font-medium">Years Experience</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Content Column -->
+            <div class="reveal-from-right">
+                <p class="text-gray-700 mb-4 reveal-item" style="transition-delay: 0.1s">
+                    Elite Endeavor delivers premium aluminium doors and windows, combining durability, security, and modern design for residential and commercial projects.
+                </p>
+                
+                <p class="text-gray-700 mb-6 reveal-item" style="transition-delay: 0.2s">
+                    Founded by <strong class="text-[#1a3c34]">Pradnya and Prasad Kudche</strong> with <strong class="text-[#1a3c34]">17+ years of engineering expertise</strong>, we are proud channel partners of <strong class="text-[#1a3c34]">Uniframe (Prominence Group)</strong>.
+                </p>
+
+                <!-- Mission Statement -->
+                <div class="bg-[#e8f5e9] p-6 rounded-xl border-l-4 border-[#2e7d32] mb-8 reveal-item" 
+                     style="transition-delay: 0.3s">
+                    <p class="text-gray-800 italic">
+                        "Our commitment is to deliver precision-engineered aluminium systems that combine strength, security, and style."
+                    </p>
+                </div>
+
+                <!-- Key Features -->
+                <div class="grid grid-cols-2 gap-4">
+                    <div class="flex items-center space-x-2 reveal-item" style="transition-delay: 0.4s">
+                        <div class="bg-[#e8f5e9] p-2 rounded-lg">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-[#2e7d32]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                            </svg>
+                        </div>
+                        <span class="text-gray-800">Premium Quality</span>
+                    </div>
+                    <div class="flex items-center space-x-2 reveal-item" style="transition-delay: 0.45s">
+                        <div class="bg-[#e8f5e9] p-2 rounded-lg">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-[#2e7d32]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/>
+                            </svg>
+                        </div>
+                        <span class="text-gray-800">Enhanced Security</span>
+                    </div>
+                    <div class="flex items-center space-x-2 reveal-item" style="transition-delay: 0.5s">
+                        <div class="bg-[#e8f5e9] p-2 rounded-lg">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-[#2e7d32]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.828 14.828a4 4 0 01-5.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                            </svg>
+                        </div>
+                        <span class="text-gray-800">Modern Design</span>
+                    </div>
+                    <div class="flex items-center space-x-2 reveal-item" style="transition-delay: 0.55s">
+                        <div class="bg-[#e8f5e9] p-2 rounded-lg">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-[#2e7d32]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"/>
+                            </svg>
+                        </div>
+                        <span class="text-gray-800">Precision Engineering</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+    
+
+    <!-- Products Section -->
+<!-- Simple Products Section with Overlap Effect -->
+<section id="products" class="py-16 bg-gray-100">
+    <!-- Section Header -->
+    <div class="container mx-auto px-4 mb-12">
+        <div class="text-center">
+            <h2 class="text-3xl md:text-4xl font-bold mb-3 text-gray-900">
+                Products
+            </h2>
+            <p class="text-gray-600 text-lg max-w-2xl mx-auto mt-6">
+                Premium aluminium doors and windows with 17+ years of engineering excellence
+            </p>
+        </div>
+    </div>
+    
+    <!-- Sticky container that holds all products -->
+    <div class="product-container">
+        
+        <!-- Product 1: Graf 32 Sliding Window (from new image) -->
+        <div class="product-item active">
+            <div class="relative w-full h-full">
+                <!-- Background with solid color -->
+                <div class="absolute inset-0 w-full h-full bg-gradient-to-br from-gray-800 via-gray-900 to-black"></div>
+                
+                <!-- Content Container -->
+                <div class="relative z-10 h-full flex flex-col md:flex-row items-center justify-between max-w-6xl mx-auto px-2 md:px-4">
+                    
+                    <!-- Left Side: Product Image -->
+                    <div class="w-full md:w-1/2 p-2 md:p-4">
+                        <div class="bg-white/10 backdrop-blur-sm rounded-xl p-2 border border-white/20 shadow-xl">
+                            <img src="assets/p1.jpg" alt="Graf 32 Sliding Window" class="w-full h-auto rounded-lg shadow-md object-cover" />
+
+                        </div>
+                    </div>
+                    
+                    <!-- Right Side: Product Information -->
+                    <div class="w-full md:w-1/2 p-2 md:p-4 text-white">
+                        <div class="bg-black/40 backdrop-blur-sm rounded-xl p-4 md:p-6 border border-white/10 shadow-xl">
+                            <!-- Product Heading -->
+                            <div class="mb-4">
+                                <h3 class="text-2xl md:text-3xl font-bold text-[#f5b642]">Graf 32 Sliding Window</h3>
+                                <div class="w-16 h-1 bg-[#e74c3c] mb-3"></div>
+                                <p class="text-sm text-gray-300 italic">Smooth sliding windows with tested performance</p>
+                            </div>
+                            
+                            <!-- Ultra Compact Specifications Table -->
+                            <div class="mb-4 overflow-hidden">
+                                <!-- Top Row - Key Specs -->
+                                <div class="grid grid-cols-3 gap-1 mb-2">
+                                    <div class="bg-white/5 p-2 rounded text-center">
+                                        <div class="text-xs text-gray-400">Frame</div>
+                                        <div class="font-bold text-sm">44mm</div>
+                                    </div>
+                                    <div class="bg-white/5 p-2 rounded text-center">
+                                        <div class="text-xs text-gray-400">Sash</div>
+                                        <div class="font-bold text-sm">55mm</div>
+                                    </div>
+                                    <div class="bg-white/5 p-2 rounded text-center">
+                                        <div class="text-xs text-gray-400">Glass</div>
+                                        <div class="font-bold text-sm">5-24mm</div>
+                                    </div>
+                                </div>
+                                
+                                <!-- Middle Row - More Specs -->
+                                <div class="grid grid-cols-3 gap-1 mb-2">
+                                    <div class="bg-white/5 p-2 rounded text-center">
+                                        <div class="text-xs text-gray-400">Wind Load</div>
+                                        <div class="font-bold text-sm">5500pa</div>
+                                    </div>
+                                    <div class="bg-white/5 p-2 rounded text-center">
+                                        <div class="text-xs text-gray-400">Frame Depth</div>
+                                        <div class="font-bold text-sm">83.5/131</div>
+                                    </div>
+                                    <div class="bg-white/5 p-2 rounded text-center">
+                                        <div class="text-xs text-gray-400">Interlock</div>
+                                        <div class="font-bold text-sm">20mm</div>
+                                    </div>
+                                </div>
+                                
+                                <!-- Compact List for Other Specs -->
+                                <div class="space-y-1 text-xs">
+                                    <div class="flex justify-between items-center px-1 py-1 hover:bg-white/5 rounded">
+                                        <span class="text-gray-300">Wall Thickness:</span>
+                                        <span class="font-semibold">1.6mm</span>
+                                    </div>
+                                    <div class="flex justify-between items-center px-1 py-1 hover:bg-white/5 rounded">
+                                        <span class="text-gray-300">Max Weight:</span>
+                                        <span class="font-semibold">80 Kg</span>
+                                    </div>
+                                    <div class="flex justify-between items-center px-1 py-1 hover:bg-white/5 rounded">
+                                        <span class="text-gray-300">Max Size:</span>
+                                        <span class="font-semibold">1800×1200</span>
+                                    </div>
+                                    <div class="flex justify-between items-center px-1 py-1 hover:bg-white/5 rounded">
+                                        <span class="text-gray-300">Air Perm:</span>
+                                        <span class="font-semibold">600pa</span>
+                                    </div>
+                                    <div class="flex justify-between items-center px-1 py-1 hover:bg-white/5 rounded">
+                                        <span class="text-gray-300">Water Tight:</span>
+                                        <span class="font-semibold">300pa</span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Features in Small Icons -->
+                            <div class="mb-4">
+                                <div class="text-sm font-semibold text-[#f5b642] mb-2">Key Features:</div>
+                                <div class="flex flex-wrap gap-2">
+                                    <div class="flex items-center gap-1 bg-white/5 px-2 py-1 rounded text-xs">
+                                        <span class="text-green-500">•</span>
+                                        <span>Concealed Fittings</span>
+                                    </div>
+                                    <div class="flex items-center gap-1 bg-white/5 px-2 py-1 rounded text-xs">
+                                        <span class="text-green-500">•</span>
+                                        <span>Single/Multipoint</span>
+                                    </div>
+                                    <div class="flex items-center gap-1 bg-white/5 px-2 py-1 rounded text-xs">
+                                        <span class="text-green-500">•</span>
+                                        <span>Tested Performance</span>
+                                    </div>
+                                    <div class="flex items-center gap-1 bg-white/5 px-2 py-1 rounded text-xs">
+                                        <span class="text-green-500">•</span>
+                                        <span>Smooth Sliding</span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Button -->
+                            <button class="w-full bg-[#e74c3c] hover:bg-[#f5b642] text-white text-sm font-bold py-2 px-4 rounded transition-all duration-300 shadow-lg">
+                                View Details
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Product 2: Graf 32 Sliding Door (from image 7) - REVERSED -->
+        <div class="product-item">
+            <div class="relative w-full h-full">
+                <!-- Background with solid color -->
+                <div class="absolute inset-0 w-full h-full bg-gradient-to-br from-gray-800 via-gray-900 to-black"></div>
+                
+                <!-- Content Container -->
+                <div class="relative z-10 h-full flex flex-col md:flex-row items-center justify-between max-w-6xl mx-auto px-2 md:px-4">
+                    
+                    <!-- Left Side: Product Information (REVERSED) -->
+                    <div class="w-full md:w-1/2 p-2 md:p-4 text-white order-2 md:order-1">
+                        <div class="bg-black/40 backdrop-blur-sm rounded-xl p-4 md:p-6 border border-white/10 shadow-xl">
+                            <!-- Product Heading -->
+                            <div class="mb-4">
+                                <h3 class="text-2xl md:text-3xl font-bold text-[#f5b642]">Graf 32 Sliding Door</h3>
+                                <div class="w-16 h-1 bg-[#e74c3c] mb-3"></div>
+                                <p class="text-sm text-gray-300 italic">Premium sliding doors with superior performance</p>
+                            </div>
+                            
+                            <!-- Ultra Compact Specifications Table -->
+                            <div class="mb-4 overflow-hidden">
+                                <!-- Top Row - Key Specs -->
+                                <div class="grid grid-cols-3 gap-1 mb-2">
+                                    <div class="bg-white/5 p-2 rounded text-center">
+                                        <div class="text-xs text-gray-400">Frame</div>
+                                        <div class="font-bold text-sm">44mm</div>
+                                    </div>
+                                    <div class="bg-white/5 p-2 rounded text-center">
+                                        <div class="text-xs text-gray-400">Sash</div>
+                                        <div class="font-bold text-sm">65mm</div>
+                                    </div>
+                                    <div class="bg-white/5 p-2 rounded text-center">
+                                        <div class="text-xs text-gray-400">Glass</div>
+                                        <div class="font-bold text-sm">5-24mm</div>
+                                    </div>
+                                </div>
+                                
+                                <!-- Middle Row - More Specs -->
+                                <div class="grid grid-cols-3 gap-1 mb-2">
+                                    <div class="bg-white/5 p-2 rounded text-center">
+                                        <div class="text-xs text-gray-400">Wind Load</div>
+                                        <div class="font-bold text-sm">5500pa</div>
+                                    </div>
+                                    <div class="bg-white/5 p-2 rounded text-center">
+                                        <div class="text-xs text-gray-400">Frame Depth</div>
+                                        <div class="font-bold text-sm">83.5/131</div>
+                                    </div>
+                                    <div class="bg-white/5 p-2 rounded text-center">
+                                        <div class="text-xs text-gray-400">Interlock</div>
+                                        <div class="font-bold text-sm">20mm</div>
+                                    </div>
+                                </div>
+                                
+                                <!-- Compact List for Other Specs -->
+                                <div class="space-y-1 text-xs">
+                                    <div class="flex justify-between items-center px-1 py-1 hover:bg-white/5 rounded">
+                                        <span class="text-gray-300">Wall Thickness:</span>
+                                        <span class="font-semibold">1.6mm</span>
+                                    </div>
+                                    <div class="flex justify-between items-center px-1 py-1 hover:bg-white/5 rounded">
+                                        <span class="text-gray-300">Max Weight:</span>
+                                        <span class="font-semibold">110 Kg</span>
+                                    </div>
+                                    <div class="flex justify-between items-center px-1 py-1 hover:bg-white/5 rounded">
+                                        <span class="text-gray-300">Max Size:</span>
+                                        <span class="font-semibold">3000×1200</span>
+                                    </div>
+                                    <div class="flex justify-between items-center px-1 py-1 hover:bg-white/5 rounded">
+                                        <span class="text-gray-300">Air Perm:</span>
+                                        <span class="font-semibold">600pa</span>
+                                    </div>
+                                    <div class="flex justify-between items-center px-1 py-1 hover:bg-white/5 rounded">
+                                        <span class="text-gray-300">Water Tight:</span>
+                                        <span class="font-semibold">300pa</span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Features in Small Icons -->
+                            <div class="mb-4">
+                                <div class="text-sm font-semibold text-[#f5b642] mb-2">Key Features:</div>
+                                <div class="flex flex-wrap gap-2">
+                                    <div class="flex items-center gap-1 bg-white/5 px-2 py-1 rounded text-xs">
+                                        <span class="text-green-500">•</span>
+                                        <span>Concealed Fittings</span>
+                                    </div>
+                                    <div class="flex items-center gap-1 bg-white/5 px-2 py-1 rounded text-xs">
+                                        <span class="text-green-500">•</span>
+                                        <span>Multipoint Lock</span>
+                                    </div>
+                                    <div class="flex items-center gap-1 bg-white/5 px-2 py-1 rounded text-xs">
+                                        <span class="text-green-500">•</span>
+                                        <span>Stainless Steel</span>
+                                    </div>
+                                    <div class="flex items-center gap-1 bg-white/5 px-2 py-1 rounded text-xs">
+                                        <span class="text-green-500">•</span>
+                                        <span>Tested Performance</span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Button -->
+                            <button class="w-full bg-[#e74c3c] hover:bg-[#f5b642] text-white text-sm font-bold py-2 px-4 rounded transition-all duration-300 shadow-lg">
+                                View Details
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <!-- Right Side: Product Image (REVERSED) -->
+                    <div class="w-full md:w-1/2 p-2 md:p-4 order-1 md:order-2">
+                        <div class="bg-white/10 backdrop-blur-sm rounded-xl p-2 border border-white/20 shadow-xl">
+                            <img src="assets/p2.jpg" alt="Graf 32 Sliding Window" class="w-full h-auto rounded-lg shadow-md object-cover" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Product 3: Robus 40 Casement Door (from image 1) -->
+        <div class="product-item">
+            <div class="relative w-full h-full">
+                <!-- Background with solid color -->
+                <div class="absolute inset-0 w-full h-full bg-gradient-to-br from-gray-800 via-gray-900 to-black"></div>
+                
+                <!-- Content Container -->
+                <div class="relative z-10 h-full flex flex-col md:flex-row items-center justify-between max-w-6xl mx-auto px-2 md:px-4">
+                    
+                    <!-- Left Side: Product Image -->
+                    <div class="w-full md:w-1/2 p-2 md:p-4">
+                        <div class="bg-white/10 backdrop-blur-sm rounded-xl p-2 border border-white/20 shadow-xl">
+                            <img src="assets/p3.jpg" alt="Graf 32 Sliding Window" class="w-full h-auto rounded-lg shadow-md object-cover" />
+                        </div>
+                    </div>
+                    
+                    <!-- Right Side: Product Information -->
+                    <div class="w-full md:w-1/2 p-2 md:p-4 text-white">
+                        <div class="bg-black/40 backdrop-blur-sm rounded-xl p-4 md:p-6 border border-white/10 shadow-xl">
+                            <!-- Product Heading -->
+                            <div class="mb-4">
+                                <h3 class="text-2xl md:text-3xl font-bold text-[#f5b642]">Robus 40 Casement Door</h3>
+                                <div class="w-16 h-1 bg-[#e74c3c] mb-3"></div>
+                                <p class="text-sm text-gray-300 italic">Durable casement doors with robust construction</p>
+                            </div>
+                            
+                            <!-- Ultra Compact Specifications Table -->
+                            <div class="mb-4 overflow-hidden">
+                                <!-- Top Row - Key Specs -->
+                                <div class="grid grid-cols-3 gap-1 mb-2">
+                                    <div class="bg-white/5 p-2 rounded text-center">
+                                        <div class="text-xs text-gray-400">Frame</div>
+                                        <div class="font-bold text-sm">65mm</div>
+                                    </div>
+                                    <div class="bg-white/5 p-2 rounded text-center">
+                                        <div class="text-xs text-gray-400">Sash</div>
+                                        <div class="font-bold text-sm">96mm</div>
+                                    </div>
+                                    <div class="bg-white/5 p-2 rounded text-center">
+                                        <div class="text-xs text-gray-400">Glass</div>
+                                        <div class="font-bold text-sm">5-28mm</div>
+                                    </div>
+                                </div>
+                                
+                                <!-- Middle Row - More Specs -->
+                                <div class="grid grid-cols-3 gap-1 mb-2">
+                                    <div class="bg-white/5 p-2 rounded text-center">
+                                        <div class="text-xs text-gray-400">Wind Load</div>
+                                        <div class="font-bold text-sm">2000pa</div>
+                                    </div>
+                                    <div class="bg-white/5 p-2 rounded text-center">
+                                        <div class="text-xs text-gray-400">Sash Depth</div>
+                                        <div class="font-bold text-sm">48mm</div>
+                                    </div>
+                                    <div class="bg-white/5 p-2 rounded text-center">
+                                        <div class="text-xs text-gray-400">Water Tight</div>
+                                        <div class="font-bold text-sm">450pa</div>
+                                    </div>
+                                </div>
+                                
+                                <!-- Compact List for Other Specs -->
+                                <div class="space-y-1 text-xs">
+                                    <div class="flex justify-between items-center px-1 py-1 hover:bg-white/5 rounded">
+                                        <span class="text-gray-300">Wall Thickness:</span>
+                                        <span class="font-semibold">1.5mm</span>
+                                    </div>
+                                    <div class="flex justify-between items-center px-1 py-1 hover:bg-white/5 rounded">
+                                        <span class="text-gray-300">Max Weight:</span>
+                                        <span class="font-semibold">110 Kg</span>
+                                    </div>
+                                    <div class="flex justify-between items-center px-1 py-1 hover:bg-white/5 rounded">
+                                        <span class="text-gray-300">Max Size:</span>
+                                        <span class="font-semibold">2400×950</span>
+                                    </div>
+                                    <div class="flex justify-between items-center px-1 py-1 hover:bg-white/5 rounded">
+                                        <span class="text-gray-300">Air Perm:</span>
+                                        <span class="font-semibold">600pa</span>
+                                    </div>
+                                    <div class="flex justify-between items-center px-1 py-1 hover:bg-white/5 rounded">
+                                        <span class="text-gray-300">Concealed:</span>
+                                        <span class="font-semibold">No</span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Features in Small Icons -->
+                            <div class="mb-4">
+                                <div class="text-sm font-semibold text-[#f5b642] mb-2">Key Features:</div>
+                                <div class="flex flex-wrap gap-2">
+                                    <div class="flex items-center gap-1 bg-white/5 px-2 py-1 rounded text-xs">
+                                        <span class="text-green-500">•</span>
+                                        <span>Multipoint Locking</span>
+                                    </div>
+                                    <div class="flex items-center gap-1 bg-white/5 px-2 py-1 rounded text-xs">
+                                        <span class="text-green-500">•</span>
+                                        <span>Robust Construction</span>
+                                    </div>
+                                    <div class="flex items-center gap-1 bg-white/5 px-2 py-1 rounded text-xs">
+                                        <span class="text-green-500">•</span>
+                                        <span>Aluminium/Steel</span>
+                                    </div>
+                                    <div class="flex items-center gap-1 bg-white/5 px-2 py-1 rounded text-xs">
+                                        <span class="text-green-500">•</span>
+                                        <span>Heavy Duty</span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Button -->
+                            <button class="w-full bg-[#e74c3c] hover:bg-[#f5b642] text-white text-sm font-bold py-2 px-4 rounded transition-all duration-300 shadow-lg">
+                                View Details
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Product 4: Robus 40 Casement Window (from image 3) - REVERSED -->
+        <div class="product-item">
+            <div class="relative w-full h-full">
+                <!-- Background with solid color -->
+                <div class="absolute inset-0 w-full h-full bg-gradient-to-br from-gray-800 via-gray-900 to-black"></div>
+                
+                <!-- Content Container -->
+                <div class="relative z-10 h-full flex flex-col md:flex-row items-center justify-between max-w-6xl mx-auto px-2 md:px-4">
+                    
+                    <!-- Left Side: Product Information (REVERSED) -->
+                    <div class="w-full md:w-1/2 p-2 md:p-4 text-white order-2 md:order-1">
+                        <div class="bg-black/40 backdrop-blur-sm rounded-xl p-4 md:p-6 border border-white/10 shadow-xl">
+                            <!-- Product Heading -->
+                            <div class="mb-4">
+                                <h3 class="text-2xl md:text-3xl font-bold text-[#f5b642]">Robus 40 Casement Window</h3>
+                                <div class="w-16 h-1 bg-[#e74c3c] mb-3"></div>
+                                <p class="text-sm text-gray-300 italic">Casement windows with reliable performance</p>
+                            </div>
+                            
+                            <!-- Ultra Compact Specifications Table -->
+                            <div class="mb-4 overflow-hidden">
+                                <!-- Top Row - Key Specs -->
+                                <div class="grid grid-cols-3 gap-1 mb-2">
+                                    <div class="bg-white/5 p-2 rounded text-center">
+                                        <div class="text-xs text-gray-400">Frame</div>
+                                        <div class="font-bold text-sm">48.5mm</div>
+                                    </div>
+                                    <div class="bg-white/5 p-2 rounded text-center">
+                                        <div class="text-xs text-gray-400">Sash</div>
+                                        <div class="font-bold text-sm">84/70.5</div>
+                                    </div>
+                                    <div class="bg-white/5 p-2 rounded text-center">
+                                        <div class="text-xs text-gray-400">Glass</div>
+                                        <div class="font-bold text-sm">5-28mm</div>
+                                    </div>
+                                </div>
+                                
+                                <!-- Middle Row - More Specs -->
+                                <div class="grid grid-cols-3 gap-1 mb-2">
+                                    <div class="bg-white/5 p-2 rounded text-center">
+                                        <div class="text-xs text-gray-400">Wind Load</div>
+                                        <div class="font-bold text-sm">2000pa</div>
+                                    </div>
+                                    <div class="bg-white/5 p-2 rounded text-center">
+                                        <div class="text-xs text-gray-400">Sash Depth</div>
+                                        <div class="font-bold text-sm">48mm</div>
+                                    </div>
+                                    <div class="bg-white/5 p-2 rounded text-center">
+                                        <div class="text-xs text-gray-400">Water Tight</div>
+                                        <div class="font-bold text-sm">450pa</div>
+                                    </div>
+                                </div>
+                                
+                                <!-- Compact List for Other Specs -->
+                                <div class="space-y-1 text-xs">
+                                    <div class="flex justify-between items-center px-1 py-1 hover:bg-white/5 rounded">
+                                        <span class="text-gray-300">Wall Thickness:</span>
+                                        <span class="font-semibold">1.5mm</span>
+                                    </div>
+                                    <div class="flex justify-between items-center px-1 py-1 hover:bg-white/5 rounded">
+                                        <span class="text-gray-300">Max Weight:</span>
+                                        <span class="font-semibold">60 Kg</span>
+                                    </div>
+                                    <div class="flex justify-between items-center px-1 py-1 hover:bg-white/5 rounded">
+                                        <span class="text-gray-300">Max Size:</span>
+                                        <span class="font-semibold">1800×800</span>
+                                    </div>
+                                    <div class="flex justify-between items-center px-1 py-1 hover:bg-white/5 rounded">
+                                        <span class="text-gray-300">Air Perm:</span>
+                                        <span class="font-semibold">600pa</span>
+                                    </div>
+                                    <div class="flex justify-between items-center px-1 py-1 hover:bg-white/5 rounded">
+                                        <span class="text-gray-300">Concealed:</span>
+                                        <span class="font-semibold">Yes</span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Features in Small Icons -->
+                            <div class="mb-4">
+                                <div class="text-sm font-semibold text-[#f5b642] mb-2">Key Features:</div>
+                                <div class="flex flex-wrap gap-2">
+                                    <div class="flex items-center gap-1 bg-white/5 px-2 py-1 rounded text-xs">
+                                        <span class="text-green-500">•</span>
+                                        <span>Multipoint Locking</span>
+                                    </div>
+                                    <div class="flex items-center gap-1 bg-white/5 px-2 py-1 rounded text-xs">
+                                        <span class="text-green-500">•</span>
+                                        <span>Concealed Fittings</span>
+                                    </div>
+                                    <div class="flex items-center gap-1 bg-white/5 px-2 py-1 rounded text-xs">
+                                        <span class="text-green-500">•</span>
+                                        <span>Stainless Steel</span>
+                                    </div>
+                                    <div class="flex items-center gap-1 bg-white/5 px-2 py-1 rounded text-xs">
+                                        <span class="text-green-500">•</span>
+                                        <span>Reliable Design</span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Button -->
+                            <button class="w-full bg-[#e74c3c] hover:bg-[#f5b642] text-white text-sm font-bold py-2 px-4 rounded transition-all duration-300 shadow-lg">
+                                View Details
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <!-- Right Side: Product Image (REVERSED) -->
+                    <div class="w-full md:w-1/2 p-2 md:p-4 order-1 md:order-2">
+                        <div class="bg-white/10 backdrop-blur-sm rounded-xl p-2 border border-white/20 shadow-xl">
+                            <img src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80" 
+                                 alt="Robus 40 Casement Window" 
+                                 class="w-full h-auto rounded-lg shadow-md object-cover">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Product 5: Robus 40 Fold and Slide (from image 5) -->
+        <div class="product-item">
+            <div class="relative w-full h-full">
+                <!-- Background with solid color -->
+                <div class="absolute inset-0 w-full h-full bg-gradient-to-br from-gray-800 via-gray-900 to-black"></div>
+                
+                <!-- Content Container -->
+                <div class="relative z-10 h-full flex flex-col md:flex-row items-center justify-between max-w-6xl mx-auto px-2 md:px-4">
+                    
+                    <!-- Left Side: Product Image -->
+                    <div class="w-full md:w-1/2 p-2 md:p-4">
+                        <div class="bg-white/10 backdrop-blur-sm rounded-xl p-2 border border-white/20 shadow-xl">
+                            <img src="https://images.unsplash.com/photo-1513584684374-8bab748fbf90?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80" 
+                                 alt="Robus 40 Fold and Slide" 
+                                 class="w-full h-auto rounded-lg shadow-md object-cover">
+                        </div>
+                    </div>
+                    
+                    <!-- Right Side: Product Information -->
+                    <div class="w-full md:w-1/2 p-2 md:p-4 text-white">
+                        <div class="bg-black/40 backdrop-blur-sm rounded-xl p-4 md:p-6 border border-white/10 shadow-xl">
+                            <!-- Product Heading -->
+                            <div class="mb-4">
+                                <h3 class="text-2xl md:text-3xl font-bold text-[#f5b642]">Robus 40 Fold and Slide</h3>
+                                <div class="w-16 h-1 bg-[#e74c3c] mb-3"></div>
+                                <p class="text-sm text-gray-300 italic">Space-saving folding sliding doors</p>
+                            </div>
+                            
+                            <!-- Ultra Compact Specifications Table -->
+                            <div class="mb-4 overflow-hidden">
+                                <!-- Top Row - Key Specs -->
+                                <div class="grid grid-cols-3 gap-1 mb-2">
+                                    <div class="bg-white/5 p-2 rounded text-center">
+                                        <div class="text-xs text-gray-400">Frame</div>
+                                        <div class="font-bold text-sm">65mm</div>
+                                    </div>
+                                    <div class="bg-white/5 p-2 rounded text-center">
+                                        <div class="text-xs text-gray-400">Sash</div>
+                                        <div class="font-bold text-sm">96mm</div>
+                                    </div>
+                                    <div class="bg-white/5 p-2 rounded text-center">
+                                        <div class="text-xs text-gray-400">Glass</div>
+                                        <div class="font-bold text-sm">6-28mm</div>
+                                    </div>
+                                </div>
+                                
+                                <!-- Middle Row - More Specs -->
+                                <div class="grid grid-cols-3 gap-1 mb-2">
+                                    <div class="bg-white/5 p-2 rounded text-center">
+                                        <div class="text-xs text-gray-400">Wind Load</div>
+                                        <div class="font-bold text-sm">2000pa</div>
+                                    </div>
+                                    <div class="bg-white/5 p-2 rounded text-center">
+                                        <div class="text-xs text-gray-400">Sash Depth</div>
+                                        <div class="font-bold text-sm">48mm</div>
+                                    </div>
+                                    <div class="bg-white/5 p-2 rounded text-center">
+                                        <div class="text-xs text-gray-400">Water Tight</div>
+                                        <div class="font-bold text-sm">300pa</div>
+                                    </div>
+                                </div>
+                                
+                                <!-- Compact List for Other Specs -->
+                                <div class="space-y-1 text-xs">
+                                    <div class="flex justify-between items-center px-1 py-1 hover:bg-white/5 rounded">
+                                        <span class="text-gray-300">Wall Thickness:</span>
+                                        <span class="font-semibold">1.5mm</span>
+                                    </div>
+                                    <div class="flex justify-between items-center px-1 py-1 hover:bg-white/5 rounded">
+                                        <span class="text-gray-300">Max Weight:</span>
+                                        <span class="font-semibold">80 Kg</span>
+                                    </div>
+                                    <div class="flex justify-between items-center px-1 py-1 hover:bg-white/5 rounded">
+                                        <span class="text-gray-300">Max Size:</span>
+                                        <span class="font-semibold">2700×900</span>
+                                    </div>
+                                    <div class="flex justify-between items-center px-1 py-1 hover:bg-white/5 rounded">
+                                        <span class="text-gray-300">Air Perm:</span>
+                                        <span class="font-semibold">600pa</span>
+                                    </div>
+                                    <div class="flex justify-between items-center px-1 py-1 hover:bg-white/5 rounded">
+                                        <span class="text-gray-300">Concealed:</span>
+                                        <span class="font-semibold">Yes (Both)</span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Features in Small Icons -->
+                            <div class="mb-4">
+                                <div class="text-sm font-semibold text-[#f5b642] mb-2">Key Features:</div>
+                                <div class="flex flex-wrap gap-2">
+                                    <div class="flex items-center gap-1 bg-white/5 px-2 py-1 rounded text-xs">
+                                        <span class="text-green-500">•</span>
+                                        <span>Fold & Slide</span>
+                                    </div>
+                                    <div class="flex items-center gap-1 bg-white/5 px-2 py-1 rounded text-xs">
+                                        <span class="text-green-500">•</span>
+                                        <span>Space Saving</span>
+                                    </div>
+                                    <div class="flex items-center gap-1 bg-white/5 px-2 py-1 rounded text-xs">
+                                        <span class="text-green-500">•</span>
+                                        <span>Concealed Both</span>
+                                    </div>
+                                    <div class="flex items-center gap-1 bg-white/5 px-2 py-1 rounded text-xs">
+                                        <span class="text-green-500">•</span>
+                                        <span>Multipoint Lock</span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Button -->
+                            <button class="w-full bg-[#e74c3c] hover:bg-[#f5b642] text-white text-sm font-bold py-2 px-4 rounded transition-all duration-300 shadow-lg">
+                                View Details
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Product 6: Graf 45 Sliding Door (from image 6) - REVERSED -->
+        <div class="product-item">
+            <div class="relative w-full h-full">
+                <!-- Background with solid color -->
+                <div class="absolute inset-0 w-full h-full bg-gradient-to-br from-gray-800 via-gray-900 to-black"></div>
+                
+                <!-- Content Container -->
+                <div class="relative z-10 h-full flex flex-col md:flex-row items-center justify-between max-w-6xl mx-auto px-2 md:px-4">
+                    
+                    <!-- Left Side: Product Information (REVERSED) -->
+                    <div class="w-full md:w-1/2 p-2 md:p-4 text-white order-2 md:order-1">
+                        <div class="bg-black/40 backdrop-blur-sm rounded-xl p-4 md:p-6 border border-white/10 shadow-xl">
+                            <!-- Product Heading -->
+                            <div class="mb-4">
+                                <h3 class="text-2xl md:text-3xl font-bold text-[#f5b642]">Graf 45 Sliding Door</h3>
+                                <div class="w-16 h-1 bg-[#e74c3c] mb-3"></div>
+                                <p class="text-sm text-gray-300 italic">Heavy-duty sliding doors for large openings</p>
+                            </div>
+                            
+                            <!-- Ultra Compact Specifications Table -->
+                            <div class="mb-4 overflow-hidden">
+                                <!-- Top Row - Key Specs -->
+                                <div class="grid grid-cols-3 gap-1 mb-2">
+                                    <div class="bg-white/5 p-2 rounded text-center">
+                                        <div class="text-xs text-gray-400">Frame</div>
+                                        <div class="font-bold text-sm">25mm</div>
+                                    </div>
+                                    <div class="bg-white/5 p-2 rounded text-center">
+                                        <div class="text-xs text-gray-400">Sash</div>
+                                        <div class="font-bold text-sm">85mm</div>
+                                    </div>
+                                    <div class="bg-white/5 p-2 rounded text-center">
+                                        <div class="text-xs text-gray-400">Glass</div>
+                                        <div class="font-bold text-sm">8-32mm</div>
+                                    </div>
+                                </div>
+                                
+                                <!-- Middle Row - More Specs -->
+                                <div class="grid grid-cols-3 gap-1 mb-2">
+                                    <div class="bg-white/5 p-2 rounded text-center">
+                                        <div class="text-xs text-gray-400">Frame Depth</div>
+                                        <div class="font-bold text-sm">132/195</div>
+                                    </div>
+                                    <div class="bg-white/5 p-2 rounded text-center">
+                                        <div class="text-xs text-gray-400">Interlock</div>
+                                        <div class="font-bold text-sm">20mm</div>
+                                    </div>
+                                    <div class="bg-white/5 p-2 rounded text-center">
+                                        <div class="text-xs text-gray-400">Wind Load</div>
+                                        <div class="font-bold text-sm">2000pa</div>
+                                    </div>
+                                </div>
+                                
+                                <!-- Compact List for Other Specs -->
+                                <div class="space-y-1 text-xs">
+                                    <div class="flex justify-between items-center px-1 py-1 hover:bg-white/5 rounded">
+                                        <span class="text-gray-300">Wall Thickness:</span>
+                                        <span class="font-semibold">1.6mm</span>
+                                    </div>
+                                    <div class="flex justify-between items-center px-1 py-1 hover:bg-white/5 rounded">
+                                        <span class="text-gray-300">Max Weight:</span>
+                                        <span class="font-semibold">400 Kg</span>
+                                    </div>
+                                    <div class="flex justify-between items-center px-1 py-1 hover:bg-white/5 rounded">
+                                        <span class="text-gray-300">Max Size:</span>
+                                        <span class="font-semibold">4200×1800</span>
+                                    </div>
+                                    <div class="flex justify-between items-center px-1 py-1 hover:bg-white/5 rounded">
+                                        <span class="text-gray-300">Air Perm:</span>
+                                        <span class="font-semibold">300pa</span>
+                                    </div>
+                                    <div class="flex justify-between items-center px-1 py-1 hover:bg-white/5 rounded">
+                                        <span class="text-gray-300">Concealed:</span>
+                                        <span class="font-semibold">Yes</span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Features in Small Icons -->
+                            <div class="mb-4">
+                                <div class="text-sm font-semibold text-[#f5b642] mb-2">Key Features:</div>
+                                <div class="flex flex-wrap gap-2">
+                                    <div class="flex items-center gap-1 bg-white/5 px-2 py-1 rounded text-xs">
+                                        <span class="text-green-500">•</span>
+                                        <span>Heavy Duty</span>
+                                    </div>
+                                    <div class="flex items-center gap-1 bg-white/5 px-2 py-1 rounded text-xs">
+                                        <span class="text-green-500">•</span>
+                                        <span>Large Size</span>
+                                    </div>
+                                    <div class="flex items-center gap-1 bg-white/5 px-2 py-1 rounded text-xs">
+                                        <span class="text-green-500">•</span>
+                                        <span>Concealed Fittings</span>
+                                    </div>
+                                    <div class="flex items-center gap-1 bg-white/5 px-2 py-1 rounded text-xs">
+                                        <span class="text-green-500">•</span>
+                                        <span>Multipoint Lock</span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Button -->
+                            <button class="w-full bg-[#e74c3c] hover:bg-[#f5b642] text-white text-sm font-bold py-2 px-4 rounded transition-all duration-300 shadow-lg">
+                                View Details
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <!-- Right Side: Product Image (REVERSED) -->
+                    <div class="w-full md:w-1/2 p-2 md:p-4 order-1 md:order-2">
+                        <div class="bg-white/10 backdrop-blur-sm rounded-xl p-2 border border-white/20 shadow-xl">
+                           <img src="assets/p6.jpg" alt="Graf 32 Sliding Window" class="w-full h-auto rounded-lg shadow-md object-cover" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Product 7: Facade and Sky Lights (from image 4) -->
+        <div class="product-item">
+            <div class="relative w-full h-full">
+                <!-- Background with solid color -->
+                <div class="absolute inset-0 w-full h-full bg-gradient-to-br from-gray-800 via-gray-900 to-black"></div>
+                
+                <!-- Content Container -->
+                <div class="relative z-10 h-full flex flex-col md:flex-row items-center justify-between max-w-6xl mx-auto px-2 md:px-4">
+                    
+                    <!-- Left Side: Product Image -->
+                    <div class="w-full md:w-1/2 p-2 md:p-4">
+                        <div class="bg-white/10 backdrop-blur-sm rounded-xl p-2 border border-white/20 shadow-xl">
+                            <img src="assets/p7.jpg" alt="Graf 32 Sliding Window" class="w-full h-auto rounded-lg shadow-md object-cover" />
+                        </div>
+                    </div>
+                    
+                    <!-- Right Side: Product Information -->
+                    <div class="w-full md:w-1/2 p-2 md:p-4 text-white">
+                        <div class="bg-black/40 backdrop-blur-sm rounded-xl p-4 md:p-6 border border-white/10 shadow-xl">
+                            <!-- Product Heading -->
+                            <div class="mb-4">
+                                <h3 class="text-2xl md:text-3xl font-bold text-[#f5b642]">Facade and Sky Lights</h3>
+                                <div class="w-16 h-1 bg-[#e74c3c] mb-3"></div>
+                                <p class="text-sm text-gray-300 italic">Architectural facade and skylight solutions</p>
+                            </div>
+                            
+                            <!-- Ultra Compact Specifications Table -->
+                            <div class="mb-4 overflow-hidden">
+                                <!-- Top Row - Key Specs -->
+                                <div class="grid grid-cols-3 gap-1 mb-2">
+                                    <div class="bg-white/5 p-2 rounded text-center">
+                                        <div class="text-xs text-gray-400">Frame</div>
+                                        <div class="font-bold text-sm">55mm</div>
+                                    </div>
+                                    <div class="bg-white/5 p-2 rounded text-center">
+                                        <div class="text-xs text-gray-400">Depth</div>
+                                        <div class="font-bold text-sm">55/110</div>
+                                    </div>
+                                    <div class="bg-white/5 p-2 rounded text-center">
+                                        <div class="text-xs text-gray-400">Glass</div>
+                                        <div class="font-bold text-sm">Up to 12</div>
+                                    </div>
+                                </div>
+                                
+                                <!-- Middle Row - More Specs -->
+                                <div class="grid grid-cols-3 gap-1 mb-2">
+                                    <div class="bg-white/5 p-2 rounded text-center">
+                                        <div class="text-xs text-gray-400">Wind Load</div>
+                                        <div class="font-bold text-sm">2000pa</div>
+                                    </div>
+                                    <div class="bg-white/5 p-2 rounded text-center">
+                                        <div class="text-xs text-gray-400">Wall Thick</div>
+                                        <div class="font-bold text-sm">2.0mm</div>
+                                    </div>
+                                    <div class="bg-white/5 p-2 rounded text-center">
+                                        <div class="text-xs text-gray-400">Sash Max</div>
+                                        <div class="font-bold text-sm">36 m²</div>
+                                    </div>
+                                </div>
+                                
+                                <!-- Compact List for Other Specs -->
+                                <div class="space-y-1 text-xs">
+                                    <div class="flex justify-between items-center px-1 py-1 hover:bg-white/5 rounded">
+                                        <span class="text-gray-300">Sash Min:</span>
+                                        <span class="font-semibold">1 m²</span>
+                                    </div>
+                                    <div class="flex justify-between items-center px-1 py-1 hover:bg-white/5 rounded">
+                                        <span class="text-gray-300">Frame Depth:</span>
+                                        <span class="font-semibold">55 & 110mm</span>
+                                    </div>
+                                    <div class="flex justify-between items-center px-1 py-1 hover:bg-white/5 rounded">
+                                        <span class="text-gray-300">Application:</span>
+                                        <span class="font-semibold">Facade/Skylight</span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Features in Small Icons -->
+                            <div class="mb-4">
+                                <div class="text-sm font-semibold text-[#f5b642] mb-2">Key Features:</div>
+                                <div class="flex flex-wrap gap-2">
+                                    <div class="flex items-center gap-1 bg-white/5 px-2 py-1 rounded text-xs">
+                                        <span class="text-green-500">•</span>
+                                        <span>Architectural</span>
+                                    </div>
+                                    <div class="flex items-center gap-1 bg-white/5 px-2 py-1 rounded text-xs">
+                                        <span class="text-green-500">•</span>
+                                        <span>Large Areas</span>
+                                    </div>
+                                    <div class="flex items-center gap-1 bg-white/5 px-2 py-1 rounded text-xs">
+                                        <span class="text-green-500">•</span>
+                                        <span>Skylight Design</span>
+                                    </div>
+                                    <div class="flex items-center gap-1 bg-white/5 px-2 py-1 rounded text-xs">
+                                        <span class="text-green-500">•</span>
+                                        <span>Facade Systems</span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Button -->
+                            <button class="w-full bg-[#e74c3c] hover:bg-[#f5b642] text-white text-sm font-bold py-2 px-4 rounded transition-all duration-300 shadow-lg">
+                                View Details
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Product 8: Premium Add-Ons (from image 2) - REVERSED -->
+        <div class="product-item">
+            <div class="relative w-full h-full">
+                <!-- Background with solid color -->
+                <div class="absolute inset-0 w-full h-full bg-gradient-to-br from-gray-800 via-gray-900 to-black"></div>
+                
+                <!-- Content Container -->
+                <div class="relative z-10 h-full flex flex-col md:flex-row items-center justify-between max-w-6xl mx-auto px-2 md:px-4">
+                    
+                    <!-- Left Side: Product Information (REVERSED) -->
+                    <div class="w-full md:w-1/2 p-2 md:p-4 text-white order-2 md:order-1">
+                        <div class="bg-black/40 backdrop-blur-sm rounded-xl p-4 md:p-6 border border-white/10 shadow-xl">
+                            <!-- Product Heading -->
+                            <div class="mb-4">
+                                <h3 class="text-2xl md:text-3xl font-bold text-[#f5b642]">Premium Add-Ons</h3>
+                                <div class="w-16 h-1 bg-[#e74c3c] mb-3"></div>
+                                <p class="text-sm text-gray-300 italic">Enhance your windows and doors with premium accessories</p>
+                            </div>
+                            
+                            <!-- Add-Ons Grid -->
+                            <div class="mb-4 overflow-hidden">
+                                <!-- Architrave with LED -->
+                                <div class="mb-3 bg-white/5 rounded-lg p-3 border border-white/10">
+                                    <div class="flex items-center gap-2 mb-1">
+                                        <div class="w-2 h-2 rounded-full bg-[#e74c3c]"></div>
+                                        <h4 class="font-semibold text-sm">Architrave with LED Lights</h4>
+                                    </div>
+                                    <p class="text-xs text-gray-300">Protects against damage and water seepage with customizable LED lighting</p>
+                                </div>
+                                
+                                <!-- Integrated Hand-Rail -->
+                                <div class="mb-3 bg-white/5 rounded-lg p-3 border border-white/10">
+                                    <div class="flex items-center gap-2 mb-1">
+                                        <div class="w-2 h-2 rounded-full bg-[#f5b642]"></div>
+                                        <h4 class="font-semibold text-sm">Integrated Hand-Rail</h4>
+                                    </div>
+                                    <p class="text-xs text-gray-300">Glass handrails for safety and aesthetic appeal, rigorously tested</p>
+                                </div>
+                                
+                                <!-- Add-On Grills -->
+                                <div class="mb-3 bg-white/5 rounded-lg p-3 border border-white/10">
+                                    <div class="flex items-center gap-2 mb-1">
+                                        <div class="w-2 h-2 rounded-full bg-[#e74c3c]"></div>
+                                        <h4 class="font-semibold text-sm">Add-On Grills</h4>
+                                    </div>
+                                    <p class="text-xs text-gray-300">Enhanced security with unique anchoring points, maintaining style</p>
+                                </div>
+                                
+                                <!-- Coupler -->
+                                <div class="mb-3 bg-white/5 rounded-lg p-3 border border-white/10">
+                                    <div class="flex items-center gap-2 mb-1">
+                                        <div class="w-2 h-2 rounded-full bg-[#f5b642]"></div>
+                                        <h4 class="font-semibold text-sm">Coupler Profiles</h4>
+                                    </div>
+                                    <p class="text-xs text-gray-300">Seamless connections for custom shapes and larger window units</p>
+                                </div>
+                            </div>
+                            
+                            <!-- Features in Small Icons -->
+                            <div class="mb-4">
+                                <div class="text-sm font-semibold text-[#f5b642] mb-2">Benefits:</div>
+                                <div class="flex flex-wrap gap-2">
+                                    <div class="flex items-center gap-1 bg-white/5 px-2 py-1 rounded text-xs">
+                                        <span class="text-green-500">•</span>
+                                        <span>Customizable</span>
+                                    </div>
+                                    <div class="flex items-center gap-1 bg-white/5 px-2 py-1 rounded text-xs">
+                                        <span class="text-green-500">•</span>
+                                        <span>Enhanced Safety</span>
+                                    </div>
+                                    <div class="flex items-center gap-1 bg-white/5 px-2 py-1 rounded text-xs">
+                                        <span class="text-green-500">•</span>
+                                        <span>Better Security</span>
+                                    </div>
+                                    <div class="flex items-center gap-1 bg-white/5 px-2 py-1 rounded text-xs">
+                                        <span class="text-green-500">•</span>
+                                        <span>Aesthetic Design</span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Button -->
+                            <button class="w-full bg-[#e74c3c] hover:bg-[#f5b642] text-white text-sm font-bold py-2 px-4 rounded transition-all duration-300 shadow-lg">
+                                Customize Now
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <!-- Right Side: Product Image (REVERSED) -->
+                    <div class="w-full md:w-1/2 p-2 md:p-4 order-1 md:order-2">
+                        <div class="bg-white/10 backdrop-blur-sm rounded-xl p-2 border border-white/20 shadow-xl">
+                            <img src="https://images.unsplash.com/photo-1487956382158-bb926046304a?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80" 
+                                 alt="Premium Add-Ons" 
+                                 class="w-full h-auto rounded-lg shadow-md object-cover">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+    
+    <!-- Spacer divs to control scrolling -->
+    <div class="scroll-spacer"></div>
+    <div class="scroll-spacer"></div>
+    <div class="scroll-spacer"></div>
+    <div class="scroll-spacer"></div>
+    <div class="scroll-spacer"></div>
+    <div class="scroll-spacer"></div>
+    <div class="scroll-spacer"></div>
+    <div class="scroll-spacer"></div>
+    
+</section>
+
+
+
+
+<!-- Product Types Showcase Section - With Hover Effects & Doodle Art Background -->
+<section class="py-16 bg-gray-100 relative overflow-hidden">
+    <!-- Subtle Doodle Art Background (Hand-drawn windows & doors line art) -->
+    <div class="absolute inset-0 opacity-10 pointer-events-none">
+        <div class="w-full h-full bg-repeat" style="background-image: url('https://media.istockphoto.com/id/533451600/vector/windows-and-doors-set.jpg?s=612x612&w=is&k=20&c=6n9mKuDXQc7w3Wu1zW2E6gSQ8ceUE0c4vE52eZWTlzI='); background-size: 300px;"></div> 
+        <div class="absolute inset-0 bg-gradient-to-b from-transparent via-gray-50/50 to-transparent"></div>
+    </div>
+
+    <div class="container mx-auto px-4 relative z-10">
+        <!-- Premium Windows -->
+        <h2 class="text-4xl md:text-5xl font-bold text-[#1a3c34] text-center mb-12 relative inline-block left-1/2 -translate-x-1/2 after:content-[''] after:absolute after:left-1/2 after:-bottom-4 after:-translate-x-1/2 after:w-24 after:h-1 after:bg-[#e74c3c] after:rounded-full">
+            Premium Windows
+        </h2>
+        <div class="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-8 gap-6 lg:gap-8 mb-12">
+            <div class="text-center flex flex-col items-center group">
+                <div class="w-28 h-28 flex items-center justify-center bg-white rounded-xl shadow-lg group-hover:shadow-2xl group-hover:scale-110 group-hover:border-2 group-hover:border-[#f5b642] transition-all duration-300">
+                    <img src="https://gjames.com/sites/default/files/2021-06/132-xox-anim.gif" alt="Sliding Window Animation" class="max-w-full max-h-full object-contain">
+                </div>
+                <div class="w-16 h-px bg-[#f5b642] my-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                <p class="text-base lg:text-lg font-medium text-[#1a3c34] group-hover:text-[#f5b642] transition-colors duration-300">SLIDING</p>
+            </div>
+            <div class="text-center flex flex-col items-center group">
+                <div class="w-28 h-28 flex items-center justify-center bg-white rounded-xl shadow-lg group-hover:shadow-2xl group-hover:scale-110 group-hover:border-2 group-hover:border-[#f5b642] transition-all duration-300">
+                    <img src="https://www.itplimited.com/wp-content/uploads/2024/10/alluminium-casement.gif" alt="Casement Window Animation" class="max-w-full max-h-full object-contain">
+                </div>
+                <div class="w-16 h-px bg-[#f5b642] my-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                <p class="text-base lg:text-lg font-medium text-[#1a3c34] group-hover:text-[#f5b642] transition-colors duration-300">CASEMENT</p>
+            </div>
+            <div class="text-center flex flex-col items-center group">
+                <div class="w-28 h-28 flex items-center justify-center bg-white rounded-xl shadow-lg group-hover:shadow-2xl group-hover:scale-110 group-hover:border-2 group-hover:border-[#f5b642] transition-all duration-300">
+                    <img src="https://static.wixstatic.com/media/788129_25d2df30692f44a4826469e0d74b7c77~mv2.gif" alt="Tilt & Turn Window Animation" class="max-w-full max-h-full object-contain">
+                </div>
+                <div class="w-16 h-px bg-[#f5b642] my-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                <p class="text-base lg:text-lg font-medium text-[#1a3c34] group-hover:text-[#f5b642] transition-colors duration-300">TILT & TURN</p>
+            </div>
+            <div class="text-center flex flex-col items-center group">
+                <div class="w-28 h-28 flex items-center justify-center bg-white rounded-xl shadow-lg group-hover:shadow-2xl group-hover:scale-110 group-hover:border-2 group-hover:border-[#f5b642] transition-all duration-300">
+                    <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEj1Z3AUt0YD1DEYJ0EC-x4_ejLVZVmTy7yL-iUpoA7_qsqBjFN_ylvPCCfGuxEk8CfLp5pKOiSJO7mv4ywAZKSDAFUmljuU4IwUpBkGUVsNL5Z1LoeGpk6VhNoIMKPpx8VuxWvg-K4k/s320/Combination-Windows.gif" alt="Combination Window Animation" class="max-w-full max-h-full object-contain">
+                </div>
+                <div class="w-16 h-px bg-[#f5b642] my-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                <p class="text-base lg:text-lg font-medium text-[#1a3c34] group-hover:text-[#f5b642] transition-colors duration-300">COMBINATION</p>
+            </div>
+            <div class="text-center flex flex-col items-center group">
+                <div class="w-28 h-28 flex items-center justify-center bg-white rounded-xl shadow-lg group-hover:shadow-2xl group-hover:scale-110 group-hover:border-2 group-hover:border-[#f5b642] transition-all duration-300">
+                    <img src="https://palmswindows.com/wp-content/uploads/2024/03/h500px_bay_W.gif" alt="Bay Window Animation" class="max-w-full max-h-full object-contain">
+                </div>
+                <div class="w-16 h-px bg-[#f5b642] my-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                <p class="text-base lg:text-lg font-medium text-[#1a3c34] group-hover:text-[#f5b642] transition-colors duration-300">BAY</p>
+            </div>
+            <div class="text-center flex flex-col items-center group">
+                <div class="w-28 h-28 flex items-center justify-center bg-white rounded-xl shadow-lg group-hover:shadow-2xl group-hover:scale-110 group-hover:border-2 group-hover:border-[#f5b642] transition-all duration-300">
+                    <img src="https://lluminare.com/assets/images/resources/29/2-rail-oxxo.gif" alt="Villa Window Animation" class="max-w-full max-h-full object-contain">
+                </div>
+                <div class="w-16 h-px bg-[#f5b642] my-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                <p class="text-base lg:text-lg font-medium text-[#1a3c34] group-hover:text-[#f5b642] transition-colors duration-300">VILLA</p>
+            </div>
+            <div class="text-center flex flex-col items-center group">
+                <div class="w-28 h-28 flex items-center justify-center bg-white rounded-xl shadow-lg group-hover:shadow-2xl group-hover:scale-110 group-hover:border-2 group-hover:border-[#f5b642] transition-all duration-300">
+                    <img src="https://www.ctralum.com.sg/wp-content/uploads/2019/02/casement-window-gif.gif" alt="Fixed Window Animation" class="max-w-full max-h-full object-contain">
+                </div>
+                <div class="w-16 h-px bg-[#f5b642] my-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                <p class="text-base lg:text-lg font-medium text-[#1a3c34] group-hover:text-[#f5b642] transition-colors duration-300">FIXED</p>
+            </div>
+            <div class="text-center flex flex-col items-center group">
+                <div class="w-28 h-28 flex items-center justify-center bg-white rounded-xl shadow-lg group-hover:shadow-2xl group-hover:scale-110 group-hover:border-2 group-hover:border-[#f5b642] transition-all duration-300">
+                    <img src="https://pearlwindowsindia.com/wp-content/uploads/2022/06/Glass-To-Glass-Windows.gif" alt="Glass to Glass Window Animation" class="max-w-full max-h-full object-contain">
+                </div>
+                <div class="w-16 h-px bg-[#f5b642] my-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                <p class="text-base lg:text-lg font-medium text-[#1a3c34] group-hover:text-[#f5b642] transition-colors duration-300">GLASS TO GLASS</p>
+            </div>
+        </div>
+
+        <!-- Premium Doors -->
+        <h2 class="text-4xl md:text-5xl font-bold text-[#1a3c34] text-center mb-12 relative inline-block left-1/2 -translate-x-1/2 after:content-[''] after:absolute after:left-1/2 after:-bottom-4 after:-translate-x-1/2 after:w-24 after:h-1 after:bg-[#e74c3c] after:rounded-full">
+            Premium Doors
+        </h2>
+        <div class="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-7 gap-6 lg:gap-8">
+            <div class="text-center flex flex-col items-center group">
+                <div class="w-28 h-28 flex items-center justify-center bg-white rounded-xl shadow-lg group-hover:shadow-2xl group-hover:scale-110 group-hover:border-2 group-hover:border-[#f5b642] transition-all duration-300">
+                    <img src="https://pearlwindowsindia.com/wp-content/uploads/2022/06/Sliding-Windows.gif" alt="Sliding Door Animation" class="max-w-full max-h-full object-contain">
+                </div>
+                <div class="w-16 h-px bg-[#f5b642] my-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                <p class="text-base lg:text-lg font-medium text-[#1a3c34] group-hover:text-[#f5b642] transition-colors duration-300">SLIDING</p>
+            </div>
+            <div class="text-center flex flex-col items-center group">
+                <div class="w-28 h-28 flex items-center justify-center bg-white rounded-xl shadow-lg group-hover:shadow-2xl group-hover:scale-110 group-hover:border-2 group-hover:border-[#f5b642] transition-all duration-300">
+                    <img src="https://www.ctralum.com.sg/wp-content/uploads/2019/02/casement-window-gif.gif" alt="Casement Door Animation" class="max-w-full max-h-full object-contain">
+                </div>
+                <div class="w-16 h-px bg-[#f5b642] my-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                <p class="text-base lg:text-lg font-medium text-[#1a3c34] group-hover:text-[#f5b642] transition-colors duration-300">CASEMENT</p>
+            </div>
+            <div class="text-center flex flex-col items-center group">
+                <div class="w-28 h-28 flex items-center justify-center bg-white rounded-xl shadow-lg group-hover:shadow-2xl group-hover:scale-110 group-hover:border-2 group-hover:border-[#f5b642] transition-all duration-300">
+                    <img src="https://gjames.com/sites/default/files/2020-09/4leaf-anim.gif" alt="Slide & Fold Door Animation" class="max-w-full max-h-full object-contain">
+                </div>
+                <div class="w-16 h-px bg-[#f5b642] my-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                <p class="text-base lg:text-lg font-medium text-[#1a3c34] group-hover:text-[#f5b642] transition-colors duration-300">SLIDE & FOLD</p>
+            </div>
+            <div class="text-center flex flex-col items-center group">
+                <div class="w-28 h-28 flex items-center justify-center bg-white rounded-xl shadow-lg group-hover:shadow-2xl group-hover:scale-110 group-hover:border-2 group-hover:border-[#f5b642] transition-all duration-300">
+                    <img src="https://norwoodwindows.ca/wp-content/uploads/2020/10/lift-and-slide.gif" alt="Lift & Slide Door Animation" class="max-w-full max-h-full object-contain">
+                </div>
+                <div class="w-16 h-px bg-[#f5b642] my-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                <p class="text-base lg:text-lg font-medium text-[#1a3c34] group-hover:text-[#f5b642] transition-colors duration-300">LIFT & SLIDE</p>
+            </div>
+            <div class="text-center flex flex-col items-center group">
+                <div class="w-28 h-28 flex items-center justify-center bg-white rounded-xl shadow-lg group-hover:shadow-2xl group-hover:scale-110 group-hover:border-2 group-hover:border-[#f5b642] transition-all duration-300">
+                    <img src="https://www.aspect-windows.com/wp-content/uploads/2021/12/Origin-bi-fold-open-corner.gif" alt="Designer Door Animation" class="max-w-full max-h-full object-contain">
+                </div>
+                <div class="w-16 h-px bg-[#f5b642] my-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                <p class="text-base lg:text-lg font-medium text-[#1a3c34] group-hover:text-[#f5b642] transition-colors duration-300">DESIGNER</p>
+            </div>
+            <div class="text-center flex flex-col items-center group">
+                <div class="w-28 h-28 flex items-center justify-center bg-white rounded-xl shadow-lg group-hover:shadow-2xl group-hover:scale-110 group-hover:border-2 group-hover:border-[#f5b642] transition-all duration-300">
+                    <img src="https://shirkeswindoors.com/wp-content/uploads/2022/02/cornerslider.gif" alt="Corner Slider Door Animation" class="max-w-full max-h-full object-contain">
+                </div>
+                <div class="w-16 h-px bg-[#f5b642] my-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                <p class="text-base lg:text-lg font-medium text-[#1a3c34] group-hover:text-[#f5b642] transition-colors duration-300">CORNER SLIDER</p>
+            </div>
+            <div class="text-center flex flex-col items-center group">
+                <div class="w-28 h-28 flex items-center justify-center bg-white rounded-xl shadow-lg group-hover:shadow-2xl group-hover:scale-110 group-hover:border-2 group-hover:border-[#f5b642] transition-all duration-300">
+                    <img src="https://shirkeswindoors.com/wp-content/uploads/2022/02/lowthresholdslider.gif" alt="Low Threshold Door Animation" class="max-w-full max-h-full object-contain">
+                </div>
+                <div class="w-16 h-px bg-[#f5b642] my-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                <p class="text-base lg:text-lg font-medium text-[#1a3c34] group-hover:text-[#f5b642] transition-colors duration-300">LOW THRESHOLD</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+    <!--  Technical Specifications Section -->
+    <section id="specs" class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl font-bold text-[#1a3c34] text-center mb-12">Technical Specifications</h2>
+
+            <div class="overflow-x-auto">
+                <table class="min-w-full bg-white rounded-lg overflow-hidden shadow-lg">
+                    <thead class="bg-[#1a3c34] text-white">
+                        <tr>
+                            <th class="py-4 px-6 text-left">Parameter</th>
+                            <th class="py-4 px-6 text-left">Graf 26 Windows</th>
+                            <th class="py-4 px-6 text-left">Graf 26 Doors</th>
+                            <th class="py-4 px-6 text-left">Premium Series</th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y divide-gray-200">
+                        <tr class="hover:bg-gray-50">
+                            <td class="py-4 px-6 font-medium">Frame Face Width</td>
+                            <td class="py-4 px-6">26 mm</td>
+                            <td class="py-4 px-6">26 mm</td>
+                            <td class="py-4 px-6">30-45 mm</td>
+                        </tr>
+                        <tr class="hover:bg-gray-50">
+                            <td class="py-4 px-6 font-medium">Frame Depth</td>
+                            <td class="py-4 px-6">60 mm</td>
+                            <td class="py-4 px-6">60 mm</td>
+                            <td class="py-4 px-6">65-85 mm</td>
+                        </tr>
+                        <tr class="hover:bg-gray-50">
+                            <td class="py-4 px-6 font-medium">Wall Thickness</td>
+                            <td class="py-4 px-6">1.4 mm</td>
+                            <td class="py-4 px-6">1.4 mm</td>
+                            <td class="py-4 px-6">1.6-2.0 mm</td>
+                        </tr>
+                        <tr class="hover:bg-gray-50">
+                            <td class="py-4 px-6 font-medium">Glass Thickness</td>
+                            <td class="py-4 px-6">5-10 mm</td>
+                            <td class="py-4 px-6">6-12 mm</td>
+                            <td class="py-4 px-6">8-24 mm</td>
+                        </tr>
+                        <tr class="hover:bg-gray-50">
+                            <td class="py-4 px-6 font-medium">Wind Load Resistance</td>
+                            <td class="py-4 px-6">Class 3 (2400 Pa)</td>
+                            <td class="py-4 px-6">Class 3 (2400 Pa)</td>
+                            <td class="py-4 px-6">Class 4 (2800 Pa)</td>
+                        </tr>
+                        <tr class="hover:bg-gray-50">
+                            <td class="py-4 px-6 font-medium">Water Tightness</td>
+                            <td class="py-4 px-6">Class 4A</td>
+                            <td class="py-4 px-6">Class 4A</td>
+                            <td class="py-4 px-6">Class 5A</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!--  Key Features & Benefits -->
+    <section id="features" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl font-bold text-[#1a3c34] text-center mb-12">Key Features & Benefits</h2>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Feature 1 -->
+                <div
+                    class="feature-item p-6 border-l-4 border-[#f5b642] hover:bg-[#f9f9f9] transition-all duration-300">
+                    <div class="flex items-start mb-4">
+                        <span class="material-icons text-[#f5b642] text-3xl mr-4">shield</span>
+                        <h3 class="text-xl font-bold text-[#1a3c34]">Durability</h3>
+                    </div>
+                    <p class="text-gray-600">Built to withstand extreme weather conditions with corrosion-resistant
+                        aluminium.</p>
+                </div>
+
+                <!-- Feature 2 -->
+                <div
+                    class="feature-item p-6 border-l-4 border-[#f5b642] hover:bg-[#f9f9f9] transition-all duration-300">
+                    <div class="flex items-start mb-4">
+                        <span class="material-icons text-[#f5b642] text-3xl mr-4">bolt</span>
+                        <h3 class="text-xl font-bold text-[#1a3c34]">Energy Efficiency</h3>
+                    </div>
+                    <p class="text-gray-600">Thermal break technology reduces heat transfer, cutting energy costs by up
+                        to 30%.</p>
+                </div>
+
+                <!-- Feature 3 -->
+                <div
+                    class="feature-item p-6 border-l-4 border-[#f5b642] hover:bg-[#f9f9f9] transition-all duration-300">
+                    <div class="flex items-start mb-4">
+                        <span class="material-icons text-[#f5b642] text-3xl mr-4">lock</span>
+                        <h3 class="text-xl font-bold text-[#1a3c34]">Security</h3>
+                    </div>
+                    <p class="text-gray-600">Multi-point locking systems with reinforced hardware for maximum security.
+                    </p>
+                </div>
+
+                <!-- Feature 4 -->
+                <div
+                    class="feature-item p-6 border-l-4 border-[#f5b642] hover:bg-[#f9f9f9] transition-all duration-300">
+                    <div class="flex items-start mb-4">
+                        <span class="material-icons text-[#f5b642] text-3xl mr-4">brush</span>
+                        <h3 class="text-xl font-bold text-[#1a3c34]">Low Maintenance</h3>
+                    </div>
+                    <p class="text-gray-600">Powder-coated finishes that resist fading, chipping, and require minimal
+                        upkeep.</p>
+                </div>
+
+                <!-- Feature 5 -->
+                <div
+                    class="feature-item p-6 border-l-4 border-[#f5b642] hover:bg-[#f9f9f9] transition-all duration-300">
+                    <div class="flex items-start mb-4">
+                        <span class="material-icons text-[#f5b642] text-3xl mr-4">design_services</span>
+                        <h3 class="text-xl font-bold text-[#1a3c34]">Aesthetic Excellence</h3>
+                    </div>
+                    <p class="text-gray-600">Sleek modern designs with a wide range of colors and finishes to match any
+                        décor.</p>
+                </div>
+
+                <!-- Feature 6 -->
+                <div
+                    class="feature-item p-6 border-l-4 border-[#f5b642] hover:bg-[#f9f9f9] transition-all duration-300">
+                    <div class="flex items-start mb-4">
+                        <span class="material-icons text-[#f5b642] text-3xl mr-4">volume_up</span>
+                        <h3 class="text-xl font-bold text-[#1a3c34]">Sound Insulation</h3>
+                    </div>
+                    <p class="text-gray-600">Advanced sealing systems reduce external noise by up to 45 dB for peaceful
+                        interiors.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Founders Section -->
+    <section id="founders" class="py-16 bg-[#f8f9fa]">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl font-bold text-[#1a3c34] text-center mb-12">Meet Our Founders</h2>
+
+            <div class="grid md:grid-cols-2 gap-12 max-w-4xl mx-auto">
+                <!-- Founder 1 -->
+                <div class="text-center">
+                    <div class="bg-white p-8 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300">
+                        <div class="w-32 h-32 mx-auto mb-6 rounded-full bg-gray-200 flex items-center justify-center">
+                            <span class="material-icons text-6xl text-[#1a3c34]">person</span>
+                        </div>
+                        <h3 class="text-2xl font-bold text-[#1a3c34] mb-2">Pradnya Kudche</h3>
+                        <p class="text-[#e74c3c] font-medium mb-4">Co-Founder</p>
+                        <p class="text-gray-600">With 17+ years in engineering and manufacturing, Pradnya ensures every
+                            product meets the highest standards of quality and precision.</p>
+                    </div>
+                </div>
+
+                <!-- Founder 2 -->
+                <div class="text-center">
+                    <div class="bg-white p-8 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300">
+                        <div class="w-32 h-32 mx-auto mb-6 rounded-full bg-gray-200 flex items-center justify-center">
+                            <span class="material-icons text-6xl text-[#1a3c34]">person</span>
+                        </div>
+                        <h3 class="text-2xl font-bold text-[#1a3c34] mb-2">Prasad Kudche</h3>
+                        <p class="text-[#e74c3c] font-medium mb-4">Co-Founder</p>
+                        <p class="text-gray-600">Bringing extensive expertise in aluminium systems, Prasad drives
+                            innovation and customer satisfaction in every project.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+   <!-- 10. Gallery Section -->
+<section class="py-16 bg-white">
+    <div class="container mx-auto px-4">
+        <h2 class="text-3xl md:text-4xl font-bold text-[#1a3c34] text-center mb-12">
+            Our Gallery
+        </h2>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- Gallery Item 1 -->
+            <div class="gallery-item relative overflow-hidden rounded-lg shadow-lg hover:shadow-2xl transition-all duration-500 group">
+                <img
+                    src="https://img.edilportale.com/product-thumbs/b_Oknoplast_ALUSLIDE-PREMIUM-PRO_PVIu57NFmO.jpeg"
+                    alt="Graf 32 Sliding Window - Premium modern interior installation"
+                    class="w-full h-72 md:h-96 object-cover transition-transform duration-700 group-hover:scale-110"
+                />
+                <!-- Overlay & Text -->
+                <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                <div class="absolute bottom-0 left-0 right-0 p-6 text-white transform translate-y-8 group-hover:translate-y-0 transition-transform duration-500">
+                    <h3 class="text-xl md:text-2xl font-bold">Graf 32 Sliding Window</h3>
+                    <p class="text-sm md:text-base opacity-90">Smooth and elegant sliding design for modern homes</p>
+                </div>
+            </div>
+
+            <!-- Gallery Item 2 -->
+            <div class="gallery-item relative overflow-hidden rounded-lg shadow-lg hover:shadow-2xl transition-all duration-500 group">
+                <img
+                    src="https://weathershield.com/wp-content/uploads/2022/01/WebHeader_Pages_FindADealer-2-1280x720.jpg"
+                    alt="Graf 32 Sliding Door - Luxury large glass patio doors"
+                    class="w-full h-72 md:h-96 object-cover transition-transform duration-700 group-hover:scale-110"
+                />
+                <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                <div class="absolute bottom-0 left-0 right-0 p-6 text-white transform translate-y-8 group-hover:translate-y-0 transition-transform duration-500">
+                    <h3 class="text-xl md:text-2xl font-bold">Graf 32 Sliding Door</h3>
+                    <p class="text-sm md:text-base opacity-90">Premium large-opening sliding doors with superior performance</p>
+                </div>
+            </div>
+
+            <!-- Gallery Item 3 -->
+            <div class="gallery-item relative overflow-hidden rounded-lg shadow-lg hover:shadow-2xl transition-all duration-500 group">
+                <img
+                    src="https://pa-window.com/wp-content/uploads/2023/11/green-living-room-casement-window-1-1024x683.jpg"
+                    alt="Robus 40 Casement Window - Modern residential casement installation"
+                    class="w-full h-72 md:h-96 object-cover transition-transform duration-700 group-hover:scale-110"
+                />
+                <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                <div class="absolute bottom-0 left-0 right-0 p-6 text-white transform translate-y-8 group-hover:translate-y-0 transition-transform duration-500">
+                    <h3 class="text-xl md:text-2xl font-bold">Robus 40 Casement Window</h3>
+                    <p class="text-sm md:text-base opacity-90">Reliable and durable casement windows for everyday use</p>
+                </div>
+            </div>
+
+            <!-- Gallery Item 4 -->
+            <div class="gallery-item relative overflow-hidden rounded-lg shadow-lg hover:shadow-2xl transition-all duration-500 group">
+                <img
+                    src="https://www.visionartaluminium.com/wp-content/uploads/brooklyn-windows-doors-and-windows.webp"
+                    alt="Commercial Facade Project with aluminium windows and doors"
+                    class="w-full h-72 md:h-96 object-cover transition-transform duration-700 group-hover:scale-110"
+                />
+                <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                <div class="absolute bottom-0 left-0 right-0 p-6 text-white transform translate-y-8 group-hover:translate-y-0 transition-transform duration-500">
+                    <h3 class="text-xl md:text-2xl font-bold">Commercial Facade Project</h3>
+                    <p class="text-sm md:text-base opacity-90">Modern architectural facade with premium aluminium systems</p>
+                </div>
+            </div>
+
+            <!-- Gallery Item 5 -->
+            <div class="gallery-item relative overflow-hidden rounded-lg shadow-lg hover:shadow-2xl transition-all duration-500 group">
+                <img
+                    src="assets/p3.jpg"
+                    alt="Robus 40 Fold and Slide Doors - Open patio view"
+                    class="w-full h-72 md:h-96 object-cover transition-transform duration-700 group-hover:scale-110"
+                />
+                <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                <div class="absolute bottom-0 left-0 right-0 p-6 text-white transform translate-y-8 group-hover:translate-y-0 transition-transform duration-500">
+                    <h3 class="text-xl md:text-2xl font-bold">Robus 40 Fold & Slide</h3>
+                    <p class="text-sm md:text-base opacity-90">Space-saving folding doors for seamless indoor-outdoor living</p>
+                </div>
+            </div>
+
+            <!-- Gallery Item 6 -->
+            <div class="gallery-item relative overflow-hidden rounded-lg shadow-lg hover:shadow-2xl transition-all duration-500 group">
+                <img
+                    src="https://www.sistemal.com/en/wp-content/uploads/2025/10/what-are-aluminum-skylight-systems-and-what-are-they-used-for.webp"
+                    alt="Facade and Skylight System - Modern architectural installation"
+                    class="w-full h-72 md:h-96 object-cover transition-transform duration-700 group-hover:scale-110"
+                />
+                <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                <div class="absolute bottom-0 left-0 right-0 p-6 text-white transform translate-y-8 group-hover:translate-y-0 transition-transform duration-500">
+                    <h3 class="text-xl md:text-2xl font-bold">Facade & Skylight Systems</h3>
+                    <p class="text-sm md:text-base opacity-90">Innovative architectural solutions for light and aesthetics</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+    <!--  Why Uniframe Doors & Windows? -->
+    <section class="py-16 bg-[#e8f5e9]">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl font-bold text-[#1a3c34] text-center mb-12">Why Choose Uniframe?</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Feature 1 -->
+                <div
+                    class="text-center p-6 bg-white rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
+                    <span class="material-icons text-5xl text-[#2e7d32] mb-4">engineering</span>
+                    <h3 class="text-xl font-bold text-[#1a3c34] mb-3">Precision Engineering</h3>
+                    <p class="text-gray-600">Manufactured with exacting standards for perfect fit and finish.</p>
+                </div>
+                <!-- Feature 2 -->
+                <div
+                    class="text-center p-6 bg-white rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
+                    <span class="material-icons text-5xl text-[#2e7d32] mb-4">security</span>
+                    <h3 class="text-xl font-bold text-[#1a3c34] mb-3">Enhanced Security</h3>
+                    <p class="text-gray-600">Multi-point locking systems for maximum safety and peace of mind.</p>
+                </div>
+                <!-- Feature 3 -->
+                <div
+                    class="text-center p-6 bg-white rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
+                    <span class="material-icons text-5xl text-[#2e7d32] mb-4">eco</span>
+                    <h3 class="text-xl font-bold text-[#1a3c34] mb-3">Energy Efficient</h3>
+                    <p class="text-gray-600">Thermally broken designs that reduce energy costs significantly.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+   <!-- Compact Contact Section -->
+<section id="contact" class="py-10 md:py-12 bg-gray-100 text-gray-800">
+    <div class="container mx-auto px-4">
+        <div class="max-w-5xl mx-auto">
+
+            <!-- Section Header - More Compact -->
+            <div class="text-center mb-8">
+                <h2 class="text-2xl md:text-3xl font-bold mb-3 text-gray-900">
+                    Get In Touch
+                </h2>
+                <p class="text-gray-600 text-sm md:text-base max-w-xl mx-auto">
+                    Ready to transform your space? Contact us for a free consultation.
+                </p>
+            </div>
+
+            <div class="grid lg:grid-cols-2 gap-6">
+
+                <!-- Contact Form - Now with light mint green background -->
+                <div class="bg-[#e6f7ed] rounded-xl p-5 border border-[#c0e8d5] shadow-sm">
+                    <h3 class="text-lg font-bold mb-4 text-gray-900 flex items-center gap-2">
+                        <svg class="w-5 h-5 text-[#f5b642]" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+                        </svg>
+                        Send Inquiry
+                    </h3>
+
+                    <form id="contact-form" class="space-y-3">
+
+                        <div class="grid md:grid-cols-2 gap-3">
+                            <div>
+                                <label class="block mb-1 text-xs text-gray-500">Full Name *</label>
+                                <input type="text" required
+                                    class="w-full px-3 py-2 text-sm border border-gray-300 rounded-lg focus:outline-none focus:border-[#10b981] focus:ring-1 focus:ring-[#10b981]"
+                                    placeholder="Maya Malhotra">
+                            </div>
+
+                            <div>
+                                <label class="block mb-1 text-xs text-gray-500">Email *</label>
+                                <input type="email" required
+                                    class="w-full px-3 py-2 text-sm border border-gray-300 rounded-lg focus:outline-none focus:border-[#10b981] focus:ring-1 focus:ring-[#10b981]"
+                                    placeholder="abc@gmail.com">
+                            </div>
+                        </div>
+
+                        <div>
+                            <label class="block mb-1 text-xs text-gray-500">Phone *</label>
+                            <input type="tel" required
+                                class="w-full px-3 py-2 text-sm border border-gray-300 rounded-lg focus:outline-none focus:border-[#10b981] focus:ring-1 focus:ring-[#10b981]"
+                                placeholder="+91 9823090987">
+                        </div>
+
+                        <div>
+                            <label class="block mb-1 text-xs text-gray-500">Service Interest</label>
+                            <select
+                                class="w-full px-3 py-2 text-sm border border-gray-300 rounded-lg focus:outline-none focus:border-[#10b981] focus:ring-1 focus:ring-[#10b981]">
+                                <option selected disabled>Select a service</option>
+                                <option>Windows</option>
+                                <option>Doors</option>
+                                <option>Commercial Solutions</option>
+                                <option>Custom Design</option>
+                            </select>
+                        </div>
+
+                        <div>
+                            <label class="block mb-1 text-xs text-gray-500">Message *</label>
+                            <textarea rows="2" required
+                                class="w-full px-3 py-2 text-sm border border-gray-300 rounded-lg focus:outline-none focus:border-[#10b981] focus:ring-1 focus:ring-[#10b981] resize-none"
+                                placeholder="Tell us about your project..."></textarea>
+                        </div>
+
+                        <button type="submit"
+                            class="w-full bg-gradient-to-r from-[#e74c3c] to-[#f5b642] text-white font-semibold text-sm py-2.5 rounded-lg hover:shadow-md transition-all duration-300 active:scale-[0.98]">
+                            Send Message
+                        </button>
+
+                    </form>
+                </div>
+
+                <!-- Contact Info & Map - Now with light mint green backgrounds -->
+                <div class="space-y-5">
+
+                    <!-- Contact Information -->
+                    <div class="bg-[#e6f7ed] rounded-xl p-5 border border-[#c0e8d5] shadow-sm">
+                        <h3 class="text-lg font-bold mb-4 text-gray-900 flex items-center gap-2">
+                            <svg class="w-5 h-5 text-[#f5b642]" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5a2.5 2.5 0 010-5 2.5 2.5 0 010 5z"/>
+                            </svg>
+                            Contact Info
+                        </h3>
+
+                        <div class="space-y-3">
+                            <a href="tel:+91 9823090987" class="flex items-center p-2 hover:bg-[#d0f0e0]/50 rounded-lg transition group">
+                                <div class="w-8 h-8 rounded-full bg-[#10b981]/10 flex items-center justify-center mr-3 group-hover:scale-110 transition">
+                                    <svg class="w-4 h-4 text-[#10b981]" fill="currentColor" viewBox="0 0 24 24">
+                                        <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
+                                    </svg>
+                                </div>
+                                <div class="flex-1">
+                                    <p class="text-xs text-gray-500">Call Us</p>
+                                    <p class="font-semibold text-sm text-gray-800 group-hover:text-[#10b981] transition">+91 9823090987</p>
+                                </div>
+                            </a>
+
+                            <a href="mailto:saleseliteendeavor@gmail.com" class="flex items-center p-2 hover:bg-[#d0f0e0]/50 rounded-lg transition group">
+                                <div class="w-8 h-8 rounded-full bg-[#f5b642]/20 flex items-center justify-center mr-3 group-hover:scale-110 transition">
+                                    <svg class="w-4 h-4 text-[#f5b642]" fill="currentColor" viewBox="0 0 24 24">
+                                        <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+                                    </svg>
+                                </div>
+                                <div class="flex-1">
+                                    <p class="text-xs text-gray-500">Email Us</p>
+                                    <p class="font-semibold text-sm text-gray-800 group-hover:text-[#f5b642] transition">saleseliteendeavor@gmail.com</p>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Compact Google Map -->
+                    <div class="bg-[#e6f7ed] rounded-xl overflow-hidden border border-[#c0e8d5] shadow-sm">
+                        <div class="p-4 border-b border-[#c0e8d5]">
+                            <div class="flex items-center justify-between">
+                                <div>
+                                    <h4 class="font-bold text-sm flex items-center gap-2 text-gray-900">
+                                        <svg class="w-4 h-4 text-[#f5b642]" fill="currentColor" viewBox="0 0 24 24">
+                                            <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5a2.5 2.5 0 010-5 2.5 2.5 0 010 5z"/>
+                                        </svg>
+                                        Our Location
+                                    </h4>
+                                    <p class="text-xs text-gray-500 mt-1">Pune, Maharashtra, India</p>
+                                </div>
+                                <a href="https://www.google.com/maps/place/Elite+Endeavor/@18.5836386,73.7639658,17z/data=!3m1!4b1!4m6!3m5!1s0x3bc2b915110e9409:0xcee433c451d3d812!8m2!3d18.5836335!4d73.7665407!16s%2Fg%2F11w14x2qqh?entry=ttu" 
+                                   target="_blank" 
+                                   rel="noopener noreferrer"
+                                   class="text-xs text-[#f5b642] hover:text-[#e74c3c] font-medium transition">
+                                    Open in Maps →
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="h-48">
+                            <iframe 
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3781.787012611875!2d73.7639658!3d18.5836386!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2b915110e9409%3A0xcee433c451d3d812!2sElite%20Endeavor!5e0!3m2!1sen!2sin!4v1766236697377!5m2!1sen!2sin" 
+                                width="100%" 
+                                height="100%" 
+                                style="border:0;" 
+                                allowfullscreen="" 
+                                loading="lazy" 
+                                referrerpolicy="no-referrer-when-downgrade"
+                                class="w-full h-full"
+                                title="Elite Endeavor Location">
+                            </iframe>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- Compact Response Time -->
+            <div class="mt-8 pt-4 border-t border-gray-200 text-center">
+                <span class="text-gray-600 text-xs flex items-center justify-center gap-2">
+                    <svg class="w-4 h-4 text-[#f5b642]" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67z"/>
+                    </svg>
+                    Guaranteed response within <strong class="text-[#f5b642]">24 hours</strong>
+                </span>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+
+<!-- Footer Section -->
+<footer class="bg-[#1a3c34] text-white py-12">
+    <!-- Golden Divider at Top -->
+    <div class="w-full h-px bg-gradient-to-r from-transparent via-[#f5b642] to-transparent"></div>
+    
+    <div class="container mx-auto px-4 pt-12">
+        <div class="grid md:grid-cols-4 gap-8 lg:gap-16">
+            <!-- Company Info -->
+            <div class="md:col-span-1">
+                <div class="flex items-center gap-3 mb-6">
+                    <img
+                        src="assets/logo.png"
+                        alt="Elite Endeavor Logo"
+                        class="h-16 md:h-20 w-auto animate-[bounce_2s_ease-in-out_infinite]"
+                    />
+                    <span class="text-2xl font-bold tracking-wide text-white relative inline-block">
+                        Elite Endeavor
+                        <span class="absolute left-0 -bottom-1 w-full h-0.5 bg-gradient-to-r from-[#e74c3c] to-[#f5b642] scale-x-100 origin-left transition-transform duration-500"></span>
+                    </span>
+                </div>
+
+                <p class="text-gray-300 text-sm leading-relaxed">
+                    Premium aluminium doors and windows with 17+ years of engineering excellence.
+                </p>
+            </div>
+
+            <!-- Quick Links - Shifted significantly to the right -->
+            <div class="md:col-span-1 md:pl-8 lg:pl-12">
+                <h4 class="text-lg font-bold mb-6 relative inline-block pb-2">
+                    Quick Links
+                    <span class="absolute left-0 -bottom-1 w-full h-0.5 bg-gradient-to-r from-[#e74c3c] to-[#f5b642]"></span>
+                </h4>
+                <ul class="space-y-3">
+                    <li><a href="#home" class="text-gray-300 hover:text-[#f5b642] transition-colors block py-1">Home</a></li>
+                    <li><a href="#about" class="text-gray-300 hover:text-[#f5b642] transition-colors block py-1">About Us</a></li>
+                    <li><a href="#products" class="text-gray-300 hover:text-[#f5b642] transition-colors block py-1">Products</a></li>
+                    <li><a href="#contact" class="text-gray-300 hover:text-[#f5b642] transition-colors block py-1">Contact</a></li>
+                </ul>
+            </div>
+
+            <!-- Products -->
+            <div class="md:col-span-1">
+                <h4 class="text-lg font-bold mb-6 relative inline-block pb-2">
+                    Products
+                    <span class="absolute left-0 -bottom-1 w-full h-0.5 bg-gradient-to-r from-[#e74c3c] to-[#f5b642]"></span>
+                </h4>
+                <ul class="space-y-3 text-gray-300">
+                    <li class="py-1">
+                        <a href="#products" class="hover:text-[#f5b642] transition-colors block" onclick="scrollToProduct('sliding-windows')">
+                            Sliding Windows
+                        </a>
+                    </li>
+                    <li class="py-1">
+                        <a href="#products" class="hover:text-[#f5b642] transition-colors block" onclick="scrollToProduct('sliding-doors')">
+                            Sliding Doors
+                        </a>
+                    </li>
+                    <li class="py-1">
+                        <a href="#products" class="hover:text-[#f5b642] transition-colors block" onclick="scrollToProduct('commercial-windows')">
+                            Commercial Windows
+                        </a>
+                    </li>
+                    <li class="py-1">
+                        <a href="#products" class="hover:text-[#f5b642] transition-colors block" onclick="scrollToProduct('premium-doors')">
+                            Premium Door Systems
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Contact Info -->
+            <div class="md:col-span-1">
+                <h4 class="text-lg font-bold mb-6 relative inline-block pb-2">
+                    Contact Info
+                    <span class="absolute left-0 -bottom-1 w-full h-0.5 bg-gradient-to-r from-[#e74c3c] to-[#f5b642]"></span>
+                </h4>
+                <ul class="space-y-4 text-gray-300">
+                    <li class="flex items-center gap-3 py-1">
+                        <svg class="w-5 h-5 fill-current text-[#f5b642]" viewBox="0 0 24 24">
+                            <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
+                        </svg>
+                        +91 9823090987
+                    </li>
+                    <li class="flex items-center gap-3 py-1">
+                        <svg class="w-5 h-5 fill-current text-[#f5b642]" viewBox="0 0 24 24">
+                            <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+                        </svg>
+                        saleseliteendeavor@gmail.com
+                    </li>
+                    <li class="flex items-center gap-3 py-1">
+                        <svg class="w-5 h-5 fill-current text-[#f5b642]" viewBox="0 0 24 24">
+                            <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+                        </svg>
+                        Pune, Maharashtra, India
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Bottom Copyright -->
+        <div class="border-t border-[#f5b642]/30 mt-12 pt-8 text-center">
+            <p class="text-gray-400 text-sm">
+                &copy; 2025 Elite Endeavor. All rights reserved. | Channel Partner of Uniframe (Prominence Group)
+            </p>
+        </div>
+    </div>
+</footer>
+
+    <!-- WhatsApp Floating Button -->
+    <a href="https://wa.me/919823090987" target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp" class="fixed bottom-6 right-6 z-50
+         flex items-center justify-center
+         h-14 w-14
+         rounded-full
+         bg-[#25D366]
+         text-white
+         shadow-lg
+         transition-all duration-300
+         hover:bg-[#1EBE5D]
+         hover:scale-105
+         focus:outline-none focus:ring-2 focus:ring-[#25D366] focus:ring-offset-2">
+
+        <!-- WhatsApp Icon (Clean & Proper) -->
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="h-7 w-7">
+            <path
+                d="M12 2C6.48 2 2 6.26 2 11.56c0 2.1.6 4.14 1.73 5.9L2 22l4.71-1.5a10.24 10.24 0 0 0 5.29 1.46c5.52 0 10-4.26 10-9.56C22 6.26 17.52 2 12 2zm0 17.64c-1.43 0-2.83-.38-4.05-1.1l-.29-.17-2.79.89.91-2.72-.19-.29A7.75 7.75 0 0 1 4.23 11.6c0-4.3 3.53-7.79 7.77-7.79s7.77 3.49 7.77 7.79-3.53 7.79-7.77 7.79z" />
+            <path
+                d="M16.31 13.44c-.23-.12-1.36-.67-1.57-.75-.21-.08-.37-.12-.53.12-.16.23-.61.75-.75.9-.14.15-.29.17-.53.06-.23-.12-.97-.36-1.85-1.15-.68-.61-1.14-1.37-1.28-1.6-.14-.23-.01-.36.11-.48.11-.11.23-.29.36-.43.12-.14.16-.23.23-.39.08-.16.04-.29-.02-.41-.06-.12-.53-1.28-.72-1.76-.19-.46-.38-.39-.53-.4h-.45c-.15 0-.41.06-.62.29-.21.23-.82.82-.82 2s.84 2.33.96 2.48c.12.15 1.67 2.53 4.06 3.55.57.24 1.01.38 1.36.49.57.18 1.09.15 1.49.09.46-.07 1.36-.57 1.55-1.14.19-.57.19-1.06.13-1.16-.06-.1-.21-.15-.44-.27z" />
+        </svg>
+    </a>
+
+    <!-- Back to Top Button -->
+    <button id="back-to-top"
+        class="fixed bottom-6 left-6 bg-[#1a3c34] text-white p-3 rounded-full shadow-lg hover:shadow-xl hover:scale-110 transition-all duration-300 hidden z-40">
+        <span class="material-icons">arrow_upward</span>
+    </button>
+
+    <!-- Scripts -->
+    <script src="script.js"></script>
+    <!-- Simple Carousel JavaScript (Add this before </body>) -->
+    <script>
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('[data-slide]');
+        const indicators = document.querySelectorAll('[data-slide-index]');
+        const totalSlides = slides.length;
+
+        function showSlide(index) {
+            slides.forEach((slide, i) => {
+                slide.style.opacity = i === index ? '1' : '0';
+            });
+            indicators.forEach((ind, i) => {
+                ind.classList.toggle('opacity-100', i === index);
+                ind.classList.toggle('opacity-50', i !== index);
+            });
+        }
+
+        document.getElementById('next-slide').addEventListener('click', () => {
+            currentSlide = (currentSlide + 1) % totalSlides;
+            showSlide(currentSlide);
+        });
+
+        document.getElementById('prev-slide').addEventListener('click', () => {
+            currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+            showSlide(currentSlide);
+        });
+
+        indicators.forEach((ind) => {
+            ind.addEventListener('click', () => {
+                currentSlide = parseInt(ind.dataset.slideIndex);
+                showSlide(currentSlide);
+            });
+        });
+
+        // Auto-play (optional - every 6 seconds)
+        setInterval(() => {
+            currentSlide = (currentSlide + 1) % totalSlides;
+            showSlide(currentSlide);
+        }, 6000);
+
+        // Form submission with animation
+        document.addEventListener('DOMContentLoaded', function () {
+            const contactForm = document.getElementById('contact-form');
+            const submitBtn = contactForm.querySelector('button[type="submit"]');
+
+            contactForm.addEventListener('submit', function (e) {
+                e.preventDefault();
+
+                // Add loading animation
+                const originalText = submitBtn.innerHTML;
+                submitBtn.innerHTML = `
+                    <svg class="animate-spin w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/>
+                    </svg>
+                    Sending...
+                `;
+                submitBtn.disabled = true;
+
+                // Simulate form submission
+                setTimeout(() => {
+                    // Show success message
+                    const successAlert = document.createElement('div');
+                    successAlert.className = 'mt-4 p-4 bg-gradient-to-r from-green-500/20 to-green-600/20 border border-green-500/30 rounded-xl animate-pulse';
+                    successAlert.innerHTML = `
+                        <div class="flex items-center">
+                            <svg class="w-6 h-6 text-green-400 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                            </svg>
+                            <div>
+                                <p class="font-semibold text-green-300">Message sent successfully!</p>
+                                <p class="text-green-400 text-sm">We'll get back to you within 24 hours.</p>
+                            </div>
+                        </div>
+                    `;
+
+                    contactForm.appendChild(successAlert);
+
+                    // Reset button
+                    submitBtn.innerHTML = originalText;
+                    submitBtn.disabled = false;
+
+                    // Reset form after success
+                    setTimeout(() => {
+                        contactForm.reset();
+                        successAlert.remove();
+                    }, 3000);
+                }, 1500);
+            });
+
+            // Add floating animation to decorative elements
+            const floatingElements = document.querySelectorAll('.absolute');
+            floatingElements.forEach(el => {
+                if (el.classList.contains('rounded-full')) {
+                    el.style.animation = `float ${6 + Math.random() * 4}s ease-in-out infinite ${Math.random() * 2}s`;
+                }
+            });
+        });
+
+        // Form submission handler
+        document.addEventListener('DOMContentLoaded', function () {
+            const contactForm = document.getElementById('contact-form');
+
+            if (contactForm) {
+                contactForm.addEventListener('submit', function (e) {
+                    e.preventDefault();
+
+                    const submitBtn = this.querySelector('button[type="submit"]');
+                    const originalText = submitBtn.innerHTML;
+
+                    // Show loading state
+                    submitBtn.innerHTML = `
+                    <svg class="animate-spin w-5 h-5 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/>
+                    </svg>
+                `;
+                    submitBtn.disabled = true;
+
+                    // Simulate form submission
+                    setTimeout(() => {
+                        // Create success message
+                        const successDiv = document.createElement('div');
+                        successDiv.className = 'mt-4 p-3 bg-green-500/10 border border-green-500/20 rounded-lg';
+                        successDiv.innerHTML = `
+                        <div class="flex items-center">
+                            <svg class="w-5 h-5 text-green-400 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                            </svg>
+                            <div>
+                                <p class="text-green-300 text-sm font-medium">Message sent successfully!</p>
+                                <p class="text-green-400/70 text-xs">We'll contact you within 24 hours.</p>
+                            </div>
+                        </div>
+                    `;
+
+                        // Insert success message
+                        contactForm.appendChild(successDiv);
+
+                        // Reset form and button
+                        setTimeout(() => {
+                            contactForm.reset();
+                            submitBtn.innerHTML = originalText;
+                            submitBtn.disabled = false;
+                            successDiv.remove();
+                        }, 3000);
+                    }, 1500);
+                });
+            }
+        });
+
+
+
+         document.addEventListener('DOMContentLoaded', function() {
+            const productItems = document.querySelectorAll('.product-item');
+            const dots = document.querySelectorAll('.dot');
+            const totalProducts = productItems.length;
+            
+            // Get the height of the viewport
+            const viewportHeight = window.innerHeight;
+            
+            // Set the total height of the products section
+            const productsSection = document.getElementById('products');
+            productsSection.style.height = `${viewportHeight * totalProducts}px`;
+            
+            // Calculate the scroll range for each product
+            const scrollRangePerProduct = viewportHeight;
+            
+            // Function to update active product based on scroll position
+            function updateActiveProduct() {
+                const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+                const sectionTop = productsSection.offsetTop;
+                
+                // Calculate which product should be active
+                const scrollPosition = Math.max(0, scrollTop - sectionTop);
+                const activeIndex = Math.min(
+                    Math.floor(scrollPosition / scrollRangePerProduct),
+                    totalProducts - 1
+                );
+                
+                // Update product items
+                productItems.forEach((item, index) => {
+                    item.classList.remove('active', 'prev', 'next');
+                    
+                    if (index === activeIndex) {
+                        item.classList.add('active');
+                    } else if (index === activeIndex - 1) {
+                        item.classList.add('prev');
+                    } else if (index === activeIndex + 1) {
+                        item.classList.add('next');
+                    }
+                });
+                
+                // Update dots
+                dots.forEach((dot, index) => {
+                    dot.classList.toggle('active', index === activeIndex);
+                });
+            }
+            
+            // Initial update
+            updateActiveProduct();
+            
+            // Update on scroll
+            window.addEventListener('scroll', updateActiveProduct);
+            
+            // Update on resize
+            window.addEventListener('resize', function() {
+                const newViewportHeight = window.innerHeight;
+                productsSection.style.height = `${newViewportHeight * totalProducts}px`;
+                updateActiveProduct();
+            });
+            
+            // Click on dots to navigate
+            dots.forEach(dot => {
+                dot.addEventListener('click', function() {
+                    const index = parseInt(this.getAttribute('data-index'));
+                    const targetScroll = productsSection.offsetTop + (index * viewportHeight);
+                    
+                    window.scrollTo({
+                        top: targetScroll,
+                        behavior: 'smooth'
+                    });
+                });
+            });
+            
+            // Keyboard navigation
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'ArrowDown' || e.key === 'ArrowUp') {
+                    e.preventDefault();
+                    
+                    const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+                    const sectionTop = productsSection.offsetTop;
+                    const scrollPosition = Math.max(0, scrollTop - sectionTop);
+                    const currentIndex = Math.min(
+                        Math.floor(scrollPosition / scrollRangePerProduct),
+                        totalProducts - 1
+                    );
+                    
+                    let targetIndex;
+                    if (e.key === 'ArrowDown' && currentIndex < totalProducts - 1) {
+                        targetIndex = currentIndex + 1;
+                    } else if (e.key === 'ArrowUp' && currentIndex > 0) {
+                        targetIndex = currentIndex - 1;
+                    } else {
+                        return;
+                    }
+                    
+                    const targetScroll = productsSection.offsetTop + (targetIndex * viewportHeight);
+                    
+                    window.scrollTo({
+                        top: targetScroll,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+            
+            // Add hover effect to dots
+            dots.forEach(dot => {
+                dot.addEventListener('mouseenter', function() {
+                    this.style.transform = 'scale(1.5)';
+                });
+                
+                dot.addEventListener('mouseleave', function() {
+                    if (!this.classList.contains('active')) {
+                        this.style.transform = 'scale(1)';
+                    }
+                });
+            });
+        });
+
+        // Header visibility control for product section
+document.addEventListener('DOMContentLoaded', function() {
+    const header = document.getElementById('header');
+    const topNavbar = document.getElementById('top-navbar');
+    const goldenDivider = document.getElementById('golden-divider');
+    const mainNav = document.getElementById('main-nav');
+    const productsSection = document.getElementById('products');
+    
+    function updateHeaderVisibility() {
+        const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+        const sectionTop = productsSection.offsetTop;
+        const sectionHeight = productsSection.offsetHeight;
+        const sectionBottom = sectionTop + sectionHeight;
+        
+        // Check if we're within the products section
+        if (scrollTop >= sectionTop && scrollTop <= sectionBottom) {
+            // In products section - make header invisible
+            header.style.opacity = '0';
+            header.style.pointerEvents = 'none';
+            header.style.transform = 'translateY(-100%)';
+        } else {
+            // Outside products section - make header visible
+            header.style.opacity = '1';
+            header.style.pointerEvents = 'auto';
+            header.style.transform = 'translateY(0)';
+        }
+    }
+    
+    // Initial check
+    updateHeaderVisibility();
+    
+    // Update on scroll
+    window.addEventListener('scroll', updateHeaderVisibility);
+    
+    // Update on resize (in case section position changes)
+    window.addEventListener('resize', updateHeaderVisibility);
+});
+
+
+  // Scroll Reveal Animation
+    document.addEventListener('DOMContentLoaded', function() {
+        // Get all elements with reveal classes
+        const revealElements = document.querySelectorAll(
+            '.reveal-from-top, .reveal-from-left, .reveal-from-right, .reveal-scale, .reveal-item'
+        );
+        
+        // Create Intersection Observer
+        const revealObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    // Add active class to trigger animation
+                    entry.target.classList.add('reveal-active');
+                    
+                    // If element has reveal-item class, also add active to child reveal-items
+                    if (entry.target.classList.contains('reveal-from-right')) {
+                        const childItems = entry.target.querySelectorAll('.reveal-item');
+                        childItems.forEach((item, index) => {
+                            // Remove inline delay and add with timeout for staggered effect
+                            const delay = item.style.transitionDelay || '0s';
+                            setTimeout(() => {
+                                item.classList.add('reveal-active');
+                            }, parseFloat(delay) * 1000);
+                        });
+                    }
+                    
+                    // Stop observing after animation
+                    revealObserver.unobserve(entry.target);
+                }
+            });
+        }, {
+            threshold: 0.15, // Trigger when 15% of element is visible
+            rootMargin: '0px 0px -50px 0px' // Adjust trigger point
+        });
+        
+        // Observe each reveal element
+        revealElements.forEach(element => {
+            revealObserver.observe(element);
+        });
+        
+        // Check if section is already in view on page load
+        function checkInitialView() {
+            const aboutSection = document.getElementById('about');
+            const rect = aboutSection.getBoundingClientRect();
+            const windowHeight = window.innerHeight;
+            
+            // If section is already visible in viewport
+            if (rect.top < windowHeight * 0.8) {
+                revealElements.forEach(element => {
+                    element.classList.add('reveal-active');
+                });
+            }
+        }
+        
+        // Run check on page load
+        setTimeout(checkInitialView, 100);
+        
+        // Also check on hash change (if user navigates directly to section)
+        window.addEventListener('hashchange', function() {
+            if (window.location.hash === '#about') {
+                setTimeout(checkInitialView, 300);
+            }
+        });
+        
+        // Check if page was loaded with #about hash
+        if (window.location.hash === '#about') {
+            setTimeout(checkInitialView, 500);
+        }
+    });
+    </script>
+</body>
+
+</html>
