@@ -359,74 +359,80 @@ body {
 <!-- Fixed Header: Top Navbar with Contact & Social + Main Navigation -->
 
 <header id="header" class="fixed top-0 left-0 w-full z-50 bg-white transition-all duration-300 shadow-sm">
-   <!-- Top Navbar: Business Hours, Contact Info & Social Icons -->
-<div id="top-navbar" class="w-full bg-white text-black text-xs border-b border-gray-200"> <!-- Reduced from text-sm to text-xs -->
-    <div class="container mx-auto px-4">
-        <div class="flex flex-col md:flex-row justify-between items-center py-2 gap-3"> <!-- Reduced py-3 → py-2 and gap-4 → gap-3 -->
+    <!-- Top Navbar: Business Hours, Contact Info & Social Icons -->
+    <div id="top-navbar" class="w-full bg-white text-black text-xs border-b border-gray-200">
+        <!-- Reduced from text-sm to text-xs -->
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row justify-between items-center py-2 gap-3">
+                <!-- Reduced py-3 → py-2 and gap-4 → gap-3 -->
 
-            <!-- Left: Business Hours -->
-            <div class="flex items-center gap-2"> <!-- Reduced gap-3 → gap-2 -->
-                <span class="text-sm">●</span> <!-- Slightly smaller dot -->
-                <span>Mon - Sat: 9:00 AM - 6:00 PM</span>
-            </div>
-
-            <!-- Right: Email, Phone & Social Icons -->
-            <div class="flex flex-col md:flex-row items-center gap-4 md:gap-6"> <!-- Reduced gaps -->
-
-                <!-- Contact Info -->
-                <div class="flex flex-col md:flex-row items-center gap-4 text-center md:text-left"> <!-- Reduced gap-6 → gap-4 -->
-                    <a href="mailto:saleseliteendeavor@gmail.com" class="hover:text-[#f5b642] transition">
-                        saleseliteendeavor@gmail.com
-                    </a>
-                    <a href="tel:+919876543210" class="hover:text-[#f5b642] transition">
-                        +91 98765 43210
-                    </a>
+                <!-- Left: Business Hours -->
+                <div class="flex items-center gap-2"> <!-- Reduced gap-3 → gap-2 -->
+                    <span class="text-sm">●</span> <!-- Slightly smaller dot -->
+                    <span>Mon - Sat: 9:00 AM - 6:00 PM</span>
                 </div>
 
-                <!-- Social Media Icons -->
-                <div class="flex items-center gap-4"> <!-- Reduced gap-5 → gap-4 -->
-                    <!-- Facebook -->
-                    <a href="https://facebook.com/eliteendeavor" target="_blank" rel="noopener"
-                        class="hover:opacity-80 transition" aria-label="Facebook">
-                        <svg class="w-4 h-4" viewBox="0 0 24 24" fill="#1877F2"> <!-- Reduced w-5 h-5 → w-4 h-4 -->
-                            <path d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.99 3.66 9.13 8.44 9.88v-6.99h-2.54v-2.89h2.54V9.41c0-2.52 1.5-3.91 3.79-3.91 1.1 0 2.25.2 2.25.2v2.48h-1.26c-1.25 0-1.64.78-1.64 1.58v1.9h2.79l-.45 2.89h-2.34v6.99C18.34 21.13 22 16.99 22 12z" />
-                        </svg>
-                    </a>
+                <!-- Right: Email, Phone & Social Icons -->
+                <div class="flex flex-col md:flex-row items-center gap-4 md:gap-6"> <!-- Reduced gaps -->
 
-                    <!-- Instagram -->
-                    <a href="https://instagram.com/eliteendeavor" target="_blank" rel="noopener"
-                        class="hover:opacity-80 transition" aria-label="Instagram">
-                        <div class="w-4 h-4 rounded overflow-hidden"> <!-- Reduced w-5 h-5 → w-4 h-4 -->
-                            <svg viewBox="0 0 24 24" class="w-full h-full">
-                                <defs>
-                                    <radialGradient id="instagramGrad" cx="30%" cy="107%" r="150%">
-                                        <stop offset="0%" stop-color="#fdf497" />
-                                        <stop offset="5%" stop-color="#fdf497" />
-                                        <stop offset="45%" stop-color="#fd5949" />
-                                        <stop offset="60%" stop-color="#d6249f" />
-                                        <stop offset="90%" stop-color="#285AEB" />
-                                    </radialGradient>
-                                </defs>
-                                <rect width="24" height="24" fill="url(#instagramGrad)" rx="6" />
-                                <path fill="white" d="M12 2.16c3.2 0 3.58.01 4.85.07 1.17.06 1.97.24 2.68.51.82.3 1.51.7 2.2 1.39.69.69 1.09 1.38 1.39 2.2.27.71.45 1.51.51 2.68.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.06 1.17-.24 1.97-.51 2.68-.3.82-.7 1.51-1.39 2.2-.69.69-1.38 1.09-2.2 1.39-.71.27-1.51.45-2.68.51-1.27.06-1.65.07-4.85.07s-3.58-.01-4.85-.07c-1.17-.06-1.97-.24-2.68-.51-.82-.3-1.51-.7-2.2-1.39-.69-.69-1.09-1.38-1.39-2.2-.27-.71-.45-1.51-.51-2.68-.06-1.27-.07-1.65-.07-4.85s.01-3.58.07-4.85c.06-1.17.24-1.97.51-2.68.3-.82.7-1.51 1.39-2.2.69-.69 1.38-1.09 2.2-1.39.71-.27 1.51-.45 2.68-.51 1.27-.06 1.65-.07 4.85-.07zM12 0C8.74 0 8.33.01 7.05.07c-1.33.06-2.24.27-3.03.58-.81.31-1.49.72-2.17 1.4-.68.68-1.09 1.36-1.4 2.17-.31.79-.52 1.7-.58 3.03C.01 8.33 0 8.74 0 12s.01 3.67.07 4.95c.06 1.33.27 2.24.58 3.03.31.81.72 1.49 1.4 2.17.68.68 1.36 1.09 2.17 1.4.79.31 1.7.52 3.03.58 1.28.06 1.69.07 4.95.07s3.67-.01 4.95-.07c1.33-.06 2.24-.27 3.03-.58.81-.31 1.49-.72 2.17-1.4-.68.68 1.09-1.36 1.4-2.17.31-.79.52-1.7.58-3.03.06-1.28.07-1.69.07-4.95s-.01-3.67-.07-4.95c-.06-1.33-.27-2.24-.58-3.03-.31-.81-.72-1.49-1.4-2.17-.68-.68-1.36-1.09-2.17-1.4-.79-.31-1.7-.52-3.03-.58C15.67.01 15.26 0 12 0z" />
-                                <circle fill="white" cx="12" cy="12" r="4" />
-                                <circle fill="white" cx="18.41" cy="5.59" r="1.44" />
+                    <!-- Contact Info -->
+                    <div class="flex flex-col md:flex-row items-center gap-4 text-center md:text-left">
+                        <!-- Reduced gap-6 → gap-4 -->
+                        <a href="mailto:saleseliteendeavor@gmail.com" class="hover:text-[#f5b642] transition">
+                            saleseliteendeavor@gmail.com
+                        </a>
+                        <a href="tel:+919876543210" class="hover:text-[#f5b642] transition">
+                            +91 98765 43210
+                        </a>
+                    </div>
+
+                    <!-- Social Media Icons -->
+                    <div class="flex items-center gap-4"> <!-- Reduced gap-5 → gap-4 -->
+                        <!-- Facebook -->
+                        <a href="https://facebook.com/eliteendeavor" target="_blank" rel="noopener"
+                            class="hover:opacity-80 transition" aria-label="Facebook">
+                            <svg class="w-4 h-4" viewBox="0 0 24 24" fill="#1877F2"> <!-- Reduced w-5 h-5 → w-4 h-4 -->
+                                <path
+                                    d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.99 3.66 9.13 8.44 9.88v-6.99h-2.54v-2.89h2.54V9.41c0-2.52 1.5-3.91 3.79-3.91 1.1 0 2.25.2 2.25.2v2.48h-1.26c-1.25 0-1.64.78-1.64 1.58v1.9h2.79l-.45 2.89h-2.34v6.99C18.34 21.13 22 16.99 22 12z" />
                             </svg>
-                        </div>
-                    </a>
+                        </a>
 
-                    <!-- YouTube -->
-                    <a href="https://youtube.com/@eliteendeavor" target="_blank" rel="noopener"
-                        class="hover:opacity-80 transition" aria-label="YouTube">
-                        <svg class="w-4 h-4" viewBox="0 0 24 24" fill="#FF0000"> <!-- Reduced w-5 h-5 → w-4 h-4 -->
-                            <path d="M23.5 6.36c-.28-1.03-.99-1.84-1.99-2.1-1.79-.48-8.99-.48-8.99-.48s-7.2 0-8.99.48c-1 .26-1.71 1.07-1.99 2.1C1.07 7.39 1 9.2 1 12s.07 4.61.57 5.64c.28 1.03.99 1.84 1.99 2.1 1.79.48 8.99.48 8.99.48s7.2 0 8.99-.48c1-.26 1.71-1.07 1.99-2.1.5-1.03.57-2.84.57-5.64s-.07-4.61-.57-5.64zM9.8 15.63l-.01-6.63 6.44 3.33-6.43 3.3z" />
-                        </svg>
-                    </a>
+                        <!-- Instagram -->
+                        <a href="https://instagram.com/eliteendeavor" target="_blank" rel="noopener"
+                            class="hover:opacity-80 transition" aria-label="Instagram">
+                            <div class="w-4 h-4 rounded overflow-hidden"> <!-- Reduced w-5 h-5 → w-4 h-4 -->
+                                <svg viewBox="0 0 24 24" class="w-full h-full">
+                                    <defs>
+                                        <radialGradient id="instagramGrad" cx="30%" cy="107%" r="150%">
+                                            <stop offset="0%" stop-color="#fdf497" />
+                                            <stop offset="5%" stop-color="#fdf497" />
+                                            <stop offset="45%" stop-color="#fd5949" />
+                                            <stop offset="60%" stop-color="#d6249f" />
+                                            <stop offset="90%" stop-color="#285AEB" />
+                                        </radialGradient>
+                                    </defs>
+                                    <rect width="24" height="24" fill="url(#instagramGrad)" rx="6" />
+                                    <path fill="white"
+                                        d="M12 2.16c3.2 0 3.58.01 4.85.07 1.17.06 1.97.24 2.68.51.82.3 1.51.7 2.2 1.39.69.69 1.09 1.38 1.39 2.2.27.71.45 1.51.51 2.68.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.06 1.17-.24 1.97-.51 2.68-.3.82-.7 1.51-1.39 2.2-.69.69-1.38 1.09-2.2 1.39-.71.27-1.51.45-2.68.51-1.27.06-1.65.07-4.85.07s-3.58-.01-4.85-.07c-1.17-.06-1.97-.24-2.68-.51-.82-.3-1.51-.7-2.2-1.39-.69-.69-1.09-1.38-1.39-2.2-.27-.71-.45-1.51-.51-2.68-.06-1.27-.07-1.65-.07-4.85s.01-3.58.07-4.85c.06-1.17.24-1.97.51-2.68.3-.82.7-1.51 1.39-2.2.69-.69 1.38-1.09 2.2-1.39.71-.27 1.51-.45 2.68-.51 1.27-.06 1.65-.07 4.85-.07zM12 0C8.74 0 8.33.01 7.05.07c-1.33.06-2.24.27-3.03.58-.81.31-1.49.72-2.17 1.4-.68.68-1.09 1.36-1.4 2.17-.31.79-.52 1.7-.58 3.03C.01 8.33 0 8.74 0 12s.01 3.67.07 4.95c.06 1.33.27 2.24.58 3.03.31.81.72 1.49 1.4 2.17.68.68 1.36 1.09 2.17 1.4.79.31 1.7.52 3.03.58 1.28.06 1.69.07 4.95.07s3.67-.01 4.95-.07c1.33-.06 2.24-.27 3.03-.58.81-.31 1.49-.72 2.17-1.4-.68.68 1.09-1.36 1.4-2.17.31-.79.52-1.7.58-3.03.06-1.28.07-1.69.07-4.95s-.01-3.67-.07-4.95c-.06-1.33-.27-2.24-.58-3.03-.31-.81-.72-1.49-1.4-2.17-.68-.68-1.36-1.09-2.17-1.4-.79-.31-1.7-.52-3.03-.58C15.67.01 15.26 0 12 0z" />
+                                    <circle fill="white" cx="12" cy="12" r="4" />
+                                    <circle fill="white" cx="18.41" cy="5.59" r="1.44" />
+                                </svg>
+                            </div>
+                        </a>
+
+                        <!-- YouTube -->
+                        <a href="https://youtube.com/@eliteendeavor" target="_blank" rel="noopener"
+                            class="hover:opacity-80 transition" aria-label="YouTube">
+                            <svg class="w-4 h-4" viewBox="0 0 24 24" fill="#FF0000"> <!-- Reduced w-5 h-5 → w-4 h-4 -->
+                                <path
+                                    d="M23.5 6.36c-.28-1.03-.99-1.84-1.99-2.1-1.79-.48-8.99-.48-8.99-.48s-7.2 0-8.99.48c-1 .26-1.71 1.07-1.99 2.1C1.07 7.39 1 9.2 1 12s.07 4.61.57 5.64c.28 1.03.99 1.84 1.99 2.1 1.79.48 8.99.48 8.99.48s7.2 0 8.99-.48c1-.26 1.71-1.07 1.99-2.1.5-1.03.57-2.84.57-5.64s-.07-4.61-.57-5.64zM9.8 15.63l-.01-6.63 6.44 3.33-6.43 3.3z" />
+                            </svg>
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
 
   <!-- Golden Divider Line -->
   <div class="w-full h-px bg-[#f5b642]"></div>
@@ -435,24 +441,29 @@ body {
 <nav id="main-nav" class="container mx-auto px-4 py-4 bg-white">
   <div class="flex justify-between items-center">
     <!-- Logo -->
-    <div class="flex items-center gap-8"> <!-- Increased gap from gap-3 to gap-8 for more space -->
-      <!-- Even larger logo using bigger scale (no height increase) -->
+    <div class="flex items-center gap-8">
+      <!-- Larger logo -->
       <div class="scale-[1.8] origin-left">
         <img src="assets/logo.png" alt="Elite Endeavor Logo" class="h-10 w-auto">
       </div>
-      <span class="font-bold text-xl text-black">Elite Endeavor</span>
+
+      <!-- Company name (attached) -->
+      <span class="font-bold text-xl">
+        <span class="text-orange-500">Elite</span><span class="text-green-800">Endeavor</span>
+      </span>
     </div>
 
     <!-- Desktop Menu -->
     <div class="hidden md:flex items-center space-x-8">
-      <a href="#home" class="text-black hover:text-[#f5b642] transition">Home</a>
-      <a href="#about" class="text-black hover:text-[#f5b642] transition">About</a>
-      <a href="#products" class="text-black hover:text-[#f5b642] transition">Products</a>
-      <a href="#specs" class="text-black hover:text-[#f5b642] transition">Specifications</a>
-      <a href="#features" class="text-black hover:text-[#f5b642] transition">Features</a>
-      <a href="#founders" class="text-black hover:text-[#f5b642] transition">Founders</a>
-      <a href="#contact" class="text-black hover:text-[#f5b642] transition">Contact</a>
-    </div>
+  <a href="#home" class="text-black hover:text-[#f5b642] hover:underline transition">Home</a>
+  <a href="#about" class="text-black hover:text-[#f5b642] hover:underline transition">About</a>
+  <a href="#products" class="text-black hover:text-[#f5b642] hover:underline transition">Products</a>
+  <a href="#features" class="text-black hover:text-[#f5b642] hover:underline transition">Features</a>
+  <a href="#founders" class="text-black hover:text-[#f5b642] hover:underline transition">Founders</a>
+  <a href="#gallery" class="text-black hover:text-[#f5b642] hover:underline transition">Gallery</a>
+  <a href="#contact" class="text-black hover:text-[#f5b642] hover:underline transition">Contact</a>
+</div>
+
 
     <!-- Mobile Hamburger Menu Button -->
     <button id="mobile-menu-button" class="md:hidden text-black text-3xl focus:outline-none">
@@ -462,16 +473,17 @@ body {
 
   <!-- Mobile Menu (hidden by default, toggled with JS) -->
   <div id="mobile-menu" class="hidden md:hidden mt-6 pb-4 border-t border-gray-200 pt-4">
-    <div class="flex flex-col space-y-4">
-      <a href="#home" class="text-black hover:text-[#f5b642] transition py-2">Home</a>
-      <a href="#about" class="text-black hover:text-[#f5b642] transition py-2">About</a>
-      <a href="#products" class="text-black hover:text-[#f5b642] transition py-2">Products</a>
-      <a href="#specs" class="text-black hover:text-[#f5b642] transition py-2">Specifications</a>
-      <a href="#features" class="text-black hover:text-[#f5b642] transition py-2">Features</a>
-      <a href="#founders" class="text-black hover:text-[#f5b642] transition py-2">Founders</a>
-      <a href="#contact" class="text-black hover:text-[#f5b642] transition py-2">Contact</a>
-    </div>
+  <div class="flex flex-col space-y-4">
+    <a href="#home" class="text-black hover:text-[#f5b642] hover:underline transition py-2">Home</a>
+    <a href="#about" class="text-black hover:text-[#f5b642] hover:underline transition py-2">About</a>
+    <a href="#products" class="text-black hover:text-[#f5b642] hover:underline transition py-2">Products</a>
+    <a href="#features" class="text-black hover:text-[#f5b642] hover:underline transition py-2">Features</a>
+    <a href="#founders" class="text-black hover:text-[#f5b642] hover:underline transition py-2">Founders</a>
+    <a href="#gallery" class="text-black hover:text-[#f5b642] hover:underline transition py-2">Gallery</a>
+    <a href="#contact" class="text-black hover:text-[#f5b642] hover:underline transition py-2">Contact</a>
   </div>
+</div>
+
 </nav>
 </header>
 
@@ -1715,7 +1727,7 @@ body {
 </section>
 
     <!--  Technical Specifications Section -->
-    <section id="specs" class="py-16 bg-gray-50">
+    <!-- <section id="specs" class="py-16 bg-gray-50">
         <div class="container mx-auto px-4">
             <h2 class="text-3xl md:text-4xl font-bold text-[#1a3c34] text-center mb-12">Technical Specifications</h2>
 
@@ -1770,7 +1782,7 @@ body {
                 </table>
             </div>
         </div>
-    </section>
+    </section> -->
 
     <!--  Key Features & Benefits -->
     <section id="features" class="py-16 bg-white">
@@ -1847,131 +1859,178 @@ body {
         </div>
     </section>
 
-    <!-- Founders Section -->
-    <section id="founders" class="py-16 bg-[#f8f9fa]">
-        <div class="container mx-auto px-4">
-            <h2 class="text-3xl md:text-4xl font-bold text-[#1a3c34] text-center mb-12">Meet Our Founders</h2>
+  <!-- Compact Founder Section with Modern Card Style -->
+<section id="founders" class="py-12 md:py-16 bg-cover bg-center bg-no-repeat relative" style="background-image: url('assets/f4.jpg');">
+    <!-- Light overlay to keep background visible but readable -->
+    <div class="absolute inset-0 bg-green-800/30"></div>
+    
+    <div class="container mx-auto px-4 relative z-10">
+        <!-- Compact Title -->
+        <h2 class="text-3xl md:text-4xl font-bold text-white text-center mb-8 drop-shadow-lg 
+                   opacity-0 translate-y-10 transition-all duration-1800 ease-out"
+            data-animate="true">
+            Meet Our Founders
+        </h2>
 
-            <div class="grid md:grid-cols-2 gap-12 max-w-4xl mx-auto">
-                <!-- Founder 1 -->
-                <div class="text-center">
-                    <div class="bg-white p-8 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300">
-                        <div class="w-32 h-32 mx-auto mb-6 rounded-full bg-gray-200 flex items-center justify-center">
-                            <span class="material-icons text-6xl text-[#1a3c34]">person</span>
-                        </div>
-                        <h3 class="text-2xl font-bold text-[#1a3c34] mb-2">Pradnya Kudche</h3>
-                        <p class="text-[#e74c3c] font-medium mb-4">Co-Founder</p>
-                        <p class="text-gray-600">With 17+ years in engineering and manufacturing, Pradnya ensures every
-                            product meets the highest standards of quality and precision.</p>
-                    </div>
-                </div>
-
-                <!-- Founder 2 -->
-                <div class="text-center">
-                    <div class="bg-white p-8 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300">
-                        <div class="w-32 h-32 mx-auto mb-6 rounded-full bg-gray-200 flex items-center justify-center">
-                            <span class="material-icons text-6xl text-[#1a3c34]">person</span>
-                        </div>
-                        <h3 class="text-2xl font-bold text-[#1a3c34] mb-2">Prasad Kudche</h3>
-                        <p class="text-[#e74c3c] font-medium mb-4">Co-Founder</p>
-                        <p class="text-gray-600">Bringing extensive expertise in aluminium systems, Prasad drives
-                            innovation and customer satisfaction in every project.</p>
-                    </div>
-                </div>
+        <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+          <!-- Founder 1 - Left Slide -->
+<div class="opacity-0 -translate-x-32 transition-all duration-2000 ease-out" data-animate="true">
+    <div class="group relative bg-white/90 backdrop-blur-md rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-500 hover:-translate-y-4 border border-green-200">
+        <!-- Image -->
+        <div class="w-32 h-32 md:w-40 md:h-40 mx-auto mt-8 rounded-full overflow-hidden border-4 border-green-500 shadow-lg">
+            <img src="assets/f2.jpg" alt="Pradnya Kudche" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                 onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+            <div class="w-full h-full bg-gradient-to-br from-green-400 to-green-600 flex items-center justify-center hidden">
+                <span class="text-5xl font-bold text-white">PK</span>
             </div>
         </div>
-    </section>
 
-   <!-- 10. Gallery Section -->
-<section class="py-16 bg-white">
+        <!-- Content -->
+        <div class="p-6 md:p-8 text-center">
+            <h3 class="text-2xl md:text-3xl font-bold text-green-800 mb-2">Pradnya Kudche</h3>
+            <p class="text-green-600 font-semibold text-lg mb-4">Co-Founder</p>
+            <p class="text-gray-700 leading-relaxed text-base">
+                With 17+ years in engineering and manufacturing, Pradnya ensures every product meets the highest standards of quality and precision.
+            </p>
+        </div>
+    </div>
+</div>
+
+<!-- Founder 2 - Right Slide -->
+<div class="opacity-0 translate-x-32 transition-all duration-2000 ease-out delay-200" data-animate="true">
+    <div class="group relative bg-white/90 backdrop-blur-md rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-500 hover:-translate-y-4 border border-green-200">
+        <!-- Image -->
+        <div class="w-32 h-32 md:w-40 md:h-40 mx-auto mt-8 rounded-full overflow-hidden border-4 border-green-500 shadow-lg">
+            <img src="assets/f1.jpg" alt="Prasad Kudche" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                 onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+            <div class="w-full h-full bg-gradient-to-br from-green-400 to-green-600 flex items-center justify-center hidden">
+                <span class="text-5xl font-bold text-white">PK</span>
+            </div>
+        </div>
+
+        <!-- Content -->
+        <div class="p-6 md:p-8 text-center">
+            <h3 class="text-2xl md:text-3xl font-bold text-green-800 mb-2">Prasad Kudche</h3>
+            <p class="text-green-600 font-semibold text-lg mb-4">Co-Founder</p>
+            <p class="text-gray-700 leading-relaxed text-base">
+                Bringing extensive expertise in aluminium systems, Prasad drives innovation and customer satisfaction in every project.
+            </p>
+        </div>
+    </div>
+</div>
+
+        </div>
+    </div>
+</section>
+
+
+<!--  Gallery Section -->
+<section id="gallery" class="py-16 bg-white">
     <div class="container mx-auto px-4">
         <h2 class="text-3xl md:text-4xl font-bold text-[#1a3c34] text-center mb-12">
             Our Gallery
+            <span class="block w-24 h-1 mx-auto mt-3 bg-red-600 rounded-full"></span>
         </h2>
 
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
             <!-- Gallery Item 1 -->
-            <div class="gallery-item relative overflow-hidden rounded-lg shadow-lg hover:shadow-2xl transition-all duration-500 group">
-                <img
-                    src="https://img.edilportale.com/product-thumbs/b_Oknoplast_ALUSLIDE-PREMIUM-PRO_PVIu57NFmO.jpeg"
+            <div
+                class="gallery-item relative overflow-hidden rounded-lg shadow-lg hover:shadow-2xl transition-all duration-500 group">
+                <img src="https://img.edilportale.com/product-thumbs/b_Oknoplast_ALUSLIDE-PREMIUM-PRO_PVIu57NFmO.jpeg"
                     alt="Graf 32 Sliding Window - Premium modern interior installation"
-                    class="w-full h-72 md:h-96 object-cover transition-transform duration-700 group-hover:scale-110"
-                />
+                    class="w-full h-72 md:h-96 object-cover transition-transform duration-700 group-hover:scale-110" />
                 <!-- Overlay & Text -->
-                <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                <div class="absolute bottom-0 left-0 right-0 p-6 text-white transform translate-y-8 group-hover:translate-y-0 transition-transform duration-500">
+                <div
+                    class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                </div>
+                <div
+                    class="absolute bottom-0 left-0 right-0 p-6 text-white transform translate-y-8 group-hover:translate-y-0 transition-transform duration-500">
                     <h3 class="text-xl md:text-2xl font-bold">Graf 32 Sliding Window</h3>
                     <p class="text-sm md:text-base opacity-90">Smooth and elegant sliding design for modern homes</p>
                 </div>
             </div>
 
             <!-- Gallery Item 2 -->
-            <div class="gallery-item relative overflow-hidden rounded-lg shadow-lg hover:shadow-2xl transition-all duration-500 group">
-                <img
-                    src="https://weathershield.com/wp-content/uploads/2022/01/WebHeader_Pages_FindADealer-2-1280x720.jpg"
+            <div
+                class="gallery-item relative overflow-hidden rounded-lg shadow-lg hover:shadow-2xl transition-all duration-500 group">
+                <img src="https://weathershield.com/wp-content/uploads/2022/01/WebHeader_Pages_FindADealer-2-1280x720.jpg"
                     alt="Graf 32 Sliding Door - Luxury large glass patio doors"
-                    class="w-full h-72 md:h-96 object-cover transition-transform duration-700 group-hover:scale-110"
-                />
-                <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                <div class="absolute bottom-0 left-0 right-0 p-6 text-white transform translate-y-8 group-hover:translate-y-0 transition-transform duration-500">
+                    class="w-full h-72 md:h-96 object-cover transition-transform duration-700 group-hover:scale-110" />
+                <div
+                    class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                </div>
+                <div
+                    class="absolute bottom-0 left-0 right-0 p-6 text-white transform translate-y-8 group-hover:translate-y-0 transition-transform duration-500">
                     <h3 class="text-xl md:text-2xl font-bold">Graf 32 Sliding Door</h3>
-                    <p class="text-sm md:text-base opacity-90">Premium large-opening sliding doors with superior performance</p>
+                    <p class="text-sm md:text-base opacity-90">Premium large-opening sliding doors with superior
+                        performance</p>
                 </div>
             </div>
 
             <!-- Gallery Item 3 -->
-            <div class="gallery-item relative overflow-hidden rounded-lg shadow-lg hover:shadow-2xl transition-all duration-500 group">
-                <img
-                    src="https://pa-window.com/wp-content/uploads/2023/11/green-living-room-casement-window-1-1024x683.jpg"
+            <div
+                class="gallery-item relative overflow-hidden rounded-lg shadow-lg hover:shadow-2xl transition-all duration-500 group">
+                <img src="https://pa-window.com/wp-content/uploads/2023/11/green-living-room-casement-window-1-1024x683.jpg"
                     alt="Robus 40 Casement Window - Modern residential casement installation"
-                    class="w-full h-72 md:h-96 object-cover transition-transform duration-700 group-hover:scale-110"
-                />
-                <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                <div class="absolute bottom-0 left-0 right-0 p-6 text-white transform translate-y-8 group-hover:translate-y-0 transition-transform duration-500">
+                    class="w-full h-72 md:h-96 object-cover transition-transform duration-700 group-hover:scale-110" />
+                <div
+                    class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                </div>
+                <div
+                    class="absolute bottom-0 left-0 right-0 p-6 text-white transform translate-y-8 group-hover:translate-y-0 transition-transform duration-500">
                     <h3 class="text-xl md:text-2xl font-bold">Robus 40 Casement Window</h3>
-                    <p class="text-sm md:text-base opacity-90">Reliable and durable casement windows for everyday use</p>
+                    <p class="text-sm md:text-base opacity-90">Reliable and durable casement windows for everyday use
+                    </p>
                 </div>
             </div>
 
             <!-- Gallery Item 4 -->
-            <div class="gallery-item relative overflow-hidden rounded-lg shadow-lg hover:shadow-2xl transition-all duration-500 group">
-                <img
-                    src="https://www.visionartaluminium.com/wp-content/uploads/brooklyn-windows-doors-and-windows.webp"
+            <div
+                class="gallery-item relative overflow-hidden rounded-lg shadow-lg hover:shadow-2xl transition-all duration-500 group">
+                <img src="https://www.visionartaluminium.com/wp-content/uploads/brooklyn-windows-doors-and-windows.webp"
                     alt="Commercial Facade Project with aluminium windows and doors"
-                    class="w-full h-72 md:h-96 object-cover transition-transform duration-700 group-hover:scale-110"
-                />
-                <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                <div class="absolute bottom-0 left-0 right-0 p-6 text-white transform translate-y-8 group-hover:translate-y-0 transition-transform duration-500">
+                    class="w-full h-72 md:h-96 object-cover transition-transform duration-700 group-hover:scale-110" />
+                <div
+                    class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                </div>
+                <div
+                    class="absolute bottom-0 left-0 right-0 p-6 text-white transform translate-y-8 group-hover:translate-y-0 transition-transform duration-500">
                     <h3 class="text-xl md:text-2xl font-bold">Commercial Facade Project</h3>
-                    <p class="text-sm md:text-base opacity-90">Modern architectural facade with premium aluminium systems</p>
+                    <p class="text-sm md:text-base opacity-90">Modern architectural facade with premium aluminium
+                        systems</p>
                 </div>
             </div>
 
             <!-- Gallery Item 5 -->
-            <div class="gallery-item relative overflow-hidden rounded-lg shadow-lg hover:shadow-2xl transition-all duration-500 group">
-                <img
-                    src="assets/p3.jpg"
-                    alt="Robus 40 Fold and Slide Doors - Open patio view"
-                    class="w-full h-72 md:h-96 object-cover transition-transform duration-700 group-hover:scale-110"
-                />
-                <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                <div class="absolute bottom-0 left-0 right-0 p-6 text-white transform translate-y-8 group-hover:translate-y-0 transition-transform duration-500">
+            <div
+                class="gallery-item relative overflow-hidden rounded-lg shadow-lg hover:shadow-2xl transition-all duration-500 group">
+                <img src="assets/p3.jpg" alt="Robus 40 Fold and Slide Doors - Open patio view"
+                    class="w-full h-72 md:h-96 object-cover transition-transform duration-700 group-hover:scale-110" />
+                <div
+                    class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                </div>
+                <div
+                    class="absolute bottom-0 left-0 right-0 p-6 text-white transform translate-y-8 group-hover:translate-y-0 transition-transform duration-500">
                     <h3 class="text-xl md:text-2xl font-bold">Robus 40 Fold & Slide</h3>
-                    <p class="text-sm md:text-base opacity-90">Space-saving folding doors for seamless indoor-outdoor living</p>
+                    <p class="text-sm md:text-base opacity-90">Space-saving folding doors for seamless indoor-outdoor
+                        living</p>
                 </div>
             </div>
 
             <!-- Gallery Item 6 -->
-            <div class="gallery-item relative overflow-hidden rounded-lg shadow-lg hover:shadow-2xl transition-all duration-500 group">
-                <img
-                    src="https://www.sistemal.com/en/wp-content/uploads/2025/10/what-are-aluminum-skylight-systems-and-what-are-they-used-for.webp"
+            <div
+                class="gallery-item relative overflow-hidden rounded-lg shadow-lg hover:shadow-2xl transition-all duration-500 group">
+                <img src="https://www.sistemal.com/en/wp-content/uploads/2025/10/what-are-aluminum-skylight-systems-and-what-are-they-used-for.webp"
                     alt="Facade and Skylight System - Modern architectural installation"
-                    class="w-full h-72 md:h-96 object-cover transition-transform duration-700 group-hover:scale-110"
-                />
-                <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                <div class="absolute bottom-0 left-0 right-0 p-6 text-white transform translate-y-8 group-hover:translate-y-0 transition-transform duration-500">
+                    class="w-full h-72 md:h-96 object-cover transition-transform duration-700 group-hover:scale-110" />
+                <div
+                    class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                </div>
+                <div
+                    class="absolute bottom-0 left-0 right-0 p-6 text-white transform translate-y-8 group-hover:translate-y-0 transition-transform duration-500">
                     <h3 class="text-xl md:text-2xl font-bold">Facade & Skylight Systems</h3>
-                    <p class="text-sm md:text-base opacity-90">Innovative architectural solutions for light and aesthetics</p>
+                    <p class="text-sm md:text-base opacity-90">Innovative architectural solutions for light and
+                        aesthetics</p>
                 </div>
             </div>
         </div>
@@ -2008,173 +2067,163 @@ body {
         </div>
     </section>
 
-   <!-- Compact Contact Section -->
-<section id="contact" class="py-10 md:py-12 bg-gray-100 text-gray-800">
+<!-- Compact Contact Section with Dark Green Background (#1a3c34) -->
+<section id="contact" class="py-10 md:py-12 bg-[#1a3c34] text-white">
     <div class="container mx-auto px-4">
         <div class="max-w-5xl mx-auto">
-
             <!-- Section Header - More Compact -->
             <div class="text-center mb-8">
-                <h2 class="text-2xl md:text-3xl font-bold mb-3 text-gray-900">
+                <!-- Updated Heading with Red Underline -->
+                <h2 class="text-2xl md:text-3xl font-bold mb-3 text-white relative inline-block pb-2">
                     Get In Touch
+                    <span
+                        class="absolute left-0 bottom-0 w-full h-1 bg-gradient-to-r from-[#e74c3c] to-[#f5b642] rounded-full"></span>
                 </h2>
-                <p class="text-gray-600 text-sm md:text-base max-w-xl mx-auto">
+                <p class="text-gray-300 text-sm md:text-base max-w-xl mx-auto">
                     Ready to transform your space? Contact us for a free consultation.
                 </p>
             </div>
-
             <div class="grid lg:grid-cols-2 gap-6">
-
-                <!-- Contact Form - Now with light mint green background -->
-                <div class="bg-[#e6f7ed] rounded-xl p-5 border border-[#c0e8d5] shadow-sm">
-                    <h3 class="text-lg font-bold mb-4 text-gray-900 flex items-center gap-2">
+                <!-- Contact Form -->
+                <div class="bg-white/10 backdrop-blur-md rounded-xl p-5 border border-white/20 shadow-sm">
+                    <h3 class="text-lg font-bold mb-4 text-white flex items-center gap-2">
                         <svg class="w-5 h-5 text-[#f5b642]" fill="currentColor" viewBox="0 0 24 24">
-                            <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+                            <path
+                                d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" />
                         </svg>
                         Send Inquiry
                     </h3>
-
                     <form id="contact-form" class="space-y-3">
-
                         <div class="grid md:grid-cols-2 gap-3">
                             <div>
-                                <label class="block mb-1 text-xs text-gray-500">Full Name *</label>
+                                <label class="block mb-1 text-xs text-gray-300">Full Name *</label>
                                 <input type="text" required
-                                    class="w-full px-3 py-2 text-sm border border-gray-300 rounded-lg focus:outline-none focus:border-[#10b981] focus:ring-1 focus:ring-[#10b981]"
+                                    class="w-full px-3 py-2 text-sm bg-white/20 border border-white/30 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-[#f5b642] focus:ring-1 focus:ring-[#f5b642]"
                                     placeholder="Maya Malhotra">
                             </div>
-
                             <div>
-                                <label class="block mb-1 text-xs text-gray-500">Email *</label>
+                                <label class="block mb-1 text-xs text-gray-300">Email *</label>
                                 <input type="email" required
-                                    class="w-full px-3 py-2 text-sm border border-gray-300 rounded-lg focus:outline-none focus:border-[#10b981] focus:ring-1 focus:ring-[#10b981]"
+                                    class="w-full px-3 py-2 text-sm bg-white/20 border border-white/30 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-[#f5b642] focus:ring-1 focus:ring-[#f5b642]"
                                     placeholder="abc@gmail.com">
                             </div>
                         </div>
-
                         <div>
-                            <label class="block mb-1 text-xs text-gray-500">Phone *</label>
+                            <label class="block mb-1 text-xs text-gray-300">Phone *</label>
                             <input type="tel" required
-                                class="w-full px-3 py-2 text-sm border border-gray-300 rounded-lg focus:outline-none focus:border-[#10b981] focus:ring-1 focus:ring-[#10b981]"
+                                class="w-full px-3 py-2 text-sm bg-white/20 border border-white/30 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-[#f5b642] focus:ring-1 focus:ring-[#f5b642]"
                                 placeholder="+91 9823090987">
                         </div>
-
                         <div>
-                            <label class="block mb-1 text-xs text-gray-500">Service Interest</label>
+                            <label class="block mb-1 text-xs text-gray-300">Service Interest</label>
                             <select
-                                class="w-full px-3 py-2 text-sm border border-gray-300 rounded-lg focus:outline-none focus:border-[#10b981] focus:ring-1 focus:ring-[#10b981]">
-                                <option selected disabled>Select a service</option>
-                                <option>Windows</option>
-                                <option>Doors</option>
-                                <option>Commercial Solutions</option>
-                                <option>Custom Design</option>
+                                class="w-full px-3 py-2 text-sm bg-white/20 border border-white/30 rounded-lg text-white focus:outline-none focus:border-[#f5b642] focus:ring-1 focus:ring-[#f5b642]">
+                                <option selected disabled class="text-gray-800">Select a service</option>
+                                <option class="text-gray-800">Windows</option>
+                                <option class="text-gray-800">Doors</option>
+                                <option class="text-gray-800">Commercial Solutions</option>
+                                <option class="text-gray-800">Custom Design</option>
                             </select>
                         </div>
-
                         <div>
-                            <label class="block mb-1 text-xs text-gray-500">Message *</label>
+                            <label class="block mb-1 text-xs text-gray-300">Message *</label>
                             <textarea rows="2" required
-                                class="w-full px-3 py-2 text-sm border border-gray-300 rounded-lg focus:outline-none focus:border-[#10b981] focus:ring-1 focus:ring-[#10b981] resize-none"
+                                class="w-full px-3 py-2 text-sm bg-white/20 border border-white/30 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-[#f5b642] focus:ring-1 focus:ring-[#f5b642] resize-none"
                                 placeholder="Tell us about your project..."></textarea>
                         </div>
-
                         <button type="submit"
                             class="w-full bg-gradient-to-r from-[#e74c3c] to-[#f5b642] text-white font-semibold text-sm py-2.5 rounded-lg hover:shadow-md transition-all duration-300 active:scale-[0.98]">
                             Send Message
                         </button>
-
                     </form>
                 </div>
-
-                <!-- Contact Info & Map - Now with light mint green backgrounds -->
+                <!-- Contact Info & Map -->
                 <div class="space-y-5">
-
                     <!-- Contact Information -->
-                    <div class="bg-[#e6f7ed] rounded-xl p-5 border border-[#c0e8d5] shadow-sm">
-                        <h3 class="text-lg font-bold mb-4 text-gray-900 flex items-center gap-2">
+                    <div class="bg-white/10 backdrop-blur-md rounded-xl p-5 border border-white/20 shadow-sm">
+                        <h3 class="text-lg font-bold mb-4 text-white flex items-center gap-2">
                             <svg class="w-5 h-5 text-[#f5b642]" fill="currentColor" viewBox="0 0 24 24">
-                                <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5a2.5 2.5 0 010-5 2.5 2.5 0 010 5z"/>
+                                <path
+                                    d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5a2.5 2.5 0 010-5 2.5 2.5 0 010 5z" />
                             </svg>
                             Contact Info
                         </h3>
-
                         <div class="space-y-3">
-                            <a href="tel:+91 9823090987" class="flex items-center p-2 hover:bg-[#d0f0e0]/50 rounded-lg transition group">
-                                <div class="w-8 h-8 rounded-full bg-[#10b981]/10 flex items-center justify-center mr-3 group-hover:scale-110 transition">
-                                    <svg class="w-4 h-4 text-[#10b981]" fill="currentColor" viewBox="0 0 24 24">
-                                        <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
+                            <a href="tel:+91 9823090987"
+                                class="flex items-center p-2 hover:bg-white/10 rounded-lg transition group">
+                                <div
+                                    class="w-8 h-8 rounded-full bg-[#f5b642]/20 flex items-center justify-center mr-3 group-hover:scale-110 transition">
+                                    <svg class="w-4 h-4 text-[#f5b642]" fill="currentColor" viewBox="0 0 24 24">
+                                        <path
+                                            d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z" />
                                     </svg>
                                 </div>
                                 <div class="flex-1">
-                                    <p class="text-xs text-gray-500">Call Us</p>
-                                    <p class="font-semibold text-sm text-gray-800 group-hover:text-[#10b981] transition">+91 9823090987</p>
+                                    <p class="text-xs text-gray-300">Call Us</p>
+                                    <p class="font-semibold text-sm text-white group-hover:text-[#f5b642] transition">
+                                        +91 9823090987</p>
                                 </div>
                             </a>
-
-                            <a href="mailto:saleseliteendeavor@gmail.com" class="flex items-center p-2 hover:bg-[#d0f0e0]/50 rounded-lg transition group">
-                                <div class="w-8 h-8 rounded-full bg-[#f5b642]/20 flex items-center justify-center mr-3 group-hover:scale-110 transition">
+                            <a href="mailto:saleseliteendeavor@gmail.com"
+                                class="flex items-center p-2 hover:bg-white/10 rounded-lg transition group">
+                                <div
+                                    class="w-8 h-8 rounded-full bg-[#f5b642]/20 flex items-center justify-center mr-3 group-hover:scale-110 transition">
                                     <svg class="w-4 h-4 text-[#f5b642]" fill="currentColor" viewBox="0 0 24 24">
-                                        <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+                                        <path
+                                            d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" />
                                     </svg>
                                 </div>
                                 <div class="flex-1">
-                                    <p class="text-xs text-gray-500">Email Us</p>
-                                    <p class="font-semibold text-sm text-gray-800 group-hover:text-[#f5b642] transition">saleseliteendeavor@gmail.com</p>
+                                    <p class="text-xs text-gray-300">Email Us</p>
+                                    <p class="font-semibold text-sm text-white group-hover:text-[#f5b642] transition">
+                                        saleseliteendeavor@gmail.com</p>
                                 </div>
                             </a>
                         </div>
                     </div>
-
                     <!-- Compact Google Map -->
-                    <div class="bg-[#e6f7ed] rounded-xl overflow-hidden border border-[#c0e8d5] shadow-sm">
-                        <div class="p-4 border-b border-[#c0e8d5]">
+                    <div
+                        class="bg-white/10 backdrop-blur-md rounded-xl overflow-hidden border border-white/20 shadow-sm">
+                        <div class="p-4 border-b border-white/20">
                             <div class="flex items-center justify-between">
                                 <div>
-                                    <h4 class="font-bold text-sm flex items-center gap-2 text-gray-900">
+                                    <h4 class="font-bold text-sm flex items-center gap-2 text-white">
                                         <svg class="w-4 h-4 text-[#f5b642]" fill="currentColor" viewBox="0 0 24 24">
-                                            <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5a2.5 2.5 0 010-5 2.5 2.5 0 010 5z"/>
+                                            <path
+                                                d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5a2.5 2.5 0 010-5 2.5 2.5 0 010 5z" />
                                         </svg>
                                         Our Location
                                     </h4>
-                                    <p class="text-xs text-gray-500 mt-1">Pune, Maharashtra, India</p>
+                                    <p class="text-xs text-gray-300 mt-1">Pune, Maharashtra, India</p>
                                 </div>
-                                <a href="https://www.google.com/maps/place/Elite+Endeavor/@18.5836386,73.7639658,17z/data=!3m1!4b1!4m6!3m5!1s0x3bc2b915110e9409:0xcee433c451d3d812!8m2!3d18.5836335!4d73.7665407!16s%2Fg%2F11w14x2qqh?entry=ttu" 
-                                   target="_blank" 
-                                   rel="noopener noreferrer"
-                                   class="text-xs text-[#f5b642] hover:text-[#e74c3c] font-medium transition">
+                                <a href="https://www.google.com/maps/place/Elite+Endeavor/@18.5836386,73.7639658,17z/data=!3m1!4b1!4m6!3m5!1s0x3bc2b915110e9409:0xcee433c451d3d812!8m2!3d18.5836335!4d73.7665407!16s%2Fg%2F11w14x2qqh?entry=ttu"
+                                    target="_blank" rel="noopener noreferrer"
+                                    class="text-xs text-[#f5b642] hover:text-[#e74c3c] font-medium transition">
                                     Open in Maps →
                                 </a>
                             </div>
                         </div>
-
                         <div class="h-48">
-                            <iframe 
-                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3781.787012611875!2d73.7639658!3d18.5836386!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2b915110e9409%3A0xcee433c451d3d812!2sElite%20Endeavor!5e0!3m2!1sen!2sin!4v1766236697377!5m2!1sen!2sin" 
-                                width="100%" 
-                                height="100%" 
-                                style="border:0;" 
-                                allowfullscreen="" 
-                                loading="lazy" 
-                                referrerpolicy="no-referrer-when-downgrade"
-                                class="w-full h-full"
+                            <iframe
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3781.787012611875!2d73.7639658!3d18.5836386!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2b915110e9409%3A0xcee433c451d3d812!2sElite%20Endeavor!5e0!3m2!1sen!2sin!4v1766236697377!5m2!1sen!2sin"
+                                width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"
+                                referrerpolicy="no-referrer-when-downgrade" class="w-full h-full"
                                 title="Elite Endeavor Location">
                             </iframe>
                         </div>
                     </div>
-
                 </div>
             </div>
-
             <!-- Compact Response Time -->
-            <div class="mt-8 pt-4 border-t border-gray-200 text-center">
-                <span class="text-gray-600 text-xs flex items-center justify-center gap-2">
+            <div class="mt-8 pt-4 border-t border-white/20 text-center">
+                <span class="text-gray-300 text-xs flex items-center justify-center gap-2">
                     <svg class="w-4 h-4 text-[#f5b642]" fill="currentColor" viewBox="0 0 24 24">
-                        <path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67z"/>
+                        <path
+                            d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67z" />
                     </svg>
                     Guaranteed response within <strong class="text-[#f5b642]">24 hours</strong>
                 </span>
             </div>
-
         </div>
     </div>
 </section>
@@ -2182,13 +2231,12 @@ body {
 
 
 <!-- Footer Section -->
-<footer class="bg-[#1a3c34] text-white py-12">
-    <!-- Golden Divider at Top -->
+<!-- <footer class="bg-[#1a3c34] text-white py-12">
     <div class="w-full h-px bg-gradient-to-r from-transparent via-[#f5b642] to-transparent"></div>
     
     <div class="container mx-auto px-4 pt-12">
         <div class="grid md:grid-cols-4 gap-8 lg:gap-16">
-            <!-- Company Info -->
+            
             <div class="md:col-span-1">
                 <div class="flex items-center gap-3 mb-6">
                     <img
@@ -2207,7 +2255,6 @@ body {
                 </p>
             </div>
 
-            <!-- Quick Links - Shifted significantly to the right -->
             <div class="md:col-span-1 md:pl-8 lg:pl-12">
                 <h4 class="text-lg font-bold mb-6 relative inline-block pb-2">
                     Quick Links
@@ -2221,7 +2268,6 @@ body {
                 </ul>
             </div>
 
-            <!-- Products -->
             <div class="md:col-span-1">
                 <h4 class="text-lg font-bold mb-6 relative inline-block pb-2">
                     Products
@@ -2251,7 +2297,6 @@ body {
                 </ul>
             </div>
 
-            <!-- Contact Info -->
             <div class="md:col-span-1">
                 <h4 class="text-lg font-bold mb-6 relative inline-block pb-2">
                     Contact Info
@@ -2280,12 +2325,135 @@ body {
             </div>
         </div>
 
-        <!-- Bottom Copyright -->
         <div class="border-t border-[#f5b642]/30 mt-12 pt-8 text-center">
             <p class="text-gray-400 text-sm">
                 &copy; 2025 Elite Endeavor. All rights reserved. | Channel Partner of Uniframe (Prominence Group)
             </p>
         </div>
+    </div>
+</footer> -->
+
+<!-- Footer Section -->
+<footer class="bg-white text-black py-12">
+    <!-- Golden Divider at Top -->
+    <div class="w-full h-px bg-gradient-to-r from-transparent via-[#f5b642] to-transparent"></div>
+    
+    <div class="container mx-auto px-4 pt-12">
+        <div class="grid md:grid-cols-4 gap-8 lg:gap-16">
+            <!-- Company Info -->
+            <div class="md:col-span-1">
+                <div class="flex items-center gap-3 mb-6">
+                    <img
+                        src="assets/logo.png"
+                        alt="Elite Endeavor Logo"
+                        class="h-16 md:h-20 w-auto animate-[bounce_2s_ease-in-out_infinite]"
+                    />
+                    <span class="text-2xl font-bold tracking-wide text-black relative inline-block">
+                        Elite Endeavor
+                        <span class="absolute left-0 -bottom-1 w-full h-0.5 bg-gradient-to-r from-[#e74c3c] to-[#f5b642] scale-x-100 origin-left transition-transform duration-500"></span>
+                    </span>
+                </div>
+
+                <p class="text-gray-700 text-sm leading-relaxed">
+                    Premium aluminium doors and windows with 17+ years of engineering excellence.
+                </p>
+            </div>
+
+            <!-- Quick Links -->
+            <div class="md:col-span-1 md:pl-8 lg:pl-12">
+                <h4 class="text-lg font-bold mb-6 relative inline-block pb-2 text-black">
+                    Quick Links
+                    <span class="absolute left-0 -bottom-1 w-full h-0.5 bg-gradient-to-r from-[#e74c3c] to-[#f5b642]"></span>
+                </h4>
+                <ul class="space-y-3">
+                    <li class="flex items-center gap-3">
+                        <span class="material-icons text-[#e67e22] text-2xl">home</span>
+                        <a href="#home" class="text-gray-700 hover:text-[#e74c3c] transition-colors block py-1">Home</a>
+                    </li>
+                    <li class="flex items-center gap-3">
+                        <span class="material-icons text-[#e67e22] text-2xl">info</span>
+                        <a href="#about" class="text-gray-700 hover:text-[#e74c3c] transition-colors block py-1">About Us</a>
+                    </li>
+                    <li class="flex items-center gap-3">
+                        <span class="material-icons text-[#e67e22] text-2xl">window</span>
+                        <a href="#products" class="text-gray-700 hover:text-[#e74c3c] transition-colors block py-1">Products</a>
+                    </li>
+                    <li class="flex items-center gap-3">
+                        <span class="material-icons text-[#e67e22] text-2xl">contact_mail</span>
+                        <a href="#contact" class="text-gray-700 hover:text-[#e74c3c] transition-colors block py-1">Contact</a>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Products -->
+            <div class="md:col-span-1">
+                <h4 class="text-lg font-bold mb-6 relative inline-block pb-2 text-black">
+                    Products
+                    <span class="absolute left-0 -bottom-1 w-full h-0.5 bg-gradient-to-r from-[#e74c3c] to-[#f5b642]"></span>
+                </h4>
+                <ul class="space-y-3">
+                    <li class="flex items-center gap-3">
+                        <span class="material-icons text-[#e67e22] text-2xl">door_sliding</span>
+                        <a href="#products" class="text-gray-700 hover:text-[#e74c3c] transition-colors block py-1" onclick="scrollToProduct('sliding-doors')">
+                            Sliding Doors
+                        </a>
+                    </li>
+                    <li class="flex items-center gap-3">
+                        <span class="material-icons text-[#e67e22] text-2xl">view_quilt</span>
+                        <a href="#products" class="text-gray-700 hover:text-[#e74c3c] transition-colors block py-1" onclick="scrollToProduct('sliding-windows')">
+                            Sliding Windows
+                        </a>
+                    </li>
+                    <li class="flex items-center gap-3">
+                        <span class="material-icons text-[#e67e22] text-2xl">business</span>
+                        <a href="#products" class="text-gray-700 hover:text-[#e74c3c] transition-colors block py-1" onclick="scrollToProduct('commercial-windows')">
+                            Commercial Windows
+                        </a>
+                    </li>
+                    <li class="flex items-center gap-3">
+                        <span class="material-icons text-[#e67e22] text-2xl">door_front</span>
+                        <a href="#products" class="text-gray-700 hover:text-[#e74c3c] transition-colors block py-1" onclick="scrollToProduct('premium-doors')">
+                            Premium Door Systems
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+           <!-- Contact Info -->
+<div class="md:col-span-1">
+    <h4 class="text-lg font-bold mb-6 relative inline-block pb-2 text-black">
+        Contact Info
+        <span class="absolute left-0 -bottom-1 w-full h-0.5 bg-gradient-to-r from-[#e74c3c] to-[#f5b642]"></span>
+    </h4>
+    <ul class="space-y-4">
+        <li class="flex items-center gap-3">
+            <span class="material-icons text-[#e67e22] text-2xl">phone</span>
+            <span class="text-gray-700">+91 9823090987</span>
+        </li>
+        <li class="flex items-center gap-3">
+            <span class="material-icons text-[#e67e22] text-2xl">email</span>
+            <span class="text-gray-700">saleseliteendeavor@gmail.com</span>
+        </li>
+        <li class="flex items-center gap-3">
+            <span class="material-icons text-[#e67e22] text-2xl">location_on</span>
+            <span class="text-gray-700">Pune, Maharashtra, India</span>
+        </li>
+    </ul>
+</div>
+        </div>
+
+        <!-- Golden Divider Before Copyright -->
+        <div class="w-full h-px bg-gradient-to-r from-transparent via-[#f5b642] to-transparent mt-12"></div>
+
+    <!-- Bottom Copyright -->
+<div class="pt-8 text-center">
+    <p class="text-gray-600 text-sm">
+        &copy; 2025 Elite Endeavor. All rights reserved. | Channel Partner of Uniframe (Prominence Group)
+    </p>
+    <p class="text-gray-600 text-sm mt-3">
+        ~Developed by Kunash Media Solutions
+    </p>
+</div>
     </div>
 </footer>
 
@@ -2694,6 +2862,38 @@ document.addEventListener('DOMContentLoaded', function() {
         if (window.location.hash === '#about') {
             setTimeout(checkInitialView, 500);
         }
+    });
+
+    const observerOptions = {
+        threshold: 0.15,
+        rootMargin: "0px 0px -100px 0px"
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const element = entry.target;
+
+                // Title: slow fade-up
+                if (element.tagName === 'H2') {
+                    element.classList.remove('opacity-0', 'translate-y-16');
+                    element.classList.add('opacity-100', 'translate-y-0');
+                }
+                // Cards: very slow slide-in from sides
+                else {
+                    element.classList.remove('opacity-0', '-translate-x-48', 'translate-x-48');
+                    element.classList.add('opacity-100', 'translate-x-0');
+                }
+
+                // Optional: uncomment to play animation only once
+                // observer.unobserve(element);
+            }
+        });
+    }, observerOptions);
+
+    // Observe title and both cards
+    document.querySelectorAll('#founders [data-animate]').forEach(el => {
+        observer.observe(el);
     });
     </script>
 </body>
