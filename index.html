@@ -270,77 +270,199 @@
         }
 
         /* Background Icon Layer */
-.about-bg-icons {
-  position: absolute;
-  inset: 0;
-  z-index: 0;
-}
+        .about-bg-icons {
+            position: absolute;
+            inset: 0;
+            z-index: 0;
+        }
 
-/* COMMON ICON STYLE — DARKER & CLEAR */
-.about-bg-icons .icon {
-  position: absolute;
-  font-size: 2.4rem;
-  color: #e65100;        /* DARK ORANGE */
-  opacity: 0.18;         /* MUCH DARKER than before */
-  animation: float 12s ease-in-out infinite;
-}
+        /* COMMON ICON STYLE — DARKER & CLEAR */
+        .about-bg-icons .icon {
+            position: absolute;
+            font-size: 2.4rem;
+            color: #e65100;
+            /* DARK ORANGE */
+            opacity: 0.18;
+            /* MUCH DARKER than before */
+            animation: float 12s ease-in-out infinite;
+        }
 
-/* ICON POSITIONS (GRID-LIKE DISTRIBUTION) */
+        /* ICON POSITIONS (GRID-LIKE DISTRIBUTION) */
 
-/* Top */
-.i1  { top: 5%;  left: 5%; }
-.i2  { top: 6%;  left: 22%; }
-.i3  { top: 5%;  left: 40%; }
-.i4  { top: 6%;  right: 35%; }
-.i5  { top: 5%;  right: 20%; }
-.i6  { top: 6%;  right: 5%; }
+        /* Top */
+        .i1 {
+            top: 5%;
+            left: 5%;
+        }
 
-/* Upper Middle */
-.i7  { top: 22%; left: 8%; }
-.i8  { top: 24%; left: 28%; }
-.i9  { top: 22%; left: 48%; }
-.i10 { top: 24%; right: 30%; }
-.i11 { top: 22%; right: 10%; }
+        .i2 {
+            top: 6%;
+            left: 22%;
+        }
 
-/* Center */
-.i12 { top: 42%; left: 10%; }
-.i13 { top: 44%; left: 30%; }
-.i14 { top: 42%; left: 50%; }
-.i15 { top: 44%; right: 28%; }
-.i16 { top: 42%; right: 8%; }
+        .i3 {
+            top: 5%;
+            left: 40%;
+        }
 
-/* Lower Middle */
-.i17 { bottom: 28%; left: 15%; }
-.i18 { bottom: 26%; left: 35%; }
-.i19 { bottom: 28%; right: 35%; }
-.i20 { bottom: 26%; right: 15%; }
+        .i4 {
+            top: 6%;
+            right: 35%;
+        }
 
-/* Bottom */
-.i21 { bottom: 8%; left: 20%; }
-.i22 { bottom: 6%; left: 40%; }
-.i23 { bottom: 8%; right: 35%; }
-.i24 { bottom: 6%; right: 15%; }
+        .i5 {
+            top: 5%;
+            right: 20%;
+        }
 
-/* VARIED FLOAT SPEED (NATURAL FEEL) */
-.i2, .i6, .i10, .i14, .i18, .i22 { animation-duration: 16s; }
-.i3, .i7, .i11, .i15, .i19, .i23 { animation-duration: 14s; }
-.i4, .i8, .i12, .i16, .i20, .i24 { animation-duration: 18s; }
+        .i6 {
+            top: 6%;
+            right: 5%;
+        }
 
-/* FLOAT ANIMATION */
-@keyframes float {
-  0%   { transform: translateY(0); }
-  50%  { transform: translateY(-18px); }
-  100% { transform: translateY(0); }
-}
+        /* Upper Middle */
+        .i7 {
+            top: 22%;
+            left: 8%;
+        }
 
-/* Hide on mobile */
-@media (max-width: 768px) {
-  .about-bg-icons {
-    display: none;
-  }
-}
+        .i8 {
+            top: 24%;
+            left: 28%;
+        }
 
+        .i9 {
+            top: 22%;
+            left: 48%;
+        }
 
+        .i10 {
+            top: 24%;
+            right: 30%;
+        }
+
+        .i11 {
+            top: 22%;
+            right: 10%;
+        }
+
+        /* Center */
+        .i12 {
+            top: 42%;
+            left: 10%;
+        }
+
+        .i13 {
+            top: 44%;
+            left: 30%;
+        }
+
+        .i14 {
+            top: 42%;
+            left: 50%;
+        }
+
+        .i15 {
+            top: 44%;
+            right: 28%;
+        }
+
+        .i16 {
+            top: 42%;
+            right: 8%;
+        }
+
+        /* Lower Middle */
+        .i17 {
+            bottom: 28%;
+            left: 15%;
+        }
+
+        .i18 {
+            bottom: 26%;
+            left: 35%;
+        }
+
+        .i19 {
+            bottom: 28%;
+            right: 35%;
+        }
+
+        .i20 {
+            bottom: 26%;
+            right: 15%;
+        }
+
+        /* Bottom */
+        .i21 {
+            bottom: 8%;
+            left: 20%;
+        }
+
+        .i22 {
+            bottom: 6%;
+            left: 40%;
+        }
+
+        .i23 {
+            bottom: 8%;
+            right: 35%;
+        }
+
+        .i24 {
+            bottom: 6%;
+            right: 15%;
+        }
+
+        /* VARIED FLOAT SPEED (NATURAL FEEL) */
+        .i2,
+        .i6,
+        .i10,
+        .i14,
+        .i18,
+        .i22 {
+            animation-duration: 16s;
+        }
+
+        .i3,
+        .i7,
+        .i11,
+        .i15,
+        .i19,
+        .i23 {
+            animation-duration: 14s;
+        }
+
+        .i4,
+        .i8,
+        .i12,
+        .i16,
+        .i20,
+        .i24 {
+            animation-duration: 18s;
+        }
+
+        /* FLOAT ANIMATION */
+        @keyframes float {
+            0% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-18px);
+            }
+
+            100% {
+                transform: translateY(0);
+            }
+        }
+
+        /* Hide on mobile */
+        @media (max-width: 768px) {
+            .about-bg-icons {
+                display: none;
+            }
+        }
     </style>
 </head>
 
@@ -428,9 +550,7 @@
     </nav>
 </header> -->
 
-
     <!-- Fixed Header: Top Navbar with Contact & Social + Main Navigation -->
-
     <header id="header" class="fixed top-0 left-0 w-full z-50 bg-white transition-all duration-300 shadow-sm">
         <!-- Top Navbar: Business Hours, Contact Info & Social Icons -->
         <div id="top-navbar" class="w-full bg-white text-black text-xs border-b border-gray-200">
@@ -632,124 +752,126 @@
             id="next-slide">&gt;</button>
     </section>
 
-   <!-- About Us Section -->
-<section id="about" class="relative py-16 bg-white overflow-hidden">
+    <!-- About Us Section -->
+    <section id="about" class="relative py-16 bg-white overflow-hidden">
 
-   <!-- Floating Background Icons -->
-<div class="about-bg-icons pointer-events-none">
+        <!-- Floating Background Icons -->
+        <div class="about-bg-icons pointer-events-none">
 
-    <!-- Top Area -->
-    <span class="material-icons icon i1">home</span>
-    <span class="material-icons icon i2">window</span>
-    <span class="material-icons icon i3">lock</span>
-    <span class="material-icons icon i4">door_front</span>
-    <span class="material-icons icon i5">window</span>
-    <span class="material-icons icon i6">home</span>
+            <!-- Top Area -->
+            <span class="material-icons icon i1">home</span>
+            <span class="material-icons icon i2">window</span>
+            <span class="material-icons icon i3">lock</span>
+            <span class="material-icons icon i4">door_front</span>
+            <span class="material-icons icon i5">window</span>
+            <span class="material-icons icon i6">home</span>
 
-    <!-- Upper Middle -->
-    <span class="material-icons icon i7">lock</span>
-    <span class="material-icons icon i8">window</span>
-    <span class="material-icons icon i9">door_front</span>
-    <span class="material-icons icon i10">home</span>
-    <span class="material-icons icon i11">lock</span>
+            <!-- Upper Middle -->
+            <span class="material-icons icon i7">lock</span>
+            <span class="material-icons icon i8">window</span>
+            <span class="material-icons icon i9">door_front</span>
+            <span class="material-icons icon i10">home</span>
+            <span class="material-icons icon i11">lock</span>
 
-    <!-- Center -->
-    <span class="material-icons icon i12">window</span>
-    <span class="material-icons icon i13">home</span>
-    <span class="material-icons icon i14">lock</span>
-    <span class="material-icons icon i15">view_week</span>
-    <span class="material-icons icon i16">door_front</span>
+            <!-- Center -->
+            <span class="material-icons icon i12">window</span>
+            <span class="material-icons icon i13">home</span>
+            <span class="material-icons icon i14">lock</span>
+            <span class="material-icons icon i15">view_week</span>
+            <span class="material-icons icon i16">door_front</span>
 
-    <!-- Lower Middle -->
-    <span class="material-icons icon i17">window</span>
-    <span class="material-icons icon i18">home</span>
-    <span class="material-icons icon i19">lock</span>
-    <span class="material-icons icon i20">window</span>
+            <!-- Lower Middle -->
+            <span class="material-icons icon i17">window</span>
+            <span class="material-icons icon i18">home</span>
+            <span class="material-icons icon i19">lock</span>
+            <span class="material-icons icon i20">window</span>
 
-    <!-- Bottom -->
-    <span class="material-icons icon i21">home</span>
-    <span class="material-icons icon i22">lock</span>
-    <span class="material-icons icon i23">window</span>
-    <span class="material-icons icon i24">door_front</span>
+            <!-- Bottom -->
+            <span class="material-icons icon i21">home</span>
+            <span class="material-icons icon i22">lock</span>
+            <span class="material-icons icon i23">window</span>
+            <span class="material-icons icon i24">door_front</span>
 
-</div>
-
-
-    <div class="container mx-auto px-4 max-w-6xl relative z-10">
-
-        <!-- Section Header -->
-        <div class="text-center mb-12">
-            <h2 class="text-3xl md:text-4xl font-bold text-[#1a3c34] mb-3 reveal-from-top">
-                About Elite Endeavor
-            </h2>
-            <div class="w-20 h-1 bg-[#2e7d32] mx-auto rounded-full reveal-from-top"></div>
         </div>
 
-        <div class="grid lg:grid-cols-2 gap-12 items-center">
 
-            <!-- Image Column -->
-            <div class="relative">
-                <div class="relative rounded-xl overflow-hidden shadow-lg reveal-from-left">
-                    <img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&w=800&q=80"
-                         alt="Premium Aluminium Doors & Windows"
-                         class="w-full h-auto transition-transform duration-500 hover:scale-105">
+        <div class="container mx-auto px-4 max-w-6xl relative z-10">
+
+            <!-- Section Header -->
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-[#1a3c34] mb-3 reveal-from-top">
+                    About Elite Endeavor
+                </h2>
+                <div class="w-20 h-1 bg-[#2e7d32] mx-auto rounded-full reveal-from-top"></div>
+            </div>
+
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+
+                <!-- Image Column -->
+                <div class="relative">
+                    <div class="relative rounded-xl overflow-hidden shadow-lg reveal-from-left">
+                        <img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&w=800&q=80"
+                            alt="Premium Aluminium Doors & Windows"
+                            class="w-full h-auto transition-transform duration-500 hover:scale-105">
+                    </div>
+
+                    <!-- Experience Badge -->
+                    <div
+                        class="absolute -bottom-4 -right-4 bg-[#1a3c34] text-white p-4 rounded-xl shadow-lg reveal-scale">
+                        <div class="text-center">
+                            <div class="text-2xl font-bold">17+</div>
+                            <div class="text-xs font-medium">Years Experience</div>
+                        </div>
+                    </div>
                 </div>
 
-                <!-- Experience Badge -->
-                <div class="absolute -bottom-4 -right-4 bg-[#1a3c34] text-white p-4 rounded-xl shadow-lg reveal-scale">
-                    <div class="text-center">
-                        <div class="text-2xl font-bold">17+</div>
-                        <div class="text-xs font-medium">Years Experience</div>
+                <!-- Content Column -->
+                <div class="reveal-from-right">
+                    <p class="text-gray-700 mb-4">
+                        Elite Endeavor delivers premium aluminium doors and windows, combining durability,
+                        security, and modern design for residential and commercial projects.
+                    </p>
+
+                    <p class="text-gray-700 mb-6">
+                        Founded by <strong class="text-[#1a3c34]">Pradnya and Prasad Kudche</strong> with
+                        <strong class="text-[#1a3c34]">17+ years of engineering expertise</strong>,
+                        we are proud channel partners of
+                        <strong class="text-[#1a3c34]">Uniframe (Prominence Group)</strong>.
+                    </p>
+
+                    <!-- Mission Statement -->
+                    <div class="bg-[#e8f5e9] p-6 rounded-xl border-l-4 border-[#2e7d32] mb-8">
+                        <p class="text-gray-800 italic">
+                            "Our commitment is to deliver precision-engineered aluminium systems
+                            that combine strength, security, and style."
+                        </p>
+                    </div>
+
+                    <!-- Key Features -->
+                    <div class="grid grid-cols-2 gap-4">
+                        <span class="feature">Premium Quality</span>
+                        <span class="feature">Enhanced Security</span>
+                        <span class="feature">Modern Design</span>
+                        <span class="feature">Precision Engineering</span>
                     </div>
                 </div>
             </div>
-
-            <!-- Content Column -->
-            <div class="reveal-from-right">
-                <p class="text-gray-700 mb-4">
-                    Elite Endeavor delivers premium aluminium doors and windows, combining durability,
-                    security, and modern design for residential and commercial projects.
-                </p>
-
-                <p class="text-gray-700 mb-6">
-                    Founded by <strong class="text-[#1a3c34]">Pradnya and Prasad Kudche</strong> with
-                    <strong class="text-[#1a3c34]">17+ years of engineering expertise</strong>,
-                    we are proud channel partners of
-                    <strong class="text-[#1a3c34]">Uniframe (Prominence Group)</strong>.
-                </p>
-
-                <!-- Mission Statement -->
-                <div class="bg-[#e8f5e9] p-6 rounded-xl border-l-4 border-[#2e7d32] mb-8">
-                    <p class="text-gray-800 italic">
-                        "Our commitment is to deliver precision-engineered aluminium systems
-                        that combine strength, security, and style."
-                    </p>
-                </div>
-
-                <!-- Key Features -->
-                <div class="grid grid-cols-2 gap-4">
-                    <span class="feature">Premium Quality</span>
-                    <span class="feature">Enhanced Security</span>
-                    <span class="feature">Modern Design</span>
-                    <span class="feature">Precision Engineering</span>
-                </div>
-            </div>
         </div>
-    </div>
-</section>
-
-
+    </section>
 
     <!-- Products Section -->
     <!-- Simple Products Section with Overlap Effect -->
-    <section id="products" class="py-16 bg-gray-100">
+    <section id="products" class="py-12 bg-gray-100">
         <!-- Section Header -->
-        <div class="container mx-auto px-4 mb-12">
+        <div class="container mx-auto px-4 mb-6">
             <div class="text-center">
-                <h2 class="text-3xl md:text-4xl font-bold mb-3 text-gray-900">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 inline-block mb-3">
                     Products
+                    <span class="block w-20 h-1 mt-2 mx-auto bg-gradient-to-r from-[#e74c3c] to-[#f5b642] rounded-full">
+                    </span>
                 </h2>
-                <p class="text-gray-600 text-lg max-w-2xl mx-auto mt-6">
+
+                <p class="text-gray-600 text-lg max-w-2xl mx-auto mt-2">
                     Premium aluminium doors and windows with 17+ years of engineering excellence
                 </p>
             </div>
@@ -1779,9 +1901,6 @@
 
     </section>
 
-
-
-
     <!-- Product Types Showcase Section - With Hover Effects & Doodle Art Background -->
     <section class="py-16 bg-gray-100 relative overflow-hidden">
         <!-- Subtle Doodle Art Background (Hand-drawn windows & doors line art) -->
@@ -2067,7 +2186,14 @@
     <!--  Key Features & Benefits -->
     <section id="features" class="py-16 bg-white">
         <div class="container mx-auto px-4">
-            <h2 class="text-3xl md:text-4xl font-bold text-[#1a3c34] text-center mb-12">Key Features & Benefits</h2>
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-[#1a3c34] inline-block">
+                    Key Features & Benefits
+                    <span class="block w-20 h-1 mt-3 mx-auto bg-gradient-to-r from-[#e74c3c] to-[#f5b642] rounded-full">
+                    </span>
+                </h2>
+            </div>
+
 
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 <!-- Feature 1 -->
@@ -2213,7 +2339,6 @@
             </div>
         </div>
     </section>
-
 
     <!--  Gallery Section -->
     <section id="gallery" class="py-16 bg-white">
@@ -2366,81 +2491,92 @@
     </div>
 </section> -->
 
-<!-- Why Uniframe Doors & Windows -->
-<section class="py-16 bg-[#e8f5e9]">
-    <div class="container mx-auto px-4">
+    <!-- Why Uniframe Doors & Windows -->
+    <section class="py-16 bg-[#e8f5e9]">
+        <div class="container mx-auto px-4">
 
-    <h2 class="text-3xl md:text-4xl font-bold text-[#1a3c34] text-center mb-16 md:mb-24">
-        Why Choose Uniframe?
-    </h2>
-
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
-
-            <!-- Card 1 -->
-            <div class="relative text-center bg-white rounded-xl shadow-md hover:shadow-xl transition-shadow duration-300 pt-20 px-6 pb-8">
-                
-                <!-- Human Image -->
-                <img src="assets/111.png"
-                     alt="Precision Engineering Expert"
-                     class="w-28 h-auto mx-auto absolute -top-20 left-1/2 -translate-x-1/2">
-
-                <h3 class="text-xl font-bold text-[#1a3c34] mb-3">
-                    Precision Engineering
-                </h3>
-
-                <p class="text-gray-600">
-                    Manufactured with exacting standards for perfect fit and flawless finishing.
-                </p>
+            <div class="text-center">
+                <h2 class="text-3xl md:text-4xl font-bold text-[#1a3c34] mb-16 md:mb-24 inline-block">
+                    Why Choose Uniframe?
+                    <span class="block w-20 h-1 mt-3 mx-auto bg-gradient-to-r from-[#e74c3c] to-[#f5b642] rounded-full">
+                    </span>
+                </h2>
             </div>
 
-            <!-- Card 2 -->
-            <div class="relative text-center bg-white rounded-xl shadow-md hover:shadow-xl transition-shadow duration-300 pt-20 px-6 pb-8">
-                
-                <img src="assets/2.png"
-                     alt="Security Specialist"
-                     class="w-28 h-auto mx-auto absolute -top-20 left-1/2 -translate-x-1/2">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
 
-                <h3 class="text-xl font-bold text-[#1a3c34] mb-3">
-                    Enhanced Security
-                </h3>
+                <!-- Card 1 -->
+                <div
+                    class="relative text-center bg-white rounded-xl shadow-md hover:shadow-xl transition-shadow duration-300 pt-20 px-6 pb-8">
 
-                <p class="text-gray-600">
-                    Multi-point locking systems ensuring maximum safety and peace of mind.
-                </p>
+                    <!-- Human Image -->
+                    <img src="assets/111.png" alt="Precision Engineering Expert"
+                        class="w-28 h-auto mx-auto absolute -top-20 left-1/2 -translate-x-1/2">
+
+                    <h3 class="text-xl font-bold text-[#1a3c34] mb-6 text-center">
+                        Precision Engineering
+                        <span
+                            class="block w-12 h-0.5 mt-2 mx-auto bg-gradient-to-r from-[#e74c3c] to-[#f5b642] rounded-full"></span>
+                    </h3>
+
+                    <p class="text-gray-600">
+                        Manufactured with exacting standards for perfect fit and flawless finishing.
+                    </p>
+                </div>
+
+                <!-- Card 2 -->
+                <div
+                    class="relative text-center bg-white rounded-xl shadow-md hover:shadow-xl transition-shadow duration-300 pt-20 px-6 pb-8">
+
+                    <img src="assets/2.png" alt="Security Specialist"
+                        class="w-28 h-auto mx-auto absolute -top-20 left-1/2 -translate-x-1/2">
+
+                    <h3 class="text-xl font-bold text-[#1a3c34] mb-6 text-center">
+                        Enhanced Security
+                        <span
+                            class="block w-12 h-0.5 mt-2 mx-auto bg-gradient-to-r from-[#e74c3c] to-[#f5b642] rounded-full"></span>
+                    </h3>
+                    <p class="text-gray-600">
+                        Multi-point locking systems ensuring maximum safety and peace of mind.
+                    </p>
+                </div>
+
+                <!-- Card 3 -->
+                <div
+                    class="relative text-center bg-white rounded-xl shadow-md hover:shadow-xl transition-shadow duration-300 pt-20 px-6 pb-8">
+
+                    <img src="assets/3.png" alt="Energy Efficiency Expert"
+                        class="w-28 h-auto mx-auto absolute -top-20 left-1/2 -translate-x-1/2">
+
+                    <h3 class="text-xl font-bold text-[#1a3c34] mb-6 text-center">
+                        Energy Efficient
+                        <span
+                            class="block w-12 h-0.5 mt-2 mx-auto bg-gradient-to-r from-[#e74c3c] to-[#f5b642] rounded-full"></span>
+                    </h3>
+
+                    <p class="text-gray-600">
+                        Thermally broken designs that significantly reduce energy consumption.
+                    </p>
+                </div>
+
             </div>
-
-            <!-- Card 3 -->
-            <div class="relative text-center bg-white rounded-xl shadow-md hover:shadow-xl transition-shadow duration-300 pt-20 px-6 pb-8">
-                
-                <img src="assets/3.png"
-                     alt="Energy Efficiency Expert"
-                     class="w-28 h-auto mx-auto absolute -top-20 left-1/2 -translate-x-1/2">
-
-                <h3 class="text-xl font-bold text-[#1a3c34] mb-3">
-                    Energy Efficient
-                </h3>
-
-                <p class="text-gray-600">
-                    Thermally broken designs that significantly reduce energy consumption.
-                </p>
-            </div>
-
         </div>
-    </div>
-</section>
+    </section>
 
-    <!-- Compact Contact Section with Dark Green Background (#1a3c34) -->
+    <!-- Contact Section -->
     <section id="contact" class="py-10 md:py-12 bg-[#1a3c34] text-white">
         <div class="container mx-auto px-4">
             <div class="max-w-5xl mx-auto">
                 <!-- Section Header - More Compact -->
                 <div class="text-center mb-8">
                     <!-- Updated Heading with Red Underline -->
-                    <h2 class="text-2xl md:text-3xl font-bold mb-3 text-white relative inline-block pb-2">
+                    <h2 class="text-2xl md:text-3xl font-bold mb-3 text-white text-center inline-block">
                         Get In Touch
                         <span
-                            class="absolute left-0 bottom-0 w-full h-1 bg-gradient-to-r from-[#e74c3c] to-[#f5b642] rounded-full"></span>
+                            class="block w-20 h-1 mt-2 mx-auto bg-gradient-to-r from-[#e74c3c] to-[#f5b642] rounded-full">
+                        </span>
                     </h2>
+
                     <p class="text-gray-300 text-sm md:text-base max-w-xl mx-auto">
                         Ready to transform your space? Contact us for a free consultation.
                     </p>
@@ -2591,8 +2727,6 @@
             </div>
         </div>
     </section>
-
-
 
     <!-- Footer Section -->
     <!-- <footer class="bg-[#1a3c34] text-white py-12">
@@ -2860,6 +2994,7 @@
 
     <!-- Scripts -->
     <script src="script.js"></script>
+
     <!-- Simple Carousel JavaScript (Add this before </body>) -->
     <script>
         let currentSlide = 0;
