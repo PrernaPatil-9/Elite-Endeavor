@@ -558,27 +558,35 @@
             <div class="container mx-auto px-4">
                 <div class="flex flex-col md:flex-row justify-between items-center py-2 gap-3">
                     <!-- Reduced py-3 → py-2 and gap-4 → gap-3 -->
-
+    
                     <!-- Left: Business Hours -->
                     <div class="flex items-center gap-2"> <!-- Reduced gap-3 → gap-2 -->
                         <span class="text-sm">●</span> <!-- Slightly smaller dot -->
                         <span>Mon - Sat: 9:00 AM - 6:00 PM</span>
                     </div>
-
+    
                     <!-- Right: Email, Phone & Social Icons -->
                     <div class="flex flex-col md:flex-row items-center gap-4 md:gap-6"> <!-- Reduced gaps -->
-
+    
                         <!-- Contact Info -->
                         <div class="flex flex-col md:flex-row items-center gap-4 text-center md:text-left">
                             <!-- Reduced gap-6 → gap-4 -->
-                            <a href="mailto:saleseliteendeavor@gmail.com" class="hover:text-[#f5b642] transition">
-                                saleseliteendeavor@gmail.com
-                            </a>
-                            <a href="tel:+919876543210" class="hover:text-[#f5b642] transition">
-                                +91 98765 43210
-                            </a>
+                            <div class="flex items-center gap-2 flex-wrap">
+                                <!-- Email -->
+                                <a href="mailto:saleseliteendeavor@gmail.com"
+                                    class="flex items-center gap-2 hover:text-[#f5b642] transition">
+                                    <span class="material-icons text-[#f97316] text-2xl">mail</span>
+                                    saleseliteendeavor@gmail.com
+                                </a>
+    
+                                <!-- Phone -->
+                                <a href="tel:+919876543210" class="flex items-center gap-2 hover:text-[#f5b642] transition">
+                                    <span class="material-icons text-[#f97316] text-2xl">phone</span>
+                                    +91 98765 43210
+                                </a>
+                            </div>
                         </div>
-
+    
                         <!-- Social Media Icons -->
                         <div class="flex items-center gap-4"> <!-- Reduced gap-5 → gap-4 -->
                             <!-- Facebook -->
@@ -590,7 +598,7 @@
                                         d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.99 3.66 9.13 8.44 9.88v-6.99h-2.54v-2.89h2.54V9.41c0-2.52 1.5-3.91 3.79-3.91 1.1 0 2.25.2 2.25.2v2.48h-1.26c-1.25 0-1.64.78-1.64 1.58v1.9h2.79l-.45 2.89h-2.34v6.99C18.34 21.13 22 16.99 22 12z" />
                                 </svg>
                             </a>
-
+    
                             <!-- Instagram -->
                             <a href="https://instagram.com/eliteendeavor" target="_blank" rel="noopener"
                                 class="hover:opacity-80 transition" aria-label="Instagram">
@@ -613,7 +621,7 @@
                                     </svg>
                                 </div>
                             </a>
-
+    
                             <!-- YouTube -->
                             <a href="https://youtube.com/@eliteendeavor" target="_blank" rel="noopener"
                                 class="hover:opacity-80 transition" aria-label="YouTube">
@@ -628,10 +636,10 @@
                 </div>
             </div>
         </div>
-
+    
         <!-- Golden Divider Line -->
         <div class="w-full h-px bg-[#f5b642]"></div>
-
+    
         <!-- Main Navigation -->
         <nav id="main-nav" class="container mx-auto px-4 py-4 bg-white">
             <div class="flex justify-between items-center">
@@ -641,13 +649,13 @@
                     <div class="scale-[1.8] origin-left">
                         <img src="assets/logo.png" alt="Elite Endeavor Logo" class="h-10 w-auto">
                     </div>
-
+    
                     <!-- Company name (attached) -->
                     <span class="font-bold text-xl">
                         <span class="text-orange-500">Elite</span><span class="text-green-800">Endeavor</span>
                     </span>
                 </div>
-
+    
                 <!-- Desktop Menu -->
                 <div class="hidden md:flex items-center space-x-8">
                     <a href="#home" class="text-black hover:text-[#f5b642] hover:underline transition">Home</a>
@@ -658,32 +666,27 @@
                     <a href="#gallery" class="text-black hover:text-[#f5b642] hover:underline transition">Gallery</a>
                     <a href="#contact" class="text-black hover:text-[#f5b642] hover:underline transition">Contact</a>
                 </div>
-
-
+    
+    
                 <!-- Mobile Hamburger Menu Button -->
                 <button id="mobile-menu-button" class="md:hidden text-black text-3xl focus:outline-none">
                     ☰
                 </button>
             </div>
-
+    
             <!-- Mobile Menu (hidden by default, toggled with JS) -->
             <div id="mobile-menu" class="hidden md:hidden mt-6 pb-4 border-t border-gray-200 pt-4">
                 <div class="flex flex-col space-y-4">
                     <a href="#home" class="text-black hover:text-[#f5b642] hover:underline transition py-2">Home</a>
                     <a href="#about" class="text-black hover:text-[#f5b642] hover:underline transition py-2">About</a>
-                    <a href="#products"
-                        class="text-black hover:text-[#f5b642] hover:underline transition py-2">Products</a>
-                    <a href="#features"
-                        class="text-black hover:text-[#f5b642] hover:underline transition py-2">Features</a>
-                    <a href="#founders"
-                        class="text-black hover:text-[#f5b642] hover:underline transition py-2">Founders</a>
-                    <a href="#gallery"
-                        class="text-black hover:text-[#f5b642] hover:underline transition py-2">Gallery</a>
-                    <a href="#contact"
-                        class="text-black hover:text-[#f5b642] hover:underline transition py-2">Contact</a>
+                    <a href="#products" class="text-black hover:text-[#f5b642] hover:underline transition py-2">Products</a>
+                    <a href="#features" class="text-black hover:text-[#f5b642] hover:underline transition py-2">Features</a>
+                    <a href="#founders" class="text-black hover:text-[#f5b642] hover:underline transition py-2">Founders</a>
+                    <a href="#gallery" class="text-black hover:text-[#f5b642] hover:underline transition py-2">Gallery</a>
+                    <a href="#contact" class="text-black hover:text-[#f5b642] hover:underline transition py-2">Contact</a>
                 </div>
             </div>
-
+    
         </nav>
     </header>
 
