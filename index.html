@@ -754,75 +754,73 @@
         </nav>
     </header>
 
-    <!--  Hero Section with Sliding Banners (Carousel) - Fixed for header overlap -->
-    <section id="home" class="relative pt-20 h-[100vh] min-h-[600px] overflow-hidden">
-        <!-- Carousel Slides -->
-        <div class="absolute inset-0">
-            <!-- Slide 1 -->
-            <div class="absolute inset-0 opacity-0 transition-opacity duration-1000 ease-in-out" data-slide="0">
-                <img src="https://iniciowindows.com/wp-content/uploads/15_Modern-Luxury-Retreat_R05_cropped.jpg"
-                    alt="Modern luxury aluminium windows and doors" class="w-full h-full object-cover">
-                <div class="absolute inset-0 bg-black opacity-60"></div>
-            </div>
-            <!-- Slide 2 -->
-            <div class="absolute inset-0 opacity-0 transition-opacity duration-1000 ease-in-out" data-slide="1">
-                <img src="https://panoramicdoors.com/wp-content/uploads/2023/03/Panoramic-Door-aluminum-butterfly-door-panels-spaced-inside-view-standard-scaled.jpeg"
-                    alt="Elegant aluminium sliding glass doors" class="w-full h-full object-cover">
-                <div class="absolute inset-0 bg-black opacity-60"></div>
-            </div>
-            <!-- Slide 3 -->
-            <div class="absolute inset-0 opacity-100 transition-opacity duration-1000 ease-in-out" data-slide="2">
-                <img src="https://www.visionartaluminium.com/wp-content/uploads/the-rise-of-luxury-aluminum-bi-folding-doors-in-new-jersey.webp"
-                    alt="Luxury aluminium bifold doors open to patio" class="w-full h-full object-cover">
-                <div class="absolute inset-0 bg-black opacity-60"></div>
+    <!-- Hero Section with Sliding Banners (Carousel) - Fixed for header overlap -->
+<section id="home" class="relative pt-20 h-[100vh] min-h-[600px] overflow-hidden">
+    <!-- Carousel Slides -->
+    <div class="absolute inset-0">
+        <!-- Slide 1 -->
+        <div class="absolute inset-0 transition-opacity duration-1000 ease-in-out" data-slide="0">
+            <img src="https://iniciowindows.com/wp-content/uploads/15_Modern-Luxury-Retreat_R05_cropped.jpg"
+                alt="Modern luxury aluminium windows and doors" class="w-full h-full object-cover">
+            <div class="absolute inset-0 bg-black opacity-60"></div>
+        </div>
+        <!-- Slide 2 -->
+        <div class="absolute inset-0 transition-opacity duration-1000 ease-in-out" data-slide="1">
+            <img src="https://panoramicdoors.com/wp-content/uploads/2023/03/Panoramic-Door-aluminum-butterfly-door-panels-spaced-inside-view-standard-scaled.jpeg"
+                alt="Elegant aluminium sliding glass doors" class="w-full h-full object-cover">
+            <div class="absolute inset-0 bg-black opacity-60"></div>
+        </div>
+        <!-- Slide 3 -->
+        <div class="absolute inset-0 transition-opacity duration-1000 ease-in-out" data-slide="2">
+            <img src="https://www.visionartaluminium.com/wp-content/uploads/the-rise-of-luxury-aluminum-bi-folding-doors-in-new-jersey.webp"
+                alt="Luxury aluminium bifold doors open to patio" class="w-full h-full object-cover">
+            <div class="absolute inset-0 bg-black opacity-60"></div>
+        </div>
+    </div>
+
+    <!-- Hero Content (Overlay) -->
+    <div class="container mx-auto px-4 h-full flex items-center relative z-10">
+        <div class="max-w-3xl text-white animate-fade-in">
+            <h1 class="text-4xl md:text-5xl font-semibold italic tracking-wide mb-8 leading-tight text-white">
+                Premium Aluminium Doors & Windows
+            </h1>
+
+            <p
+                class="text-base md:text-lg lg:text-xl mt-8 mb-8 opacity-95 font-normal tracking-wide leading-relaxed text-white max-w-3xl mx-auto text-justify">
+                Engineering Excellence Meets Aesthetic Perfection — At Elite Endeavor, we craft durable, secure, and
+                timeless aluminium doors and windows that elevate your space with unmatched style, superior
+                performance,
+                and lasting value.
+            </p>
+            <div class="flex flex-wrap gap-4">
+                <!-- Restored original color: Red (#e74c3c) with hover to golden (#f5b642) -->
+                <a href="#products"
+                    class="bg-[#e74c3c] hover:bg-[#f5b642] text-white font-bold py-3 px-8 rounded-lg text-base transition-all duration-300 transform hover:scale-105 shadow-lg">
+                    Explore Products
+                </a>
+                <a href="#contact"
+                    class="bg-transparent border-2 border-white hover:bg-white hover:text-[#1a3c34] text-white font-bold py-3 px-8 rounded-lg text-base transition-all duration-300 shadow-lg">
+                    Get a Quote
+                </a>
             </div>
         </div>
+    </div>
 
-        <!-- Hero Content (Overlay) -->
-        <div class="container mx-auto px-4 h-full flex items-center relative z-10">
-            <div class="max-w-3xl text-white animate-fade-in">
-                <h1 class="text-4xl md:text-5xl font-semibold italic tracking-wide mb-8 leading-tight text-white">
-                    Premium Aluminium Doors & Windows
-                </h1>
+    <!-- Carousel Indicators -->
+    <div class="absolute bottom-6 left-1/2 transform -translate-x-1/2 flex space-x-3 z-20">
+        <button class="w-3 h-3 rounded-full bg-white transition-all duration-300 hero-indicator" data-slide-to="0"></button>
+        <button class="w-3 h-3 rounded-full bg-white opacity-50 hover:opacity-80 transition-all duration-300 hero-indicator" data-slide-to="1"></button>
+        <button class="w-3 h-3 rounded-full bg-white opacity-50 hover:opacity-80 transition-all duration-300 hero-indicator" data-slide-to="2"></button>
+    </div>
 
-                <p
-                    class="text-base md:text-lg lg:text-xl mt-8 mb-8 opacity-95 font-normal tracking-wide leading-relaxed text-white max-w-3xl mx-auto text-justify">
-                    Engineering Excellence Meets Aesthetic Perfection — At Elite Endeavor, we craft durable, secure, and
-                    timeless aluminium doors and windows that elevate your space with unmatched style, superior
-                    performance,
-                    and lasting value.
-                </p>
-                <div class="flex flex-wrap gap-4">
-                    <!-- Restored original color: Red (#e74c3c) with hover to golden (#f5b642) -->
-                    <a href="#products"
-                        class="bg-[#e74c3c] hover:bg-[#f5b642] text-white font-bold py-3 px-8 rounded-lg text-base transition-all duration-300 transform hover:scale-105 shadow-lg">
-                        Explore Products
-                    </a>
-                    <a href="#contact"
-                        class="bg-transparent border-2 border-white hover:bg-white hover:text-[#1a3c34] text-white font-bold py-3 px-8 rounded-lg text-base transition-all duration-300 shadow-lg">
-                        Get a Quote
-                    </a>
-                </div>
-            </div>
-        </div>
-
-        <!-- Carousel Indicators -->
-        <div class="absolute bottom-6 left-1/2 transform -translate-x-1/2 flex space-x-3 z-20">
-            <button class="w-2.5 h-2.5 rounded-full bg-white opacity-50 hover:opacity-100 transition"
-                data-slide-index="0"></button>
-            <button class="w-2.5 h-2.5 rounded-full bg-white opacity-50 hover:opacity-100 transition"
-                data-slide-index="1"></button>
-            <button class="w-2.5 h-2.5 rounded-full bg-white opacity-100 transition" data-slide-index="2"></button>
-        </div>
-
-        <!-- Prev/Next Arrows -->
-        <button
-            class="absolute left-4 top-1/2 transform -translate-y-1/2 text-white text-3xl z-20 opacity-70 hover:opacity-100"
-            id="prev-slide">&lt;</button>
-        <button
-            class="absolute right-4 top-1/2 transform -translate-y-1/2 text-white text-3xl z-20 opacity-70 hover:opacity-100"
-            id="next-slide">&gt;</button>
-    </section>
+    <!-- Prev/Next Arrows -->
+    <button
+        class="absolute left-4 top-1/2 transform -translate-y-1/2 text-white text-4xl z-20 opacity-70 hover:opacity-100 hover:bg-black/30 w-12 h-12 flex items-center justify-center rounded-full transition-all duration-300"
+        id="prev-slide">‹</button>
+    <button
+        class="absolute right-4 top-1/2 transform -translate-y-1/2 text-white text-4xl z-20 opacity-70 hover:opacity-100 hover:bg-black/30 w-12 h-12 flex items-center justify-center rounded-full transition-all duration-300"
+        id="next-slide">›</button>
+</section>
 
 <!-- About Us Section - Compact Version -->
 <section id="about" class="relative py-10 md:py-12 bg-gradient-to-b from-white to-gray-50/50 overflow-hidden">
@@ -968,10 +966,11 @@
  
   <!-- Section Header -->
   <div class="container mx-auto px-4 relative z-10 mb-12 md:mb-16">
-    <div class="max-w-3xl mx-auto text-center">
-      <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
-        Premium Doors & Windows Systems
-      </h2>
+    <div class="max-w-3xl mx-auto text-center -mt-12 md:-mt-16">
+      <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4 whitespace-nowrap inline-block">
+  Premium Doors & Windows Systems
+  <span class="block w-72 h-1 mt-5 mx-auto bg-gradient-to-r from-[#e74c3c] to-[#f5b642] rounded-full"></span>
+</h2>
       <p class="text-lg md:text-xl text-gray-700">
         Engineered for durability, thermal efficiency, and architectural elegance
       </p>
@@ -2275,44 +2274,124 @@
     <script src="script.js"></script>
 
     <!-- Simple Carousel JavaScript (Add this before </body>) -->
-    <script>
-        let currentSlide = 0;
-        const slides = document.querySelectorAll('[data-slide]');
-        const indicators = document.querySelectorAll('[data-slide-index]');
-        const totalSlides = slides.length;
+   <script>
+// Hero Carousel Functionality - Fixed version
+document.addEventListener('DOMContentLoaded', function() {
+    // Hero Carousel Variables
+    let heroCurrentSlide = 0;
+    const heroSlides = document.querySelectorAll('#home [data-slide]');
+    const heroIndicators = document.querySelectorAll('#home .hero-indicator');
+    const prevButton = document.getElementById('prev-slide');
+    const nextButton = document.getElementById('next-slide');
+    const totalHeroSlides = heroSlides.length;
+    let heroAutoplayInterval;
+    
+    // Slide timing configuration - each slide stays for 6 seconds
+    const SLIDE_DURATION = 6000; // 6 seconds in milliseconds
+    const TRANSITION_DURATION = 1000; // 1 second for fade transition (matches your CSS)
 
-        function showSlide(index) {
-            slides.forEach((slide, i) => {
-                slide.style.opacity = i === index ? '1' : '0';
-            });
-            indicators.forEach((ind, i) => {
-                ind.classList.toggle('opacity-100', i === index);
-                ind.classList.toggle('opacity-50', i !== index);
-            });
-        }
-
-        document.getElementById('next-slide').addEventListener('click', () => {
-            currentSlide = (currentSlide + 1) % totalSlides;
-            showSlide(currentSlide);
+    // Function to show slide with proper z-index management
+    function showHeroSlide(index) {
+        // Update all slides
+        heroSlides.forEach((slide, i) => {
+            if (i === index) {
+                slide.style.opacity = '1';
+                slide.style.zIndex = '10';
+            } else {
+                slide.style.opacity = '0';
+                slide.style.zIndex = '0';
+            }
         });
-
-        document.getElementById('prev-slide').addEventListener('click', () => {
-            currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
-            showSlide(currentSlide);
+        
+        // Update indicators
+        heroIndicators.forEach((ind, i) => {
+            if (i === index) {
+                ind.style.opacity = '1';
+                ind.style.transform = 'scale(1.2)';
+            } else {
+                ind.style.opacity = '0.5';
+                ind.style.transform = 'scale(1)';
+            }
         });
+    }
 
-        indicators.forEach((ind) => {
-            ind.addEventListener('click', () => {
-                currentSlide = parseInt(ind.dataset.slideIndex);
-                showSlide(currentSlide);
-            });
+    // Function to go to next slide
+    function nextHeroSlide() {
+        heroCurrentSlide = (heroCurrentSlide + 1) % totalHeroSlides;
+        showHeroSlide(heroCurrentSlide);
+    }
+
+    // Function to go to previous slide
+    function prevHeroSlide() {
+        heroCurrentSlide = (heroCurrentSlide - 1 + totalHeroSlides) % totalHeroSlides;
+        showHeroSlide(heroCurrentSlide);
+    }
+
+    // Function to go to specific slide
+    function goToHeroSlide(index) {
+        heroCurrentSlide = index;
+        showHeroSlide(heroCurrentSlide);
+    }
+
+    // Start autoplay with precise timing
+    function startHeroAutoplay() {
+        // Clear any existing interval
+        clearInterval(heroAutoplayInterval);
+        
+        // Set new interval with proper timing
+        heroAutoplayInterval = setInterval(() => {
+            nextHeroSlide();
+        }, SLIDE_DURATION);
+    }
+
+    // Reset autoplay timer with proper timing
+    function resetHeroAutoplay() {
+        clearInterval(heroAutoplayInterval);
+        startHeroAutoplay();
+    }
+
+    // Event listeners for hero carousel
+    if (prevButton) {
+        prevButton.addEventListener('click', () => {
+            prevHeroSlide();
+            resetHeroAutoplay();
         });
+    }
 
-        // Auto-play (optional - every 6 seconds)
-        setInterval(() => {
-            currentSlide = (currentSlide + 1) % totalSlides;
-            showSlide(currentSlide);
-        }, 6000);
+    if (nextButton) {
+        nextButton.addEventListener('click', () => {
+            nextHeroSlide();
+            resetHeroAutoplay();
+        });
+    }
+
+    heroIndicators.forEach((indicator, index) => {
+        indicator.addEventListener('click', () => {
+            goToHeroSlide(index);
+            resetHeroAutoplay();
+        });
+    });
+
+    // Initialize hero carousel - set first slide to visible
+    showHeroSlide(0);
+    
+    // Start autoplay after a short delay to ensure initial display
+    setTimeout(() => {
+        startHeroAutoplay();
+    }, 500);
+
+    // Pause autoplay on hover
+    const heroSection = document.getElementById('home');
+    if (heroSection) {
+        heroSection.addEventListener('mouseenter', () => {
+            clearInterval(heroAutoplayInterval);
+        });
+        
+        heroSection.addEventListener('mouseleave', () => {
+            startHeroAutoplay();
+        });
+    }
+});
 
         // Form submission with animation
         document.addEventListener('DOMContentLoaded', function () {
@@ -2422,8 +2501,6 @@
                 });
             }
         });
-
-
 
         // Products Carousel Functionality
      // PRODUCT CAROUSEL SCRIPT - ISOLATED WITH ENHANCED OVERLAY
@@ -2718,6 +2795,7 @@
         initProductCarousel();
     });
 })();
+
         // Scroll Reveal Animation
         document.addEventListener('DOMContentLoaded', function () {
             // Get all elements with reveal classes
@@ -2893,9 +2971,7 @@
             mobileMenuButton.textContent = '☰';
         }
     });
-
-    
-    </script>
+</script>
 </body>
 
 </html>
