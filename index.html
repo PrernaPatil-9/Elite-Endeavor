@@ -627,9 +627,19 @@
                                 <hr class="border-gray-200">
 
                                 <!-- Facade & Skylights (No submenu) -->
-                                <a href="#facade-skylights" class="block px-4 py-3 text-gray-800 hover:bg-orange-50 hover:text-[#f97316] font-semibold rounded-md">
-                                    Facade & Skylights
-                                </a>
+                                 <div>
+                                    <button class="w-full flex items-center justify-between px-4 py-3 text-gray-800 hover:bg-orange-50 hover:text-[#f97316] font-semibold rounded-md">
+                                        Facade & Skylights
+                                        <svg class="w-5 h-5 text-[#f5b642] transition-transform duration-200 subcategory-arrow" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                                        </svg>
+                                    </button>
+                                    <div class="subcategory-menu hidden ml-6 space-y-1 mt-1">
+                                        <!-- UPDATED: Added navbar-subproduct class and data-sub attributes -->
+                                        <a href="javascript:void(0)" class="navbar-subproduct block px-4 py-2 text-gray-700 hover:bg-gray-50 hover:text-[#f97316] rounded" data-sub="facade">Facade Systems</a>
+                                        <a href="javascript:void(0)" class="navbar-subproduct block px-4 py-2 text-gray-700 hover:bg-gray-50 hover:text-[#f97316] rounded" data-sub="skylights">Skylights</a>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -960,7 +970,7 @@
 </section>
 
    <!-- Product Section -->
-<section id="product-section" class="relative py-16 md:py-24 overflow-hidden">
+<section id="products" class="relative py-16 md:py-24 overflow-hidden">
   <!-- Background decorative element -->
   <div class="absolute inset-0 bg-gradient-to-br from-gray-50 to-gray-100 z-0"></div>
  
@@ -1611,59 +1621,77 @@
         </div>
     </section>
 
-   <!-- Gallery Section -->
+<!-- Gallery Section -->
 <section id="gallery" class="py-20 bg-gradient-to-b from-gray-50 to-white">
     <div class="container mx-auto px-4">
         <!-- Section Header -->
-        <div class="text-center mb-16">
-            <span class="inline-block px-4 py-1 bg-gradient-to-r from-[#e74c3c] to-[#f5b642] text-white text-sm font-semibold rounded-full mb-4">
-                PORTFOLIO SHOWCASE
-            </span>
-            <h2 class="text-4xl md:text-5xl font-bold text-[#1a3c34] mb-6">
-                Our <span class="relative">Gallery
-                    <span class="absolute -bottom-2 left-0 w-24 h-1 bg-gradient-to-r from-[#e74c3c] to-[#f5b642] rounded-full"></span>
-                </span>
-            </h2>
-            <p class="text-gray-600 max-w-2xl mx-auto text-lg">
-                Discover our premium aluminium window and door installations that blend aesthetics with functionality
-            </p>
-        </div>
+     <div class="text-center mb-10">
+    <span
+        class="inline-block px-4 py-1 bg-gradient-to-r from-[#e74c3c] to-[#f5b642] text-white text-sm font-semibold rounded-full mb-3">
+        PORTFOLIO SHOWCASE
+    </span>
+
+    <h2 class="text-4xl md:text-5xl font-bold text-[#1a3c34] mb-4 leading-tight">
+        Our 
+        <span
+            class="relative inline-block pb-1 after:content-[''] after:absolute after:left-0 after:bottom-0 after:h-1 after:w-24 after:rounded-full after:bg-gradient-to-r after:from-[#e74c3c] after:to-[#f5b642]">
+            Gallery
+        </span>
+    </h2>
+
+    <p class="text-gray-600 max-w-2xl mx-auto text-lg">
+        Discover our premium aluminium window and door installations that blend aesthetics with functionality
+    </p>
+</div>
+
 
         <!-- Gallery Grid -->
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
             <!-- Gallery Item 1 -->
-            <div class="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 cursor-pointer">
+            <div
+                class="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 cursor-pointer">
                 <!-- Image Container with Gradient Overlay -->
                 <div class="relative h-80 overflow-hidden">
                     <img src="https://img.edilportale.com/product-thumbs/b_Oknoplast_ALUSLIDE-PREMIUM-PRO_PVIu57NFmO.jpeg"
                         alt="Graf 32 Sliding Window - Premium modern interior installation"
                         class="w-full h-full object-cover transition-all duration-700 group-hover:scale-110 group-hover:rotate-1" />
                     <!-- Gradient Overlay -->
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-70 group-hover:opacity-90 transition-opacity duration-500"></div>
+                    <div
+                        class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-70 group-hover:opacity-90 transition-opacity duration-500">
+                    </div>
                     <!-- Category Badge -->
                     <div class="absolute top-4 left-4">
-                        <span class="px-3 py-1 bg-white/90 backdrop-blur-sm text-[#1a3c34] text-xs font-bold rounded-full">SLIDING WINDOW</span>
+                        <span
+                            class="px-3 py-1 bg-white/90 backdrop-blur-sm text-[#1a3c34] text-xs font-bold rounded-full">SLIDING
+                            WINDOW</span>
                     </div>
                 </div>
-                
+
                 <!-- Content -->
-                <div class="absolute bottom-0 left-0 right-0 p-6 text-white transform translate-y-0 group-hover:-translate-y-2 transition-transform duration-500">
+                <div
+                    class="absolute bottom-0 left-0 right-0 p-6 text-white transform translate-y-0 group-hover:-translate-y-2 transition-transform duration-500">
                     <div class="mb-3">
                         <div class="flex items-center gap-2 text-sm text-gray-300 mb-2">
                             <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
-                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" clip-rule="evenodd"/>
+                                <path fill-rule="evenodd"
+                                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z"
+                                    clip-rule="evenodd" />
                             </svg>
                             <span>Premium Series</span>
                         </div>
                         <h3 class="text-2xl font-bold mb-2">Graf 32 Sliding Window</h3>
-                        <p class="text-gray-200 text-sm">Smooth and elegant sliding design for modern homes with superior thermal performance</p>
+                        <p class="text-gray-200 text-sm">Smooth and elegant sliding design for modern homes with
+                            superior thermal performance</p>
                     </div>
                     <!-- View Button -->
-                    <div class="opacity-0 group-hover:opacity-100 translate-y-4 group-hover:translate-y-0 transition-all duration-500 delay-150">
-                        <button class="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-[#e74c3c] to-[#f5b642] text-white font-medium rounded-lg hover:shadow-lg transition-shadow">
+                    <div
+                        class="opacity-0 group-hover:opacity-100 translate-y-4 group-hover:translate-y-0 transition-all duration-500 delay-150">
+                        <button
+                            class="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-[#e74c3c] to-[#f5b642] text-white font-medium rounded-lg hover:shadow-lg transition-shadow">
                             <span>View Details</span>
                             <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M14 5l7 7m0 0l-7 7m7-7H3" />
                             </svg>
                         </button>
                     </div>
@@ -1671,33 +1699,45 @@
             </div>
 
             <!-- Gallery Item 2 -->
-            <div class="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 cursor-pointer">
+            <div
+                class="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 cursor-pointer">
                 <div class="relative h-80 overflow-hidden">
                     <img src="https://weathershield.com/wp-content/uploads/2022/01/WebHeader_Pages_FindADealer-2-1280x720.jpg"
                         alt="Graf 32 Sliding Door - Luxury large glass patio doors"
                         class="w-full h-full object-cover transition-all duration-700 group-hover:scale-110" />
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-70 group-hover:opacity-90 transition-opacity duration-500"></div>
+                    <div
+                        class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-70 group-hover:opacity-90 transition-opacity duration-500">
+                    </div>
                     <div class="absolute top-4 left-4">
-                        <span class="px-3 py-1 bg-white/90 backdrop-blur-sm text-[#1a3c34] text-xs font-bold rounded-full">SLIDING DOOR</span>
+                        <span
+                            class="px-3 py-1 bg-white/90 backdrop-blur-sm text-[#1a3c34] text-xs font-bold rounded-full">SLIDING
+                            DOOR</span>
                     </div>
                 </div>
-                
-                <div class="absolute bottom-0 left-0 right-0 p-6 text-white transform translate-y-0 group-hover:-translate-y-2 transition-transform duration-500">
+
+                <div
+                    class="absolute bottom-0 left-0 right-0 p-6 text-white transform translate-y-0 group-hover:-translate-y-2 transition-transform duration-500">
                     <div class="mb-3">
                         <div class="flex items-center gap-2 text-sm text-gray-300 mb-2">
                             <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
-                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" clip-rule="evenodd"/>
+                                <path fill-rule="evenodd"
+                                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z"
+                                    clip-rule="evenodd" />
                             </svg>
                             <span>Luxury Series</span>
                         </div>
                         <h3 class="text-2xl font-bold mb-2">Graf 32 Sliding Door</h3>
-                        <p class="text-gray-200 text-sm">Premium large-opening sliding doors with superior performance and security features</p>
+                        <p class="text-gray-200 text-sm">Premium large-opening sliding doors with superior performance
+                            and security features</p>
                     </div>
-                    <div class="opacity-0 group-hover:opacity-100 translate-y-4 group-hover:translate-y-0 transition-all duration-500 delay-150">
-                        <button class="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-[#e74c3c] to-[#f5b642] text-white font-medium rounded-lg hover:shadow-lg transition-shadow">
+                    <div
+                        class="opacity-0 group-hover:opacity-100 translate-y-4 group-hover:translate-y-0 transition-all duration-500 delay-150">
+                        <button
+                            class="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-[#e74c3c] to-[#f5b642] text-white font-medium rounded-lg hover:shadow-lg transition-shadow">
                             <span>View Details</span>
                             <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M14 5l7 7m0 0l-7 7m7-7H3" />
                             </svg>
                         </button>
                     </div>
@@ -1705,33 +1745,45 @@
             </div>
 
             <!-- Gallery Item 3 -->
-            <div class="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 cursor-pointer">
+            <div
+                class="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 cursor-pointer">
                 <div class="relative h-80 overflow-hidden">
                     <img src="https://pa-window.com/wp-content/uploads/2023/11/green-living-room-casement-window-1-1024x683.jpg"
                         alt="Robus 40 Casement Window - Modern residential casement installation"
                         class="w-full h-full object-cover transition-all duration-700 group-hover:scale-110" />
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-70 group-hover:opacity-90 transition-opacity duration-500"></div>
+                    <div
+                        class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-70 group-hover:opacity-90 transition-opacity duration-500">
+                    </div>
                     <div class="absolute top-4 left-4">
-                        <span class="px-3 py-1 bg-white/90 backdrop-blur-sm text-[#1a3c34] text-xs font-bold rounded-full">CASEMENT WINDOW</span>
+                        <span
+                            class="px-3 py-1 bg-white/90 backdrop-blur-sm text-[#1a3c34] text-xs font-bold rounded-full">CASEMENT
+                            WINDOW</span>
                     </div>
                 </div>
-                
-                <div class="absolute bottom-0 left-0 right-0 p-6 text-white transform translate-y-0 group-hover:-translate-y-2 transition-transform duration-500">
+
+                <div
+                    class="absolute bottom-0 left-0 right-0 p-6 text-white transform translate-y-0 group-hover:-translate-y-2 transition-transform duration-500">
                     <div class="mb-3">
                         <div class="flex items-center gap-2 text-sm text-gray-300 mb-2">
                             <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
-                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" clip-rule="evenodd"/>
+                                <path fill-rule="evenodd"
+                                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z"
+                                    clip-rule="evenodd" />
                             </svg>
                             <span>Standard Series</span>
                         </div>
                         <h3 class="text-2xl font-bold mb-2">Robus 40 Casement Window</h3>
-                        <p class="text-gray-200 text-sm">Reliable and durable casement windows for everyday use with enhanced ventilation</p>
+                        <p class="text-gray-200 text-sm">Reliable and durable casement windows for everyday use with
+                            enhanced ventilation</p>
                     </div>
-                    <div class="opacity-0 group-hover:opacity-100 translate-y-4 group-hover:translate-y-0 transition-all duration-500 delay-150">
-                        <button class="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-[#e74c3c] to-[#f5b642] text-white font-medium rounded-lg hover:shadow-lg transition-shadow">
+                    <div
+                        class="opacity-0 group-hover:opacity-100 translate-y-4 group-hover:translate-y-0 transition-all duration-500 delay-150">
+                        <button
+                            class="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-[#e74c3c] to-[#f5b642] text-white font-medium rounded-lg hover:shadow-lg transition-shadow">
                             <span>View Details</span>
                             <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M14 5l7 7m0 0l-7 7m7-7H3" />
                             </svg>
                         </button>
                     </div>
@@ -1739,33 +1791,44 @@
             </div>
 
             <!-- Gallery Item 4 -->
-            <div class="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 cursor-pointer">
+            <div
+                class="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 cursor-pointer">
                 <div class="relative h-80 overflow-hidden">
                     <img src="https://www.visionartaluminium.com/wp-content/uploads/brooklyn-windows-doors-and-windows.webp"
                         alt="Commercial Facade Project with aluminium windows and doors"
                         class="w-full h-full object-cover transition-all duration-700 group-hover:scale-110" />
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-70 group-hover:opacity-90 transition-opacity duration-500"></div>
+                    <div
+                        class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-70 group-hover:opacity-90 transition-opacity duration-500">
+                    </div>
                     <div class="absolute top-4 left-4">
-                        <span class="px-3 py-1 bg-white/90 backdrop-blur-sm text-[#1a3c34] text-xs font-bold rounded-full">COMMERCIAL</span>
+                        <span
+                            class="px-3 py-1 bg-white/90 backdrop-blur-sm text-[#1a3c34] text-xs font-bold rounded-full">COMMERCIAL</span>
                     </div>
                 </div>
-                
-                <div class="absolute bottom-0 left-0 right-0 p-6 text-white transform translate-y-0 group-hover:-translate-y-2 transition-transform duration-500">
+
+                <div
+                    class="absolute bottom-0 left-0 right-0 p-6 text-white transform translate-y-0 group-hover:-translate-y-2 transition-transform duration-500">
                     <div class="mb-3">
                         <div class="flex items-center gap-2 text-sm text-gray-300 mb-2">
                             <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
-                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" clip-rule="evenodd"/>
+                                <path fill-rule="evenodd"
+                                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z"
+                                    clip-rule="evenodd" />
                             </svg>
                             <span>Architectural Series</span>
                         </div>
                         <h3 class="text-2xl font-bold mb-2">Commercial Facade Project</h3>
-                        <p class="text-gray-200 text-sm">Modern architectural facade with premium aluminium systems for commercial spaces</p>
+                        <p class="text-gray-200 text-sm">Modern architectural facade with premium aluminium systems for
+                            commercial spaces</p>
                     </div>
-                    <div class="opacity-0 group-hover:opacity-100 translate-y-4 group-hover:translate-y-0 transition-all duration-500 delay-150">
-                        <button class="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-[#e74c3c] to-[#f5b642] text-white font-medium rounded-lg hover:shadow-lg transition-shadow">
+                    <div
+                        class="opacity-0 group-hover:opacity-100 translate-y-4 group-hover:translate-y-0 transition-all duration-500 delay-150">
+                        <button
+                            class="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-[#e74c3c] to-[#f5b642] text-white font-medium rounded-lg hover:shadow-lg transition-shadow">
                             <span>View Details</span>
                             <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M14 5l7 7m0 0l-7 7m7-7H3" />
                             </svg>
                         </button>
                     </div>
@@ -1773,32 +1836,44 @@
             </div>
 
             <!-- Gallery Item 5 -->
-            <div class="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 cursor-pointer">
+            <div
+                class="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 cursor-pointer">
                 <div class="relative h-80 overflow-hidden">
                     <img src="assets/p3.jpg" alt="Robus 40 Fold and Slide Doors - Open patio view"
                         class="w-full h-full object-cover transition-all duration-700 group-hover:scale-110" />
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-70 group-hover:opacity-90 transition-opacity duration-500"></div>
+                    <div
+                        class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-70 group-hover:opacity-90 transition-opacity duration-500">
+                    </div>
                     <div class="absolute top-4 left-4">
-                        <span class="px-3 py-1 bg-white/90 backdrop-blur-sm text-[#1a3c34] text-xs font-bold rounded-full">FOLDING DOOR</span>
+                        <span
+                            class="px-3 py-1 bg-white/90 backdrop-blur-sm text-[#1a3c34] text-xs font-bold rounded-full">FOLDING
+                            DOOR</span>
                     </div>
                 </div>
-                
-                <div class="absolute bottom-0 left-0 right-0 p-6 text-white transform translate-y-0 group-hover:-translate-y-2 transition-transform duration-500">
+
+                <div
+                    class="absolute bottom-0 left-0 right-0 p-6 text-white transform translate-y-0 group-hover:-translate-y-2 transition-transform duration-500">
                     <div class="mb-3">
                         <div class="flex items-center gap-2 text-sm text-gray-300 mb-2">
                             <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
-                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" clip-rule="evenodd"/>
+                                <path fill-rule="evenodd"
+                                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z"
+                                    clip-rule="evenodd" />
                             </svg>
                             <span>Space-Saving Series</span>
                         </div>
                         <h3 class="text-2xl font-bold mb-2">Robus 40 Fold & Slide</h3>
-                        <p class="text-gray-200 text-sm">Space-saving folding doors for seamless indoor-outdoor living experience</p>
+                        <p class="text-gray-200 text-sm">Space-saving folding doors for seamless indoor-outdoor living
+                            experience</p>
                     </div>
-                    <div class="opacity-0 group-hover:opacity-100 translate-y-4 group-hover:translate-y-0 transition-all duration-500 delay-150">
-                        <button class="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-[#e74c3c] to-[#f5b642] text-white font-medium rounded-lg hover:shadow-lg transition-shadow">
+                    <div
+                        class="opacity-0 group-hover:opacity-100 translate-y-4 group-hover:translate-y-0 transition-all duration-500 delay-150">
+                        <button
+                            class="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-[#e74c3c] to-[#f5b642] text-white font-medium rounded-lg hover:shadow-lg transition-shadow">
                             <span>View Details</span>
                             <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M14 5l7 7m0 0l-7 7m7-7H3" />
                             </svg>
                         </button>
                     </div>
@@ -1806,33 +1881,45 @@
             </div>
 
             <!-- Gallery Item 6 -->
-            <div class="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 cursor-pointer">
+            <div
+                class="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 cursor-pointer">
                 <div class="relative h-80 overflow-hidden">
                     <img src="https://www.sistemal.com/en/wp-content/uploads/2025/10/what-are-aluminum-skylight-systems-and-what-are-they-used-for.webp"
                         alt="Facade and Skylight System - Modern architectural installation"
                         class="w-full h-full object-cover transition-all duration-700 group-hover:scale-110" />
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-70 group-hover:opacity-90 transition-opacity duration-500"></div>
+                    <div
+                        class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-70 group-hover:opacity-90 transition-opacity duration-500">
+                    </div>
                     <div class="absolute top-4 left-4">
-                        <span class="px-3 py-1 bg-white/90 backdrop-blur-sm text-[#1a3c34] text-xs font-bold rounded-full">SKYLIGHT SYSTEM</span>
+                        <span
+                            class="px-3 py-1 bg-white/90 backdrop-blur-sm text-[#1a3c34] text-xs font-bold rounded-full">SKYLIGHT
+                            SYSTEM</span>
                     </div>
                 </div>
-                
-                <div class="absolute bottom-0 left-0 right-0 p-6 text-white transform translate-y-0 group-hover:-translate-y-2 transition-transform duration-500">
+
+                <div
+                    class="absolute bottom-0 left-0 right-0 p-6 text-white transform translate-y-0 group-hover:-translate-y-2 transition-transform duration-500">
                     <div class="mb-3">
                         <div class="flex items-center gap-2 text-sm text-gray-300 mb-2">
                             <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
-                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" clip-rule="evenodd"/>
+                                <path fill-rule="evenodd"
+                                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z"
+                                    clip-rule="evenodd" />
                             </svg>
                             <span>Innovative Series</span>
                         </div>
                         <h3 class="text-2xl font-bold mb-2">Facade & Skylight Systems</h3>
-                        <p class="text-gray-200 text-sm">Innovative architectural solutions for optimal light and aesthetic appeal</p>
+                        <p class="text-gray-200 text-sm">Innovative architectural solutions for optimal light and
+                            aesthetic appeal</p>
                     </div>
-                    <div class="opacity-0 group-hover:opacity-100 translate-y-4 group-hover:translate-y-0 transition-all duration-500 delay-150">
-                        <button class="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-[#e74c3c] to-[#f5b642] text-white font-medium rounded-lg hover:shadow-lg transition-shadow">
+                    <div
+                        class="opacity-0 group-hover:opacity-100 translate-y-4 group-hover:translate-y-0 transition-all duration-500 delay-150">
+                        <button
+                            class="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-[#e74c3c] to-[#f5b642] text-white font-medium rounded-lg hover:shadow-lg transition-shadow">
                             <span>View Details</span>
                             <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M14 5l7 7m0 0l-7 7m7-7H3" />
                             </svg>
                         </button>
                     </div>
@@ -2233,7 +2320,7 @@
             <!-- Bottom Copyright -->
             <div class="pt-8 text-center">
                 <p class="text-gray-600 text-sm">
-                    &copy; 2025 Elite Endeavor. All rights reserved. | Channel Partner of Uniframe (Prominence Group)
+                    &copy; 2026 Elite Endeavor. All rights reserved. | Channel Partner of Uniframe (Prominence Group)
                 </p>
                 <p class="text-gray-600 text-sm mt-3">
                     ~Developed by Kunash Media Solutions
